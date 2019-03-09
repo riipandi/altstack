@@ -79,6 +79,6 @@ Do you like this project? Support it by donating via:
 ## License
 
 Laravel is a trademark of Taylor Otwel, and TailwindCSS is a trademark of Adam Wathan.
-This project licensed under the terms of [MIT License](https://choosealicense.com/licenses/mit).
 
+This project licensed under the terms of [MIT License](https://choosealicense.com/licenses/mit).
 Read the [license file](./license.txt) file for the full license text.
