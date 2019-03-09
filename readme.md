@@ -31,7 +31,7 @@ custom design with its own identity, Tailwind might be just what you're looking 
 
 Edit or create `.env` file and then execute:
 
-```
+```bash
 composer install
 npm i --no-optional
 npm run development
@@ -40,8 +40,9 @@ php artisan migrate:fresh --seed
 
 Create example user:
 
-```
+```php
 php artisan tinker
+
 $user = new App\Models\User();
 $user->name     = 'Admin Sistem';
 $user->username = 'admin';
@@ -51,6 +52,17 @@ $user->email_verified_at = now();
 $user->save();
 exit();
 ```
+
+### Automatic Versioning
+
+You will need add git hooks. Open `.git/hooks/post-commit` and put this code:
+
+```bash
+#!/bin/sh
+php artisan version:refresh
+```
+
+Don't forget to edit `config/version.yml` and change the remote git repository value with your own.
 
 ## Security Issue
 

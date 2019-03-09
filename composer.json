@@ -21,6 +21,7 @@
         "laravel/horizon": "^3.0",
         "laravel/telescope": "^2.0",
         "laravel/tinker": "^1.0",
+        "pragmarx/version": "^0.2.8",
         "predis/predis": "^1.1",
         "rap2hpoutre/laravel-log-viewer": "^1.1"
     },
