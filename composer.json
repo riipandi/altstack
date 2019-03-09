@@ -7,7 +7,7 @@
         "framework",
         "laravel",
         "scaffolding",
-        "starterkit",
+        "starter-project",
         "tailwind"
     ],
     "license": "MIT",
