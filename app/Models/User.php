@@ -10,6 +10,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
+// TODO: Fix must verify meythod.
 class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;

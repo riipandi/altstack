@@ -1,80 +1,101 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!doctype html>
+<html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <meta name="robots" content="all, noindex, nofollow">
+    <meta name="googlebot" content="all, noindex, nofollow">
+    <title>{{ config('app.name') }}</title>
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>
-<body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+<body class="bg-grey-lightest h-screen font-sans antialiased">
+    <div id="app" class="wrapper">
+        <!-- Sidebar  -->
+        @include('layouts.sidebar')
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
+        <div id="content">
+            <header id="navbar" class="inline-flex flex-row bg-white border-t-2 align-middle">
+                <div class="flex-1 text-grey-darker align-middle">
+                    <div class="inline-block py-1">
+                        <div class="flex">
+                            <div class="pl-6">
+                                <button onclick="toggleHidden('sidebar')" class="inherit focus:outline-none -ml-3">
+                                    <i class="fas fa-align-left mr-1"></i>
+                                </button>
+                            </div>
+                            <div class="hidden md:block ml-4 font-semibold">
+                                Your Company Name
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </nav>
+                <div class="flex-1 text-grey-darker text-right align-middle pr-4">
+                    <div class="inline-block">
+                        <div class="flex">
+                            <div class="py-1">
+                                <a href="javascript:;" class="inline-block text-grey-dark hover:text-green mr-5" aria-label="You have 69 unread notifications" data-microtip-position="bottom-left" role="tooltip">
+                                    <i class="fas fa-fw fa-bell"></i>
+                                </a>
+                            </div>
+                            <div class="mr-2">
+                                <img class="w-6 h-6 rounded-full" src="{{ auth()->user()->avatar_url }}" alt="User Avatar">
+                            </div>
+                            <button onclick="toggleDropdown('userDropdown')" class="drop-button text-grey-darker focus:outline-none font-medium">
+                                {{ auth()->user()->name }}
+                                <svg class="h-3 fill-current opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                            </button>
+                            <div id="userDropdown" class="dropdown dropdown-user absolute pin-r mr-6 mt-10 py-2 invisible rounded shadow-md">
+                                <a class="py-2 px-4 hover:bg-blue-dark hover:text-white" href="javascript:;"><i class="fas fa-fw fa-user mr-2"></i> Profile</a>
+                                <a class="py-2 px-4 hover:bg-blue-dark hover:text-white" href="javascript:;"><i class="fas fa-fw fa-user-cog mr-2"></i> Settings</a>
+                                <a class="py-2 px-4 hover:bg-blue-dark hover:text-white" href="javascript:;"><i class="fas fa-fw fa-list mr-2"></i> User Logs</a>
+                                <div class="border border-grey-lightest b-1 my-2 mx-4"></div>
+                                <a class="py-2 px-4 hover:bg-blue-dark hover:text-white" href="{{ route('logout') }}">
+                                    <i class="fas fa-fw fa-sign-out-alt mr-2"></i>{{ __('Sign Out ') }}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
+            <main class="w-full mx-auto py-10 px-8">
+                @include('layouts.alert')
+                @yield('content')
+            </main>
+
+            <footer id="footer">
+                <div class="text-center pt-2 md:pt-0 md:float-left">
+                    Copyright &copy; 2019 <a href="//ripandi.id" target="_new" rel="noopener" aria-label="Made by Aris Ripandi in Indonesia" data-microtip-position="top" role="tooltip">Aris Ripandi</a>.
+                </div>
+                <div class="text-center pt-3 pb-4 md:py-0 md:inline-block md:float-right">
+                    {{ config('app.name') }} <a href="{{ route('app.updates') }}" aria-label="Click here to check for updates" data-microtip-position="top-left" role="tooltip">{{ Version::format('compact') }}</a>
+                </div>
+            </footer>
+        </div>
     </div>
+
+    <script src="{{ mix('js/app.js') }}"></script>
+    <script>
+        function toggleDropdown(target) {
+            document.getElementById(target).classList.toggle('invisible');
+        }
+        function toggleHidden(target) {
+            document.getElementById(target).classList.toggle('hidden');
+        }
+        // Close the dropdown menu if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.drop-button')) {
+                var dropdowns = document.getElementsByClassName("dropdown");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (!openDropdown.classList.contains('invisible')) {
+                        openDropdown.classList.add('invisible');
+                    }
+                }
+            }
+        }
+    </script>
 </body>
 </html>
