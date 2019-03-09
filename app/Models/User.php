@@ -2,14 +2,27 @@
 
 namespace App\Models;
 
+use App\Traits\Uuid;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
+    use Notifiable;
+    use SoftDeletes;
+    use Uuid;
+
+    public $incrementing = false;
+
+    protected $guarded = ['id'];
+
+    protected $appends = ['avatar_url'];
+
 
     /**
      * The attributes that are mass assignable.
@@ -17,7 +30,12 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'email',
+        'password',
+        'email_verified_at',
+        'username',
+        'avatar',
     ];
 
     /**
@@ -46,5 +64,22 @@ class User extends Authenticatable implements MustVerifyEmail
     public function setPasswordAttribute($password)
     {
         $this->attributes['password'] = Hash::make($password);
+    }
+
+    /**
+     * Generate user avatar url.
+     * @return string
+     */
+    public function getAvatarUrlAttribute()
+    {
+        if ($this->avatar) {
+            if (filter_var($this->avatar, FILTER_VALIDATE_URL)) {
+                return $this->avatar;
+            } else {
+                return Storage::url('avatars/'.$this->avatar);
+            }
+        } else {
+            return asset('img/avatar-64.png');
+        }
     }
 }

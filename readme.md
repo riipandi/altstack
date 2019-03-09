@@ -25,7 +25,7 @@ custom design with its own identity, Tailwind might be just what you're looking 
 1. PHP >= 7.2;
 2. Nodejs >= 8.15 or >= 10.15;
 3. MySQL >= 5.7 or MariaDB >= 10.3;
-4. Redis Server >= 3.2 (_optional_);
+4. Redis Server >= 3.2;
 
 ### Local installation
 
@@ -36,6 +36,20 @@ composer install
 npm i --no-optional
 npm run development
 php artisan migrate:fresh --seed
+```
+
+Create example user:
+
+```
+php artisan tinker
+$user = new App\Models\User();
+$user->name     = 'Admin Sistem';
+$user->username = 'admin';
+$user->password = 'secret';
+$user->email    = 'admin@mail.com';
+$user->email_verified_at = now();
+$user->save();
+exit();
 ```
 
 ## Security Issue
