@@ -22,8 +22,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     protected $guarded = ['id'];
 
-    protected $appends = ['avatar_url'];
-
+    protected $appends = ['name', 'avatar_url'];
 
     /**
      * The attributes that are mass assignable.
@@ -31,7 +30,8 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name',
+        'first_name',
+        'last_name',
         'email',
         'password',
         'email_verified_at',
@@ -82,5 +82,17 @@ class User extends Authenticatable implements MustVerifyEmail
         } else {
             return asset('img/avatar-64.png');
         }
+    }
+
+    /**
+     * Get user full name.
+     * @return string
+     */
+    public function getNameAttribute()
+    {
+        if ($this->last_name) {
+            return $this->first_name . ' ' . $this->last_name;
+        }
+        return $this->first_name;
     }
 }

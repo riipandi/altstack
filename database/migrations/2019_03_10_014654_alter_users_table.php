@@ -15,6 +15,8 @@ class AlterUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('id', 36)->change();
+            $table->renameColumn('name', 'first_name');
+            $table->string('last_name')->unique()->after('name');
             $table->string('username', 40)->unique()->after('email');
             $table->string('avatar')->nullable();
             $table->softDeletes();
