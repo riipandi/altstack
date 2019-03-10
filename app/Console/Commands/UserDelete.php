@@ -28,7 +28,7 @@ class UserDelete extends Command
      */
     public function handle()
     {
-        $identity  = $this->argument('user');
+        $identity = $this->argument('user');
         $fieldType = filter_var($identity, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
 
         $user = User::where($fieldType, '=', $identity)->firstOrFail();

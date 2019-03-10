@@ -16,7 +16,7 @@ class UserTest extends TestCase
     {
         $user = new User([
             'first_name' => 'Admin',
-            'last_name'  => 'Sistem'
+            'last_name'  => 'Sistem',
         ]);
         $this->assertEquals('Admin Sistem', $user->name);
     }

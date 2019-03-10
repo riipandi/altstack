@@ -64,6 +64,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     /**
      * Generate user avatar url.
+     *
      * @return string
      */
     public function getAvatarUrlAttribute()
@@ -81,13 +82,15 @@ class User extends Authenticatable implements MustVerifyEmail
 
     /**
      * Get user full name.
+     *
      * @return string
      */
     public function getNameAttribute()
     {
         if ($this->last_name) {
-            return $this->first_name . ' ' . $this->last_name;
+            return $this->first_name.' '.$this->last_name;
         }
+
         return $this->first_name;
     }
 }

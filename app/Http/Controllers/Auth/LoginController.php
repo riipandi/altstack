@@ -35,15 +35,15 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
 
-        $identity  = $request->input('identity');
-        $remember  = $request->input('remember');
+        $identity = $request->input('identity');
+        $remember = $request->input('remember');
         $loginType = filter_var($identity, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
         $request->merge([$loginType => $identity]);
 
         if (auth()->attempt($request->only($loginType, 'password'), $remember)) {
             return redirect()
                 ->intended($this->redirectPath())
-                ->with(['info' => 'Welcome back ' . auth()->user()->first_name]);
+                ->with(['info' => 'Welcome back '.auth()->user()->first_name]);
         }
 
         return redirect()->back()
@@ -60,6 +60,7 @@ class LoginController extends Controller
         }
         $this->guard()->logout();
         $request->session()->invalidate();
+
         return $this->loggedOut($request) ?: redirect(route('login'))->with(['success' => 'You\'ve been logged out.']);
     }
 }
