@@ -15,8 +15,8 @@
             </a>
         </li>
         <li>
-            <a href="javascript:;" onclick="toggleHidden('transaksiProduk')" class="dropdown-toggle"><i class="fas fa-fw fa-database mx-2"></i> Example Menu 02</a>
-            <ul class="collapse list-reset hidden" id="transaksiProduk">
+            <a href="javascript:;" v-on:click="toggleClass('hidden', 'SubMenu1')" class="dropdown-toggle"><i class="fas fa-fw fa-database mx-2"></i> Example Menu 02</a>
+            <ul class="collapse list-reset hidden" id="SubMenu1">
                 <li><a href="javascript:;">Sample sub menu</a></li>
                 <li><a href="javascript:;">Sample sub menu</a></li>
                 <li><a href="javascript:;">Sample sub menu</a></li>
@@ -24,8 +24,8 @@
             </ul>
         </li>
         <li>
-            <a href="javascript:;" onclick="toggleHidden('transaksiKeuangan')" class="dropdown-toggle"><i class="fas fa-fw fa-tools mx-2"></i> Example Menu 03</a>
-            <ul class="collapse list-reset hidden" id="transaksiKeuangan">
+            <a href="javascript:;" v-on:click="toggleClass('hidden', 'SubMenu2')" class="dropdown-toggle"><i class="fas fa-fw fa-tools mx-2"></i> Example Menu 03</a>
+            <ul class="collapse list-reset hidden" id="SubMenu2">
                 <li><a href="javascript:;">Sample sub menu</a></li>
                 <li><a href="javascript:;">Sample sub menu</a></li>
                 <li><a href="javascript:;">Sample sub menu</a></li>
@@ -40,8 +40,8 @@
         </li>
         <p>System</p>
         <li>
-            <a href="javascript:;" onclick="toggleHidden('settingMenu')" class="dropdown-toggle"><i class="fas fa-fw fa-cogs mx-2"></i> Configuration</a>
-            <ul class="collapse list-reset hidden" id="settingMenu">
+            <a href="javascript:;" v-on:click="toggleClass('hidden', 'SubMenu3')" class="dropdown-toggle"><i class="fas fa-fw fa-cogs mx-2"></i> Configuration</a>
+            <ul class="collapse list-reset hidden" id="SubMenu3">
                 <li><a href="javascript:;">Sample sub menu</a></li>
                 <li><a href="javascript:;">Sample sub menu</a></li>
                 <li><a href="javascript:;">Sample sub menu</a></li>
@@ -49,8 +49,8 @@
             </ul>
         </li>
         <li>
-            <a href="javascript:;" onclick="toggleHidden('utilitiesMenu')" class="dropdown-toggle"><i class="fas fa-fw fa-toolbox mx-2"></i> Tool Box</a>
-            <ul class="collapse list-reset hidden" id="utilitiesMenu">
+            <a href="javascript:;" v-on:click="toggleClass('hidden', 'SubMenu4')" class="dropdown-toggle"><i class="fas fa-fw fa-toolbox mx-2"></i> Tool Box</a>
+            <ul class="collapse list-reset hidden" id="SubMenu4">
                 <li><a href="javascript:;">Sample sub menu</a></li>
                 <li><a href="javascript:;">Sample sub menu</a></li>
                 <li><a href="javascript:;">Sample sub menu</a></li>
