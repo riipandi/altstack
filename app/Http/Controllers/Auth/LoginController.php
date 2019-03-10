@@ -41,7 +41,9 @@ class LoginController extends Controller
         $request->merge([$loginType => $identity]);
 
         if (auth()->attempt($request->only($loginType, 'password'), $remember)) {
-            return redirect()->intended($this->redirectPath());
+            return redirect()
+                ->intended($this->redirectPath())
+                ->with(['info' => 'Welcome back ' . auth()->user()->first_name]);
         }
 
         return redirect()->back()
