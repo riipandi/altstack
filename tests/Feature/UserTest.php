@@ -14,7 +14,10 @@ class UserTest extends TestCase
      */
     public function testExample()
     {
-        $user = new User(['name'=>'Admin Sistem']);
+        $user = new User([
+            'first_name' => 'Admin',
+            'last_name'  => 'Sistem'
+        ]);
         $this->assertEquals('Admin Sistem', $user->name);
     }
 }
