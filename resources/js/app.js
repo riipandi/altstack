@@ -14,10 +14,33 @@ require('./bootstrap');
  */
 const app = new Vue({
     el: '#app',
+    methods: {
+        toggleClass: function(className, obj) {
+            let target = document.getElementById(obj);
+            if (!target.classList.contains(className)) {
+                target.classList.add(className);
+            } else {
+              target.classList.toggle(className);
+            }
+        }
+    }
 });
 
-// Disable form autocomplete
-var form = document.getElementsByTagName('form')[0];
-if (typeof (form) != 'undefined' && form != null) {
-    form.setAttribute('autocomplete', 'off');
+/**
+ * This is method for switching sidebar.
+ * Set status sidebar, collapsed or expanded?
+ */
+let sidebarButton = document.getElementById('sidebarCollapse'); 
+let sidebar = document.getElementById('sidebar');
+if (Boolean(sessionStorage.getItem('sidebarCollapse'))) {
+    sidebar.classList.toggle('hidden');
 }
+sidebarButton.addEventListener('click',function(event){
+    event.preventDefault();
+    document.getElementById('sidebar').classList.toggle('hidden');
+    if (Boolean(sessionStorage.getItem('sidebarCollapse'))) {
+        sessionStorage.setItem('sidebarCollapse', '');
+    } else {
+        sessionStorage.setItem('sidebarCollapse', '1');
+    }
+});

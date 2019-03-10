@@ -7,7 +7,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>
-<body class="bg-grey-light h-screen font-sans antialiased">
+<body class="bg-blue h-screen font-sans antialiased">
     <div id="app" class="container mx-auto p-4 h-full flex justify-center items-center">
         @yield('content')
     </div>

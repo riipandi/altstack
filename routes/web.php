@@ -17,3 +17,8 @@ Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->m
 Route::get('updates', function () {
     return view('updates');
 })->name('app.updates');
+
+
+// User account.
+Route::get('settings/account', 'UserAccountController@index')->name('user.account');
+Route::post('settings/account', 'UserAccountController@update')->name('user.account');

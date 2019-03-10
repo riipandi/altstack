@@ -41,3 +41,27 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+/**
+ * Disable form autocomplete.
+ */
+let form = document.getElementsByTagName('form')[0];
+if (typeof (form) != 'undefined' && form != null) {
+    form.setAttribute('autocomplete', 'off');
+}
+
+/**
+ * This method is for dropdown menu.
+ * Close the dropdown menu if the user clicks outside of it.
+*/
+window.onclick = function(event) {
+    if (!event.target.matches('.drop-button')) {
+        var dropdowns = document.getElementsByClassName("dropdown");
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (!openDropdown.classList.contains('invisible')) {
+                openDropdown.classList.add('invisible');
+            }
+        }
+    }
+}

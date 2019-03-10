@@ -15,7 +15,7 @@
                         @csrf
 
                         <div class="flex flex-wrap mb-6">
-                            <label for="identity" class="block text-grey-darker text-sm font-bold mb-2">
+                            <label for="identity" class="block tracking-wide text-grey-darker text-xs font-bold mb-2">
                                 {{ __('E-Mail or Username') }}:
                             </label>
 
@@ -26,7 +26,7 @@
                         </div>
 
                         <div class="flex flex-wrap mb-6">
-                            <label for="password" class="block text-grey-darker text-sm font-bold mb-2">
+                            <label for="password" class="block tracking-wide text-grey-darker text-xs font-bold mb-2">
                                 {{ __('Password') }}:
                             </label>
 
