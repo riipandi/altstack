@@ -10,17 +10,11 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
-// TODO: Fix must verify meythod.
 class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
-    use Notifiable;
     use SoftDeletes;
     use Uuid;
-
-    public $incrementing = false;
-
-    protected $guarded = ['id'];
 
     protected $appends = ['name', 'avatar_url'];
 
@@ -30,6 +24,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
+        'uuid',
         'first_name',
         'last_name',
         'email',

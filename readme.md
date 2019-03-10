@@ -44,7 +44,7 @@ Create example user:
 php artisan tinker
 
 $user = new App\Models\User();
-$user->name     = 'Admin Sistem';
+$user->first_name = 'Admin';
 $user->username = 'admin';
 $user->password = 'secret';
 $user->email    = 'admin@mail.com';

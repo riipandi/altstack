@@ -14,17 +14,13 @@ class AlterUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('id', 36)->change();
+            $table->string('uuid', 36)->after('id');
             $table->renameColumn('name', 'first_name');
-            $table->string('last_name')->unique()->after('name');
+            $table->string('last_name')->nullable()->after('name');
             $table->string('username', 40)->unique()->after('email');
             $table->string('avatar')->nullable();
             $table->softDeletes();
             $table->index(['email', 'username']);
-        });
-
-        Schema::table('sessions', function (Blueprint $table) {
-            $table->string('user_id', 36)->nullable()->change();
         });
     }
 
@@ -37,13 +33,9 @@ class AlterUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dropIndex(['email', 'username']);
-            $table->bigIncrements('id')->change();
+            $table->dropColumn('uuid');
             $table->dropColumn('username');
             $table->dropColumn('avatar');
-        });
-
-        Schema::table('sessions', function (Blueprint $table) {
-            $table->unsignedInteger('user_id')->nullable()->change();
         });
     }
 }
