@@ -5,7 +5,8 @@ namespace App\Console\Commands;
 use App\Models\User;
 use App\Notifications\UserAccountCreated as UserAccountCreatedNotification;
 use Illuminate\Console\Command;
-use Validator;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class UserCreate extends Command
 {
@@ -48,6 +49,7 @@ class UserCreate extends Command
         $user->username   = $username;
         $user->password   = $password;
         $user->email_verified_at = now();
+        $user->remember_token    = Str::random(24);
         $user->save();
 
         // TODO: Create notification for user:create command.

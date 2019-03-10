@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -59,6 +60,7 @@ class RegisterController extends Controller
             'email'      => $data['email'],
             'username'   => $data['username'],
             'password'   => $data['password'],
+            'remember_token'   => Str::random(24),
         ]);
 
         return $user;

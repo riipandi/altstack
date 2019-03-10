@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -35,10 +36,11 @@ class LoginController extends Controller
         ]);
 
         $identity  = $request->input('identity');
+        $remember  = $request->input('remember');
         $loginType = filter_var($identity, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
         $request->merge([$loginType => $identity]);
 
-        if (auth()->attempt($request->only($loginType, 'password'))) {
+        if (auth()->attempt($request->only($loginType, 'password'), $remember)) {
             return redirect()->intended($this->redirectPath());
         }
 
@@ -52,7 +54,7 @@ class LoginController extends Controller
     public function logout(Request $request)
     {
         if (!auth()->check()) {
-            return redirect(route('login'))->with(['info' => 'You have not logged in before!']);
+            return redirect(route('login'))->with(['warning' => 'You have not logged in before!']);
         }
         $this->guard()->logout();
         $request->session()->invalidate();
