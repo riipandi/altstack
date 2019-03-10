@@ -8,7 +8,12 @@
                     Dashboard
                 </div>
                 <div class="w-full p-6">
-                    Welcome to your dashboard!
+                    <div>Welcome to your dashboard!</div>
+                    <div class="mt-4">
+                        <button @click="showToastr('success', 'Horayyyy', 'You got love dude!')" class="shadow bg-green hover:bg-green-light focus:shadow-outline focus:outline-none text-white py-3 px-6 rounded">
+                            Example Toastr
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

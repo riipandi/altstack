@@ -9,6 +9,7 @@
 </head>
 <body class="bg-blue h-screen font-sans antialiased">
     <div id="app" class="container mx-auto p-4 h-full flex justify-center items-center">
+        @include('layouts.toastr')
         @yield('content')
     </div>
     <script src="{{ mix('js/app.js') }}"></script>

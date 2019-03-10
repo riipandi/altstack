@@ -48,6 +48,17 @@
  * Extended libraries.
  */
 @import url('~microtip/microtip.css');
+@import url('~@deveodk/vue-toastr/dist/@deveodk/vue-toastr.css');
+
+.toast-top-right {
+    top: 2rem !important;
+}
+.toast-top-right-override {
+    top: 5rem !important;
+}
+.toast-message {
+    margin-top: 6px;
+}
 
 /* ---------------------------------------------------
     DIVIDER WITH TEXT

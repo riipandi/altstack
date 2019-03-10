@@ -5,7 +5,7 @@
         <div class="flex flex-wrap justify-center">
             <div class="w-full max-w-xs">
 
-                @include('layouts.alert')
+                {{-- @include('layouts.alert') --}}
 
                 <div class="flex flex-col break-words bg-white border border-2 rounded shadow-md">
 

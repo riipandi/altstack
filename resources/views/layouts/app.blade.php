@@ -59,7 +59,8 @@
             </header>
 
             <main class="w-full mx-auto py-10 px-8">
-                @include('layouts.alert')
+                {{-- @include('layouts.alert') --}}
+                @include('layouts.toastr')
                 @yield('content')
             </main>
 
@@ -74,6 +75,8 @@
         </div>
     </div>
 
+    <!-- Javascript libraries -->
     <script src="{{ mix('js/app.js') }}"></script>
+    @stack('scripts')
 </body>
 </html>

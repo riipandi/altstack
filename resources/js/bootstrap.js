@@ -1,6 +1,10 @@
 window._ = require('lodash');
 window.Vue = require('vue');
 
+// Vue plugins
+import VueToastr from '@deveodk/vue-toastr';
+Vue.use(VueToastr)
+
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the
