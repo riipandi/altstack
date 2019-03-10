@@ -21,8 +21,8 @@ class UserCreate extends Command
      *
      * @var string
      */
-
     protected $description = 'Create a new application user';
+
     /**
      * Execute the console command.
      *
@@ -31,9 +31,9 @@ class UserCreate extends Command
     public function handle()
     {
         $first_name = $this->validateAsk('First Name', ['first_name' => 'string|max:255']);
-        $last_name  = $this->validateAsk('Last Name', ['last_name' => 'string|max:255']);
-        $username   = $this->validateAsk('Username', ['username' => 'alpha_dash|min:4|max:40|unique:users,username']);
-        $email      = $this->validateAsk('Email address', ['email' => 'string|email|max:255|unique:users']);
+        $last_name = $this->validateAsk('Last Name', ['last_name' => 'string|max:255']);
+        $username = $this->validateAsk('Username', ['username' => 'alpha_dash|min:4|max:40|unique:users,username']);
+        $email = $this->validateAsk('Email address', ['email' => 'string|email|max:255|unique:users']);
 
         if ($this->confirm('Do you wish to create a random password?')) {
             $password = str_random(8);
@@ -44,12 +44,12 @@ class UserCreate extends Command
 
         $user = new User();
         $user->first_name = $first_name;
-        $user->last_name  = $last_name;
-        $user->email      = $email;
-        $user->username   = $username;
-        $user->password   = $password;
+        $user->last_name = $last_name;
+        $user->email = $email;
+        $user->username = $username;
+        $user->password = $password;
         $user->email_verified_at = now();
-        $user->remember_token    = Str::random(24);
+        $user->remember_token = Str::random(24);
         $user->save();
 
         // TODO: Create notification for user:create command.
@@ -69,6 +69,7 @@ class UserCreate extends Command
             $this->error($validate);
             $value = $this->validateAsk($question, $rules);
         }
+
         return $value;
     }
 
@@ -78,6 +79,7 @@ class UserCreate extends Command
         if ($validator->fails()) {
             return $error = $validator->errors()->first(key($rules));
         }
+
         return true;
     }
 }

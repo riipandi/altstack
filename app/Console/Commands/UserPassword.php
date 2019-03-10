@@ -53,6 +53,7 @@ class UserPassword extends Command
             $this->error($validate);
             $value = $this->validateAsk($question, $rules);
         }
+
         return $value;
     }
 
@@ -62,6 +63,7 @@ class UserPassword extends Command
         if ($validator->fails()) {
             return $error = $validator->errors()->first(key($rules));
         }
+
         return true;
     }
 }
