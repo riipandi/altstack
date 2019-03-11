@@ -2,8 +2,8 @@
 
 [![Build Status](https://travis-ci.org/riipandi/laravel-tailwind.svg)](https://travis-ci.org/riipandi/laravel-tailwind)
 [![StyleCI Status](https://github.styleci.io/repos/174728418/shield?branch=master)](https://github.styleci.io/repos/174728418)
-[![Total Download](https://poser.pugx.org/riipandi/laravel-start/d/total.svg)](https://packagist.org/packages/riipandi/laravel-start)
-[![Latest Stable Version](https://poser.pugx.org/riipandi/laravel-start/v/stable.svg)](https://packagist.org/packages/riipandi/laravel-start)
+[![Total Download](https://poser.pugx.org/riipandi/laravel-tailwind/d/total.svg)](https://packagist.org/packages/riipandi/laravel-tailwind)
+[![Latest Stable Version](https://poser.pugx.org/riipandi/laravel-tailwind/v/stable.svg)](https://packagist.org/packages/riipandi/laravel-tailwind)
 [![License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://choosealicense.com/licenses/mit)
 
 ## Introduction
@@ -26,6 +26,15 @@ custom design with its own identity, Tailwind might be just what you're looking 
 2. Nodejs >= 8.15 or >= 10.15;
 3. MySQL >= 5.7 or MariaDB >= 10.3;
 4. Redis Server >= 3.2;
+
+### Create the project
+
+```
+composer create-project riipandi/laravel-tailwind <your_app_name> <version>
+
+# Example
+composer create-project riipandi/laravel-tailwind myblog v0.1.2
+```
 
 ### Local installation
 
