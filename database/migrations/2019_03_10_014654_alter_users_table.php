@@ -14,7 +14,7 @@ class AlterUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('uuid', 36)->after('id');
+            $table->string('ulid', 26)->after('id');
             $table->renameColumn('name', 'first_name');
             $table->string('last_name')->nullable()->after('name');
             $table->string('username', 40)->unique()->after('email');
@@ -33,7 +33,7 @@ class AlterUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dropIndex(['email', 'username']);
-            $table->dropColumn('uuid');
+            $table->dropColumn('ulid');
             $table->dropColumn('username');
             $table->dropColumn('avatar');
         });
