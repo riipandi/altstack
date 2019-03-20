@@ -75,8 +75,11 @@ return [
     ],
 
     'telegram' => [
-        'bot_token'    => env('TELEGRAM_BOT_TOKEN'),
-        'bot_username' => env('TELEGRAM_BOT_USERNAME'),
+        'bot_id'          => env('TELEGRAM_BOT_ID'),
+        'bot_username'    => env('TELEGRAM_BOT_USERNAME'),
+        'bot_public_key'  => env('TELEGRAM_BOT_PUBKEY'),
+        'bot_private_key' => env('TELEGRAM_BOT_PRIVKEY'),
+        'hmac_secret'     => env('TELEGRAM_BOT_HMAC'),
     ],
 
 ];

@@ -17,6 +17,7 @@ class AlterUsersTable extends Migration
             $table->string('ulid', 26)->index()->after('id');
             $table->string('username', 40)->unique()->after('email');
             $table->string('avatar')->nullable();
+            $table->smallInteger('telegram_chat_id')->nullable();
             $table->softDeletes();
             $table->index(['email', 'username']);
         });
