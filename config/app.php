@@ -177,6 +177,9 @@ return [
         App\Providers\TelescopeServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        // App custom providers
+        App\Providers\ExtendSocialiteProvider::class,
+
     ],
 
     /*

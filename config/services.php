@@ -68,4 +68,10 @@ return [
         'redirect'      => env('APP_URL') . '/auth/twitter/callback',
     ],
 
+    'uid' => [
+        'client_id'     => env('UID_CLIENT_ID'),
+        'client_secret' => env('UID_CLIENT_SECRET'),
+        'redirect'      => env('APP_URL') . '/auth/uid/callback',
+    ],
+
 ];
