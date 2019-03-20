@@ -18,7 +18,7 @@ class User extends Authenticatable implements MustVerifyEmail
     use SoftDeletes;
     use UlidKey;
 
-    protected $appends = ['name', 'avatar_url'];
+    protected $appends = ['avatar_url'];
 
     /**
      * The attributes that are mass assignable.
@@ -27,8 +27,7 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $fillable = [
         'ulid',
-        'first_name',
-        'last_name',
+        'name',
         'email',
         'password',
         'email_verified_at',
@@ -87,12 +86,10 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @return string
      */
-    public function getNameAttribute()
+    public function getFirstNameAttribute()
     {
-        if ($this->last_name) {
-            return $this->first_name.' '.$this->last_name;
-        }
-
-        return $this->first_name;
+        $parser = new \TheIconic\NameParser\Parser();
+        $name   = $parser->parse($this->name);
+        return $name->getFirstname();
     }
 }

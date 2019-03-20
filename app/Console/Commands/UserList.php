@@ -39,9 +39,9 @@ class UserList extends Command
      */
     public function handle()
     {
-        $users = User::all(['id', 'username', 'email', 'email_verified_at'])->toArray();
+        $users = User::all(['id', 'ulid', 'name', 'username', 'email', 'email_verified_at'])->toArray();
         if (count($users)) {
-            $headers = ['ID', 'Username', 'E-mail', 'Verified at', 'Name', 'Avatar URL'];
+            $headers = ['ID', 'ULID', 'Name','Username', 'E-mail', 'Verified at', 'Avatar URL'];
             $this->info(PHP_EOL.'There are '.count($users).' users:');
             $this->table($headers, $users);
         } else {

@@ -10,18 +10,11 @@
                     <form class="w-full p-6" method="POST" action="{{ route('register') }}">
                         @csrf
                         <div class="flex flex-wrap -mx-3 mb-5">
-                            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                <label for="first_name" class="block text-grey-darker text-sm font-bold mb-2">{{ __('First Name') }}</label>
-                                <input id="first_name" type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline{{ $errors->has('first_name') ? ' border-red' : '' }}" name="first_name" value="{{ old('first_name') }}" required>
-                                @if ($errors->has('first_name'))
-                                    <p class="text-red text-xs italic mt-3">{{ $errors->first('first_name') }}</p>
-                                @endif
-                            </div>
-                            <div class="w-full md:w-1/2 px-3">
-                                <label for="last_name" class="block text-grey-darker text-sm font-bold mb-2">{{ __('Last Name') }}</label>
-                                <input id="last_name" type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline{{ $errors->has('last_name') ? ' border-red' : '' }}" name="last_name" value="{{ old('last_name') }}" required>
-                                @if ($errors->has('last_name'))
-                                    <p class="text-red text-xs italic mt-3">{{ $errors->first('last_name') }}</p>
+                            <div class="w-full px-3">
+                                <label for="name" class="block text-grey-darker text-sm font-bold mb-2">{{ __('Your Name') }}</label>
+                                <input id="name" type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline{{ $errors->has('name') ? ' border-red' : '' }}" name="name" value="{{ old('name') }}" required>
+                                @if ($errors->has('name'))
+                                    <p class="text-red text-xs italic mt-3">{{ $errors->first('name') }}</p>
                                 @endif
                             </div>
                         </div>

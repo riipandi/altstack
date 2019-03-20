@@ -28,18 +28,10 @@
                                 @csrf
                                 <div class="md:flex md:items-center mb-6">
                                     <div class="md:w-1/3 mr-2">
-                                        <label class="block text-grey font-semibold md:text-right mb-1 md:mb-0 pr-4" for="first_name">First Name</label>
+                                        <label class="block text-grey font-semibold md:text-right mb-1 md:mb-0 pr-4" for="name">Your Name</label>
                                     </div>
                                     <div class="md:w-2/3">
-                                        <input class="focus:outline-none focus:bg-white focus:border-grey" name="first_name" id="first_name" type="text" value="{{ auth()->user()->first_name }}">
-                                    </div>
-                                </div>
-                                <div class="md:flex md:items-center mb-6">
-                                    <div class="md:w-1/3 mr-2">
-                                        <label class="block text-grey font-semibold md:text-right mb-1 md:mb-0 pr-4" for="last_name">Last Name</label>
-                                    </div>
-                                    <div class="md:w-2/3">
-                                        <input class="focus:outline-none focus:bg-white focus:border-grey" name="last_name" id="last_name" type="text" value="{{ auth()->user()->last_name }}">
+                                        <input class="focus:outline-none focus:bg-white focus:border-grey" name="name" id="name" type="text" value="{{ auth()->user()->name }}">
                                     </div>
                                 </div>
                                 <div class="md:flex md:items-center mb-6">
