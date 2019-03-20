@@ -21,3 +21,7 @@ Route::get('updates', function () {
 // User account.
 Route::get('settings/account', 'UserAccountController@index')->name('user.account');
 Route::post('settings/account', 'UserAccountController@update')->name('user.account');
+
+// Auth with social account.
+Route::get('auth/{provider}', 'Auth\SocialAuthController@redirectToProvider');
+Route::get('auth/{provider}/callback', 'Auth\SocialAuthController@handleProviderCallback');

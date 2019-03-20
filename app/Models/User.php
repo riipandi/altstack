@@ -18,7 +18,7 @@ class User extends Authenticatable implements MustVerifyEmail
     use SoftDeletes;
     use UlidKey;
 
-    protected $appends = ['avatar_url'];
+    // protected $appends = ['avatar_url'];
 
     /**
      * The attributes that are mass assignable.
@@ -70,14 +70,12 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     public function getAvatarUrlAttribute()
     {
-        if ($this->avatar) {
-            if (filter_var($this->avatar, FILTER_VALIDATE_URL)) {
-                return $this->avatar;
-            } else {
-                return Storage::url('avatars/'.$this->avatar);
-            }
-        } else {
+        if (!$this->avatar) {
             return asset('img/avatar-64.png');
+        } else if (!filter_var($this->avatar, FILTER_VALIDATE_URL)) {
+            return Storage::url('avatars/'.$this->avatar);
+        } else {
+            return $this->avatar;
         }
     }
 

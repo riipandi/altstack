@@ -66,15 +66,18 @@
                     @if (config('auth.social') == true)
                     <div class="hr-text mt-4 mx-6" data-content="or sign in with"></div>
                     <div class="w-full p-6">
-                        <button type="submit" class="w-full text-white py-3 mt-2 rounded outline-none bg-red hover:bg-red-dark">
+                        <a href="{{ url('/auth/twitter') }}" class="appearance-none no-underline block text-center text-white hover:text-white py-3 mt-2 rounded outline-none bg-blue-light hover:bg-blue">
+                            <i class="fab fa-fw fa-twitter mr-2"></i>Twitter
+                        </a>
+                        <a href="{{ url('/auth/google') }}" class="appearance-none no-underline block text-center text-white hover:text-white py-3 mt-2 rounded outline-none bg-red hover:bg-red-dark">
                             <i class="fab fa-fw fa-google mr-2"></i>Google
-                        </button>
-                        <button type="submit" class="w-full text-white py-3 mt-2 rounded outline-none bg-blue hover:bg-blue-dark">
+                        </a>
+                        <a href="{{ url('/auth/facebook') }}" class="appearance-none no-underline block text-center text-white hover:text-white py-3 mt-2 rounded outline-none bg-blue hover:bg-blue-dark">
                             <i class="fab fa-fw fa-facebook mr-2"></i>Facebook
-                        </button>
-                        <button type="submit" class="w-full text-white py-3 mt-2 rounded outline-none bg-black hover:bg-grey-darkest">
+                        </a>
+                        <a href="{{ url('/auth/github') }}" class="appearance-none no-underline block text-center text-white hover:text-white py-3 mt-2 rounded outline-none bg-black hover:bg-grey-darkest">
                             <i class="fab fa-fw fa-github-alt mr-2"></i>Github
-                        </button>
+                        </a>
                     </div>
                     @endIf
 

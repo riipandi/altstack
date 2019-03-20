@@ -20,6 +20,7 @@
         "laravel/framework": "5.8.*",
         "laravel/horizon": "^3.0",
         "laravel/passport": "^7.2",
+        "laravel/socialite": "^4.1",
         "laravel/telescope": "^2.0",
         "laravel/tinker": "^1.0",
         "pragmarx/version": "^0.2.8",
