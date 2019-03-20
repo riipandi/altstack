@@ -28,6 +28,8 @@ class SocialAuthController extends Controller
     {
         $user = $service->createOrGetUser(Socialite::driver($provider)->user(), $provider);
         auth()->login($user);
-        return redirect()->to('dashboard');
+        return redirect()
+            ->to('dashboard')
+            ->with(['info' => 'Welcome back '.auth()->user()->first_name]);
     }
 }
