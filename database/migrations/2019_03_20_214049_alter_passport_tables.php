@@ -41,18 +41,15 @@ class AlterPassportTables extends Migration
     public function down()
     {
         Schema::table('oauth_auth_codes', function (Blueprint $table) {
-            $table->integer('user_id')->change();
             $table->unsignedInteger('client_id')->change();
         });
 
         Schema::table('oauth_access_tokens', function (Blueprint $table) {
-            $table->integer('user_id')->change();
             $table->unsignedInteger('client_id')->change();
         });
 
         Schema::table('oauth_clients', function (Blueprint $table) {
             $table->increments('id')->change();
-            $table->integer('user_id')->change();
         });
 
         Schema::table('oauth_personal_access_clients', function (Blueprint $table) {
