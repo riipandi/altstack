@@ -26,8 +26,8 @@ or `MySQL >= 5.7` or `MariaDB >= 10.3` for your application database. Also, you 
 composer create-project ruhaycreative/gram <app_name> <version>
 ```
 
-Change `<app_name>` with your own and `<version>` with this gram version. Refer to 
-[release page](https://github.com/ruhaycreative/gram/release) for the version.
+Change `<app_name>` with your own and `<version>` with this gram version. 
+See[release page](https://github.com/ruhaycreative/gram/release) for the version number.
 
 ### Local Installation
 
