@@ -40,7 +40,7 @@
         </li>
         <p>System</p>
         <li>
-            <a href="javascript:;" v-on:click="toggleClass('hidden', 'SubMenu3')" class="dropdown-toggle"><i class="fas fa-fw fa-cogs mx-2"></i> Configuration</a>
+            <a href="javascript:;" v-on:click="toggleClass('hidden', 'SubMenu3')" class="dropdown-toggle"><i class="fas fa-fw fa-wrench mx-2"></i> Configuration</a>
             <ul class="collapse list-reset hidden" id="SubMenu3">
                 <li><a href="javascript:;">Sample sub menu</a></li>
                 <li><a href="javascript:;">Sample sub menu</a></li>
@@ -64,7 +64,7 @@
             <a href="javascript:;"><i class="fas fa-fw fa-mail-bulk mx-2"></i> Contact Support</a>
         </li>
     </ul>
-    
+
     <ul class="list-reset CTAs">
         <li>
             <a href="//github.com/riipandi/laravel-tailwind" target="_new" class="bg-blue-dark hover:bg-white">Download source</a>

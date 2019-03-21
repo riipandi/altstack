@@ -46,7 +46,7 @@
                             </button>
                             <div id="userDropdown" class="dropdown dropdown-user absolute pin-r mr-6 mt-10 py-2 rounded shadow-md invisible">
                                 <a class="py-2 px-4 hover:bg-blue-dark hover:text-white" href="javascript:;"><i class="fas fa-fw fa-user mr-2"></i> Profile</a>
-                                <a class="py-2 px-4 hover:bg-blue-dark hover:text-white" href="{{ route('user.account') }}"><i class="fas fa-fw fa-user-cog mr-2"></i> Settings</a>
+                                <a class="py-2 px-4 hover:bg-blue-dark hover:text-white" href="{{ route('user.account') }}"><i class="fas fa-fw fa-cog mr-2"></i> Settings</a>
                                 {{-- <a class="py-2 px-4 hover:bg-blue-dark hover:text-white" href="javascript:;"><i class="fas fa-fw fa-list mr-2"></i> User Logs</a> --}}
                                 <div class="border border-grey-lightest b-1 my-2 mx-4"></div>
                                 <a class="py-2 px-4 hover:bg-blue-dark hover:text-white" href="{{ route('logout') }}">
