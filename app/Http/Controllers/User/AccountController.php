@@ -37,13 +37,13 @@ class AccountController extends Controller
      */
     public function update(Request $request)
     {
-        $id   = auth()->user()->id;
+        $id = auth()->user()->id;
         $ulid = auth()->user()->ulid;
 
         $request->validate([
             'name'        => 'required|string|max:255',
-            'username'    => 'required|alpha_dash|min:4|max:40|unique:users,username,'. $id,
-            'email'       => 'required|string|email|max:255|unique:users,email,'. $id,
+            'username'    => 'required|alpha_dash|min:4|max:40|unique:users,username,'.$id,
+            'email'       => 'required|string|email|max:255|unique:users,email,'.$id,
             'oldpassword' => 'required|string',
         ]);
 
@@ -54,12 +54,11 @@ class AccountController extends Controller
             return back()->with('warning', 'Invalid current password!');
         }
 
-        $user->name     = $request->get('name');
+        $user->name = $request->get('name');
         $user->username = $request->get('username');
-        $user->email    = $request->get('email');
+        $user->email = $request->get('email');
 
         if ($request->get('newpassword')) {
-
             $newPassword = $request->get('newpassword');
             $request->validate(['newpassword' => 'string|min:8|confirmed']);
 
