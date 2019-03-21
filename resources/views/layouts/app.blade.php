@@ -66,7 +66,7 @@
 
             <footer id="footer">
                 <div class="text-center pt-2 md:pt-0 md:float-left">
-                    Copyright &copy; 2019 <a href="//ripandi.id" target="_new" rel="noopener" aria-label="Made by Aris Ripandi in Indonesia" data-microtip-position="top" role="tooltip">Aris Ripandi</a>.
+                    Copyright &copy; 2019 <a href="//ruhaycreative.co.id" target="_new" rel="noopener" aria-label="Made by Ruhay Creative Studio in Indonesia" data-microtip-position="top" role="tooltip">Aris Ripandi</a>.
                 </div>
                 <div class="text-center pt-3 pb-4 md:py-0 md:inline-block md:float-right">
                     {{ config('app.name') }} <a href="{{ route('app.updates') }}" aria-label="Click here to check for updates" data-microtip-position="top-left" role="tooltip">{{ Version::format('compact') }}</a>

@@ -67,10 +67,10 @@
 
     <ul class="list-reset CTAs">
         <li>
-            <a href="//github.com/riipandi/laravel-tailwind" target="_new" class="bg-blue-dark hover:bg-white">Download source</a>
+            <a href="//github.com/ruhaycreative/gram" target="_new" class="bg-blue-dark hover:bg-white">Download source</a>
         </li>
         <li>
-            <a href="//ripandi.id/" target="_new" class="bg-green hover:bg-white">Visit My Blog</a>
+            <a href="//ruhaycreative.co.id/" target="_new" class="bg-green hover:bg-white">Visit Our Site</a>
         </li>
     </ul>
 </nav>
