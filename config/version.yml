@@ -1,38 +1,33 @@
 version_source: config
 blade_directive: version
 current:
-  major: 0
-  minor: 0
-  patch: 1
-  format: "{$major}.{$minor}.{$patch}"
-  git_absorb: false
+    major: 0
+    minor: 1
+    patch: 3
+    format: '{$major}.{$minor}.{$patch}'
+    git_absorb: false
 cache:
-  enabled: true
-  key: app-version
-  time: 525600
+    enabled: true
+    key: app-version
+    time: 525600
 build:
-  mode: git-local
-  number: 7
-  length: 6
-  increment_by: 1
-  git_absorb: false
+    mode: git-local
+    number: 7
+    length: 6
+    increment_by: 1
+    git_absorb: false
 git:
-  git-local: "git rev-parse --verify HEAD"
-  git-remote: "git ls-remote {$repository}"
-  branch: refs/heads/master
-  repository: "https://github.com/riipandi/laravel-start"
-  version:
-    {
-      git-local: "git describe",
-      git-remote: "git ls-remote {$repository} | grep tags/ | grep -v {} | cut -d / -f 3 | sort --version-sort | tail -1",
-      matcher: '/[V|v]*[ersion]*\s*\.*(\d+)\.(\d+)\.(\d+)\.*(\w*)/',
-    }
+    git-local: 'git rev-parse --verify HEAD'
+    git-remote: 'git ls-remote {$repository}'
+    branch: refs/heads/master
+    repository: 'https://github.com/riipandi/laravel-start'
+    version: { git-local: 'git describe', git-remote: 'git ls-remote {$repository} | grep tags/ | grep -v {} | cut -d / -f 3 | sort --version-sort | tail -1', matcher: '/[V|v]*[ersion]*\s*\.*(\d+)\.(\d+)\.(\d+)\.*(\w*)/' }
 format:
-  major: "{$major}"
-  minor: "{$minor}"
-  patch: "{$patch}"
-  build: "{$build}"
-  version: "{$major}.{$minor}.{$patch} (build {$build})"
-  full: "version {$major}.{$minor}.{$patch} (build {$build})"
-  compact: "v{$major}.{$minor}.{$patch}-{$build}"
-  release: "{$major}.{$minor}.{$patch}"
+    major: '{$major}'
+    minor: '{$minor}'
+    patch: '{$patch}'
+    build: '{$build}'
+    version: '{$major}.{$minor}.{$patch} (build {$build})'
+    full: 'version {$major}.{$minor}.{$patch} (build {$build})'
+    compact: 'v{$major}.{$minor}.{$patch}-{$build}'
+    release: '{$major}.{$minor}.{$patch}'
