@@ -30,9 +30,9 @@ class UserCreate extends Command
      */
     public function handle()
     {
-        $name     = $this->validateAsk('Real Name', ['name' => 'string|max:255']);
+        $name = $this->validateAsk('Real Name', ['name' => 'string|max:255']);
         $username = $this->validateAsk('Username', ['username' => 'alpha_dash|min:4|max:40|unique:users,username']);
-        $email    = $this->validateAsk('Email address', ['email' => 'string|email|max:255|unique:users']);
+        $email = $this->validateAsk('Email address', ['email' => 'string|email|max:255|unique:users']);
 
         if ($this->confirm('Do you wish to create a random password?')) {
             $password = str_random(8);

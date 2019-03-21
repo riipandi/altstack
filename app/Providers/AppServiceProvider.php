@@ -8,7 +8,6 @@ use Laravel\Passport\Client;
 use Laravel\Passport\Passport;
 use Ulid\Ulid;
 
-
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -28,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        /**
+        /*
          * Change primary key field type for Passport.
          */
         Client::creating(function (Client $client) {
@@ -40,7 +39,7 @@ class AppServiceProvider extends ServiceProvider
             $client->incrementing = false;
         });
 
-        /**
+        /*
          * Change primary key field type for Appstract Options.
          */
         Option::creating(function (Option $option) {

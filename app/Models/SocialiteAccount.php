@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class SocialiteAccount extends Model
 {
     protected $fillable = [
-        'user_id', 'provider_user_id', 'provider'
+        'user_id', 'provider_user_id', 'provider',
     ];
 
     /**

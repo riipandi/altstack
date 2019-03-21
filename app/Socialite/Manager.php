@@ -2,7 +2,6 @@
 
 namespace App\Socialite;
 
-use App\Socialite\UidProvider;
 use Laravel\Socialite\SocialiteManager;
 
 class Manager extends SocialiteManager
