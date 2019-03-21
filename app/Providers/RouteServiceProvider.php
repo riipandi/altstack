@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider
@@ -23,8 +24,6 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-
         parent::boot();
     }
 
@@ -39,7 +38,12 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
-        //
+        // Register log viewer route.
+        if (config('app.debug') == true) {
+            Route::get('logs',
+                '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')
+                ->name('log.viewer');
+        }
     }
 
     /**
