@@ -47,10 +47,9 @@ npm run development
 php artisan migrate:fresh --seed
 ```
 
-Create example user:
+Create example user using Tinker:
 
 ```php
-php artisan tinker
 $user = new App\Models\User();
 $user->name     = 'Admin Sistem';
 $user->username = 'admin';
@@ -58,7 +57,6 @@ $user->password = 'secret';
 $user->email    = 'admin@mail.com';
 $user->email_verified_at = now();
 $user->save();
-exit();
 ```
 
 ### Automatic Versioning
