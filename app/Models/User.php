@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Notifications\ResetPassword as ResetPasswordNotification;
 use App\Traits\UlidKey;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -102,5 +103,11 @@ class User extends Authenticatable implements MustVerifyEmail
     public function passwordHistories()
     {
         return $this->hasMany('App\Models\PasswordHistory');
+    }
+
+    // Password reset must be queueable.
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new ResetPasswordNotification($token));
     }
 }
