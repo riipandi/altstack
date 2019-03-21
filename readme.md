@@ -2,9 +2,9 @@
 
 [![Build Status](https://travis-ci.org/riipandi/laravel-tailwind.svg)](https://travis-ci.org/riipandi/laravel-tailwind)
 [![StyleCI Status](https://github.styleci.io/repos/174728418/shield?branch=master)](https://github.styleci.io/repos/174728418)
-[![Total Download](https://poser.pugx.org/riipandi/laravel-tailwind/d/total.svg)](https://packagist.org/packages/riipandi/laravel-tailwind)
-[![Latest Stable Version](https://poser.pugx.org/riipandi/laravel-tailwind/v/stable.svg)](https://packagist.org/packages/riipandi/laravel-tailwind)
-[![License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://choosealicense.com/licenses/mit)
+[![Total Download](https://poser.pugx.org/riipandi/laravel-tailwind/d/total.svg?format=flat-square)](https://packagist.org/packages/riipandi/laravel-tailwind)
+[![Latest Stable Version](https://poser.pugx.org/riipandi/laravel-tailwind/v/stable.svg?format=flat-square)](https://packagist.org/packages/riipandi/laravel-tailwind)
+[![License](https://img.shields.io/badge/license-Apache%202-blue.svg?style=flat-square)](https://choosealicense.com/licenses/apache-2.0/)
 
 ## Introduction
 
