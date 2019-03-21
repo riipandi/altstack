@@ -27,7 +27,7 @@ composer create-project ruhaycreative/gram <app_name> <version>
 ```
 
 Change `<app_name>` with your own and `<version>` with this gram version. 
-See[release page](https://github.com/ruhaycreative/gram/release) for the version number.
+See [release page](https://github.com/ruhaycreative/gram/release) for the version number.
 
 ### Local Installation
 
