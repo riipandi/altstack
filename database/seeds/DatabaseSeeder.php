@@ -23,5 +23,8 @@ class DatabaseSeeder extends Seeder
         $user->email    = 'admin@mail.com';
         $user->email_verified_at = now();
         $user->save();
+
+        // Give superadmin to this user.
+        $user->assignRole('superadmin');
     }
 }
