@@ -28,7 +28,8 @@ class UidProvider extends AbstractProvider implements ProviderInterface
     /**
      * Get the authentication URL for the provider.
      *
-     * @param  string $state
+     * @param string $state
+     *
      * @return string
      */
     protected function getAuthUrl($state)
@@ -44,7 +45,7 @@ class UidProvider extends AbstractProvider implements ProviderInterface
     protected function getTokenUrl()
     {
         // return 'https://api.u.id/oauth/token';
-        return 'https://api.u.id/oauth/token?' . http_build_query([
+        return 'https://api.u.id/oauth/token?'.http_build_query([
             'grant_type' => 'authorization_code',
         ]);
     }
@@ -53,7 +54,8 @@ class UidProvider extends AbstractProvider implements ProviderInterface
      * Get the raw user for the given access token.
      * TODO:Response still null, waiting for fix from the provider.
      *
-     * @param  string $token
+     * @param string $token
+     *
      * @return array
      */
     protected function getUserByToken($token)
@@ -62,8 +64,8 @@ class UidProvider extends AbstractProvider implements ProviderInterface
 
         $response = $this->getHttpClient()->get($userUrl, [
             'headers' => [
-                'Accept' => 'application/json',
-                'Authorization' => 'Bearer '.$token,
+                'Accept'           => 'application/json',
+                'Authorization'    => 'Bearer '.$token,
                 'X-Requested-With' => 'XMLHttpRequest',
             ],
         ]);
@@ -76,7 +78,8 @@ class UidProvider extends AbstractProvider implements ProviderInterface
     /**
      * Map the raw user array to a Socialite User instance.
      *
-     * @param  array $user
+     * @param array $user
+     *
      * @return \Laravel\Socialite\User
      */
     protected function mapUserToObject(array $user)

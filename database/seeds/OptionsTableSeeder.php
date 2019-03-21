@@ -12,13 +12,13 @@ class OptionsTableSeeder extends Seeder
      */
     public function run()
     {
-            $options = [
+        $options = [
                 ['key' => 'site_name',    'value' => 'Your Company Name'],
                 ['key' => 'site_tagline', 'value' => 'An inspiring tagline'],
             ];
 
-            foreach ($options as $option) {
-                Option::create($option);
-            }
+        foreach ($options as $option) {
+            Option::create($option);
+        }
     }
 }

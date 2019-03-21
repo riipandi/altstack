@@ -72,7 +72,7 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         if (!$this->avatar) {
             return asset('img/avatar-64.png');
-        } else if (!filter_var($this->avatar, FILTER_VALIDATE_URL)) {
+        } elseif (!filter_var($this->avatar, FILTER_VALIDATE_URL)) {
             return Storage::url('avatars/'.$this->avatar);
         } else {
             return $this->avatar;
@@ -87,7 +87,8 @@ class User extends Authenticatable implements MustVerifyEmail
     public function getFirstNameAttribute()
     {
         $parser = new \TheIconic\NameParser\Parser();
-        $name   = $parser->parse($this->name);
+        $name = $parser->parse($this->name);
+
         return $name->getFirstname();
     }
 }

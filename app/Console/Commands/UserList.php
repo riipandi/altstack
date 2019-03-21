@@ -41,7 +41,7 @@ class UserList extends Command
     {
         $users = User::all(['id', 'ulid', 'name', 'username', 'email', 'email_verified_at', 'updated_at'])->toArray();
         if (count($users)) {
-            $headers = ['ID', 'ULID', 'Name','Username', 'E-mail', 'Verified at', 'Updated at'];
+            $headers = ['ID', 'ULID', 'Name', 'Username', 'E-mail', 'Verified at', 'Updated at'];
             $this->info(PHP_EOL.'There are '.count($users).' users:');
             $this->table($headers, $users);
         } else {
