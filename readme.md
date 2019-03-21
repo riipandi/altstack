@@ -20,23 +20,20 @@ custom design with its own identity, Tailwind might be just what you're looking 
 
 ## Quick Start
 
-### Prerequisites
+At least you will need `PHP >= 7.2` and `Nodejs >= 8.15`. You can choose between `PostgreSQL >= 9.6` 
+or `MySQL >= 5.7` or `MariaDB >= 10.3` for your application database. Also, you maybe want to use 
+`Redis >= 3.2` for session store and caching.
 
-1. PHP >= 7.2;
-2. Nodejs >= 8.15 or >= 10.15;
-3. MySQL >= 5.7 or MariaDB >= 10.3;
-4. Redis Server >= 3.2;
-
-### Create the project
+### Create New Project
 
 ```
-composer create-project riipandi/laravel-tailwind <your_app_name> <version>
-
-# Example
-composer create-project riipandi/laravel-tailwind myblog v0.1.2
+composer create-project riipandi/laravel-tailwind <app_name> <version>
 ```
 
-### Local installation
+Change `<app_name>` with your application name and `<version>` with this project version number. Please 
+see [release page](https://github.com/riipandi/laravel-tailwind/release) for list available version.
+
+### Local Installation
 
 Edit or create `.env` file and then execute:
 
@@ -61,14 +58,13 @@ $user->save();
 
 ### Automatic Versioning
 
-You will need add git hooks. Open `.git/hooks/post-commit` and put this code:
+Edit `config/version.yml` file and change the remote git repository value with your own. 
+You will need add git hooks, open `.git/hooks/post-commit` and put this code:
 
 ```bash
 #!/bin/sh
 php artisan version:refresh
 ```
-
-Don't forget to edit `config/version.yml` and change the remote git repository value with your own.
 
 ## Security Issue
 
@@ -77,7 +73,7 @@ If you discover any security related issues, please send an e-mail to
 
 ## Support Development
 
-Do you like this project? Support it by donating via:
+You can support me for another open source project by donating via:
 
 * PayPal: <https://paypal.me/riipandi>
 * Bitcoin: `3GyvnzgVCkrb8rjkdzAb1Fav2EbL3qAjUA`
