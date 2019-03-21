@@ -31,7 +31,10 @@
                                         <label class="block text-grey font-semibold md:text-right mb-1 md:mb-0 pr-4" for="name">Your Name</label>
                                     </div>
                                     <div class="md:w-2/3">
-                                        <input class="focus:outline-none focus:bg-white focus:border-grey" name="name" id="name" type="text" value="{{ auth()->user()->name }}">
+                                        <input class="{{ $errors->has('name') ? 'border-red ' : '' }}focus:outline-none focus:bg-white focus:border-grey" name="name" id="name" value="{{ old('name', auth()->user()->name) }}" type="text" required>
+                                        @if ($errors->has('name'))
+                                            <p class="text-red text-xs italic mt-2">{{ $errors->first('name') }}</p>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="md:flex md:items-center mb-6">
@@ -39,7 +42,10 @@
                                         <label class="block text-grey font-semibold md:text-right mb-1 md:mb-0 pr-4" for="email">Email Address</label>
                                     </div>
                                     <div class="md:w-2/3">
-                                        <input class="focus:outline-none focus:bg-white focus:border-grey" name="email" id="email" type="email" value="{{ auth()->user()->email }}">
+                                        <input class="{{ $errors->has('email') ? 'border-red ' : '' }}focus:outline-none focus:bg-white focus:border-grey" name="email" id="email" value="{{ old('email', auth()->user()->email) }}" type="email" required>
+                                        @if ($errors->has('email'))
+                                            <p class="text-red text-xs italic mt-2">{{ $errors->first('email') }}</p>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="md:flex md:items-center mb-6">
@@ -47,15 +53,21 @@
                                         <label class="block text-grey font-semibold md:text-right mb-1 md:mb-0 pr-4" for="username">Username</label>
                                     </div>
                                     <div class="md:w-2/3">
-                                        <input class="focus:outline-none focus:bg-white focus:border-grey" name="username" id="username" type="text" value="{{ auth()->user()->username }}">
+                                        <input class="{{ $errors->has('username') ? 'border-red ' : '' }}focus:outline-none focus:bg-white focus:border-grey" name="username" id="username" value="{{ old('username', auth()->user()->username) }}" type="text" required>
+                                        @if ($errors->has('username'))
+                                            <p class="text-red text-xs italic mt-2">{{ $errors->first('username') }}</p>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="md:flex md:items-center mb-6">
                                     <div class="md:w-1/3 mr-2">
-                                        <label class="block text-grey font-semibold md:text-right -mt-4 mb-0 md:mb-0 pr-4" for="password">Current Password</label>
+                                        <label class="block text-grey font-semibold md:text-right -mt-4 mb-0 md:mb-0 pr-4" for="oldpassword">Current Password</label>
                                     </div>
                                     <div class="md:w-2/3">
-                                        <input class="focus:outline-none focus:bg-white focus:border-grey" name="password" id="password" type="password" placeholder="******************">
+                                        <input class="{{ $errors->has('oldpassword') ? 'border-red ' : '' }}focus:outline-none focus:bg-white focus:border-grey" name="oldpassword" id="oldpassword" type="password" placeholder="******************" required>
+                                        @if ($errors->has('oldpassword'))
+                                            <p class="text-red text-xs italic mt-2">{{ $errors->first('oldpassword') }}</p>
+                                        @endif
                                         <a class="mt-2 float-right text-xs text-blue hover:text-blue-dark whitespace-no-wrap no-underline ml-auto focus:outline-none" href="javascript:;" tabindex="-1">
                                             {{ __('Forgot Your Password?') }}
                                         </a>
@@ -64,7 +76,7 @@
                                 <div class="md:flex md:items-center mb-6 -mt-4">
                                     <div class="md:w-1/3 mr-2"></div>
                                     <div class="form-switch inline-block align-middle">
-                                        <input type="checkbox" name="check_pass_change" id="check_pass_change" class="form-switch-checkbox" v-on:click="toggleClass('hidden', 'changePassForm')">
+                                        <input type="checkbox" name="check_pass_change" id="check_pass_change" class="form-switch-checkbox" v-on:change="toggleClass('hidden', 'changePassForm')"{{ $errors->has('newpassword') ? ' checked' : '' }}>
                                         <label class="form-switch-label" for="check_pass_change"></label>
                                     </div>
                                     <label class="text-sm text-grey-darker cursor-pointer" for="check_pass_change">Change Password</label>
@@ -73,18 +85,21 @@
                                 <div id="changePassForm" class="hidden">
                                     <div class="md:flex md:items-center mb-6">
                                         <div class="md:w-1/3 mr-2">
-                                            <label class="block text-grey font-semibold md:text-right mb-1 md:mb-0 pr-4" for="new_password">New Password</label>
+                                            <label class="block text-grey font-semibold md:text-right mb-1 md:mb-0 pr-4" for="newpassword">New Password</label>
                                         </div>
                                         <div class="md:w-2/3">
-                                            <input class="bg-grey-lighter appearance-none border border-grey-lighter rounded w-full py-3 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-grey appearance-none" name="new_password" id="new_password" type="password" placeholder="******************">
+                                            <input class="{{ $errors->has('oldpassword') ? 'border-red ' : '' }}bg-grey-lighter appearance-none border border-grey-lighter rounded w-full py-3 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-grey appearance-none" name="newpassword" id="newpassword" type="password" placeholder="******************">
+                                            @if ($errors->has('newpassword'))
+                                                <p class="text-red text-xs italic mt-2">{{ $errors->first('newpassword') }}</p>
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="md:flex md:items-center mb-6">
                                         <div class="md:w-1/3 mr-2">
-                                            <label class="block text-grey font-semibold md:text-right mb-1 md:mb-0 pr-4" for="new_password_confirmation">Confirm Password</label>
+                                            <label class="block text-grey font-semibold md:text-right mb-1 md:mb-0 pr-4" for="newpassword_confirmation">Confirm Password</label>
                                         </div>
                                         <div class="md:w-2/3">
-                                            <input class="bg-grey-lighter appearance-none border border-grey-lighter rounded w-full py-3 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-grey appearance-none" name="new_password_confirmation" id="new_password_confirmation" type="password" placeholder="******************">
+                                            <input class="bg-grey-lighter appearance-none border border-grey-lighter rounded w-full py-3 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-grey appearance-none" name="newpassword_confirmation" id="newpassword_confirmation" type="password" placeholder="******************">
                                         </div>
                                     </div>
                                 </div>
@@ -95,7 +110,7 @@
                                         <button class="shadow bg-blue hover:bg-blue-light focus:shadow-outline focus:outline-none text-white py-3 px-8 rounded" type="submit">
                                             {{ __('Update') }}
                                         </button>
-                                        <a href="javascript:;" class="no-underline text-blue hover:text-blue-darker text-sm py-1 px-2 ml-1 focus:outline-none">Cancel</a>
+                                        <a href="javascript:history.back();" class="no-underline text-blue hover:text-blue-darker text-sm py-1 px-2 ml-1 focus:outline-none">Cancel</a>
                                     </div>
                                 </div>
                             </form>

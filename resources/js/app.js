@@ -49,7 +49,7 @@ let sidebar = document.getElementById('sidebar');
 if (typeof (sidebar) != 'undefined' && sidebar != null) {
 
     // This is for sidebar toggle.
-    var sidebarButton = document.getElementById('sidebarCollapse'); 
+    var sidebarButton = document.getElementById('sidebarCollapse');
     if (Boolean(sessionStorage.getItem('sidebarCollapse'))) {
         sidebar.classList.toggle('hidden');
     }

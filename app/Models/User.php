@@ -91,4 +91,14 @@ class User extends Authenticatable implements MustVerifyEmail
 
         return $name->getFirstname();
     }
+
+    /**
+     * Implementing password history.
+     *
+     * @return void
+     */
+    public function passwordHistories()
+    {
+        return $this->hasMany('App\Models\PasswordHistory');
+    }
 }
