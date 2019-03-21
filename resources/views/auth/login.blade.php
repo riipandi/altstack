@@ -78,6 +78,9 @@
                         <a href="{{ url('/auth/github') }}" class="appearance-none no-underline block text-center text-white hover:text-white py-3 mt-2 rounded outline-none bg-black hover:bg-grey-darkest">
                             <i class="fab fa-fw fa-github-alt mr-2"></i>Github
                         </a>
+                        <a href="{{ url('/auth/uid') }}" class="appearance-none no-underline block text-center text-white hover:text-white py-3 mt-2 rounded outline-none bg-red-dark hover:bg-red">
+                            <i class="fab fa-fw fa-openid mr-2"></i>u.id by PANDI
+                        </a>
                     </div>
                     @endIf
 
