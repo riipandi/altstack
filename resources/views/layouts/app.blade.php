@@ -25,7 +25,7 @@
                                     <i class="fas fa-align-left mr-1"></i>
                                 </button>
                             </div>
-                            <div class="hidden md:block ml-4 font-semibold">Your Company Name</div>
+                            <div class="hidden md:block ml-4 font-semibold">{{ option('site_name') }}</div>
                         </div>
                     </div>
                 </div>

@@ -45,7 +45,7 @@ class AppServiceProvider extends ServiceProvider
          */
         Option::creating(function (Option $option) {
             $option->incrementing = false;
-            $option->id = (string) Ulid::generate(true);
+            $option->id = (string) Ulid::generate();
         });
 
         Option::retrieved(function (Option $option) {
