@@ -37,6 +37,7 @@ Edit or create `.env` file and then execute:
 composer install
 npm i --no-optional
 npm run development
+php artisan web-tinker:install
 php artisan migrate:fresh --seed
 ```
 
