@@ -9,6 +9,7 @@ mix.copy('resources/img/', 'public/img/')
     .tailwind()
     .purgeCss();
 
-if (mix.inProduction()) {
-    mix.version();
-}
+// TODO: Toastr doesn't have color if using mix version.
+// if (mix.inProduction()) {
+//     mix.version();
+// }
