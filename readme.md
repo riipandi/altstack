@@ -1,6 +1,6 @@
 # 📦 Laravel Tailwind Starter Pack
 
-[![Build Status](https://travis-ci.org/riipandi/laravel-tailwind.svg)](https://travis-ci.org/riipandi/laravel-tailwind)
+[![Build Status](https://travis-ci.org/riipandi/laravel-tailwind.svg?branch=master)](https://travis-ci.org/riipandi/laravel-tailwind)
 [![StyleCI Status](https://github.styleci.io/repos/174728418/shield?branch=master)](https://github.styleci.io/repos/174728418)
 [![Total Download](https://poser.pugx.org/riipandi/laravel-tailwind/d/total.svg?format=flat-square)](https://packagist.org/packages/riipandi/laravel-tailwind)
 [![Latest Stable Version](https://poser.pugx.org/riipandi/laravel-tailwind/v/stable.svg?format=flat-square)](https://packagist.org/packages/riipandi/laravel-tailwind)
