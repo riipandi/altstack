@@ -68,7 +68,7 @@
                                         @if ($errors->has('oldpassword'))
                                             <p class="text-red text-xs italic mt-2">{{ $errors->first('oldpassword') }}</p>
                                         @endif
-                                        <a class="mt-2 float-right text-xs text-blue hover:text-blue-dark whitespace-no-wrap no-underline ml-auto focus:outline-none" href="javascript:;" tabindex="-1">
+                                        <a class="mt-2 float-right text-xs text-blue hover:text-blue-dark whitespace-no-wrap no-underline ml-auto focus:outline-none" href="{{ route('password.request') }}" tabindex="-1">
                                             {{ __('Forgot Your Password?') }}
                                         </a>
                                     </div>
