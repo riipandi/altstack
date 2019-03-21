@@ -17,10 +17,10 @@ class DatabaseSeeder extends Seeder
 
         // Create first user.
         $user = new App\Models\User();
-        $user->name     = 'Admin Sistem';
+        $user->name = 'Admin Sistem';
         $user->username = 'admin';
         $user->password = 'secret';
-        $user->email    = 'admin@mail.com';
+        $user->email = 'admin@mail.com';
         $user->email_verified_at = now();
         $user->save();
 
