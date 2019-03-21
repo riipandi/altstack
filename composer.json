@@ -28,7 +28,6 @@
         "predis/predis": "^1.1",
         "rap2hpoutre/laravel-log-viewer": "^1.1",
         "robinvdvleuten/ulid": "^3.0",
-        "tecdiary/laravel-ulid": "^1.0",
         "theiconic/name-parser": "^1.2"
     },
     "require-dev": {

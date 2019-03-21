@@ -40,18 +40,6 @@ npm run development
 php artisan migrate:fresh --seed
 ```
 
-Create example user using Tinker:
-
-```php
-$user = new App\Models\User();
-$user->name     = 'Admin Sistem';
-$user->username = 'admin';
-$user->password = 'secret';
-$user->email    = 'admin@mail.com';
-$user->email_verified_at = now();
-$user->save();
-```
-
 ### Automatic Versioning
 
 Edit `config/version.yml` file and change the remote git repository value with your own. 
