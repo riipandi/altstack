@@ -2,14 +2,6 @@
 
 Route::get('/', 'WelcomeController@index')->name('home');
 
-// Authentication routes.
-Auth::routes([
-    'register' => env('ENABLE_REGISTRATION', true),
-    'reset'    => env('ENABLE_PASSWD_RESET', true),
-    'verify'   => true,
-]);
-Route::get('logout', 'Auth\LoginController@logout')->name('logout');
-
 Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
 Route::get('updates', function () {
