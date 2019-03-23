@@ -39,6 +39,15 @@ npm i --no-optional
 npm run development
 php artisan web-tinker:install
 php artisan migrate:fresh --seed
+php artisan passport:install
+```
+
+### Nginx Configuration
+
+```nginx
+location / {
+    try_files $request_uri $request_uri/ /index.php?$query_string;
+}
 ```
 
 ### Automatic Versioning
@@ -53,8 +62,8 @@ php artisan version:refresh
 
 ## Contributing
 
-Generally we won't accept any PR requests to this project. If you have discovered a bug 
-or have an idea to improve the code, contact us first before you start coding.
+Current state we won't accept any PR requests to this project. If you have discovered a bug or 
+have an idea to improve the code, contact us first before you start coding.
 
 ## Security Issue
 

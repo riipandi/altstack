@@ -13,6 +13,16 @@ class SocialAuthController extends Controller
      *
      * @return void
      */
+    public function index()
+    {
+        return view('auth.login');
+    }
+
+    /**
+     * Create a redirect method to provider.
+     *
+     * @return void
+     */
     public function redirectToProvider($provider)
     {
         return Socialite::driver($provider)->redirect();
@@ -25,11 +35,21 @@ class SocialAuthController extends Controller
      */
     public function handleProviderCallback($provider, SocialiteHandler $service)
     {
-        $user = $service->createOrGetUser(Socialite::driver($provider)->user(), $provider);
-        auth()->login($user);
+        try {
+            $state = Socialite::driver($provider)->user();
+            $user = $service->createOrGetUser($state, $provider);
+            auth()->login($user);
+        } catch (\Exception $e) {
+            if (config('app.debug') == true) {
+                $msg = $e->getMessage();
+            } else {
+                $msg = 'Something wrong!';
+            }
+            return redirect('login')->with('error', $msg);
+        }
 
         return redirect()
             ->to('dashboard')
-            ->with(['info' => 'Welcome back '.auth()->user()->first_name]);
+            ->with('info', 'Welcome back '.auth()->user()->first_name);
     }
 }

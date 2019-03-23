@@ -18,7 +18,7 @@
         "vue": "2.6.10"
     },
     "devDependencies": {
-        "@fortawesome/fontawesome-free": "^5.8.0",
+        "@fortawesome/fontawesome-free": "^5.8.1",
         "laravel-mix": "^4.0.15",
         "laravel-mix-purgecss": "^4.1.0",
         "laravel-mix-tailwind": "^0.1.0",

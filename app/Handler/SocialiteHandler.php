@@ -4,6 +4,7 @@ namespace App\Handler;
 
 use App\Models\SocialiteAccount;
 use App\Models\User;
+use Illuminate\Support\Str;
 use Laravel\Socialite\Contracts\User as ProviderUser;
 
 class SocialiteHandler

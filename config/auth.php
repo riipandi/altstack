@@ -107,5 +107,13 @@ return [
     |
     */
 
-   'social' => env('AUTH_SOCIAL', false),
+    'social' => env('AUTH_SOCIAL', false),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Enable authentication using social account
+    |--------------------------------------------------------------------------
+    |
+    */
+    'native' => env('AUTH_NATIVE', true),
 ];

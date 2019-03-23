@@ -29,6 +29,7 @@
         "rap2hpoutre/laravel-log-viewer": "^1.1",
         "robinvdvleuten/ulid": "^3.0",
         "spatie/laravel-permission": "^2.36",
+        "spatie/robots-txt": "^1.0",
         "theiconic/name-parser": "^1.2"
     },
     "require-dev": {
