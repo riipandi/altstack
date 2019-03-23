@@ -41,6 +41,7 @@ class SocialAuthController extends Controller
             auth()->login($user);
         } catch (\Exception $e) {
             $msg = (config('app.debug') == true) ? $e->getMessage() : 'Something wrong!';
+
             return redirect('login')->with('error', $msg);
         }
 
