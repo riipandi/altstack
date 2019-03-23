@@ -40,11 +40,7 @@ class SocialAuthController extends Controller
             $user = $service->createOrGetUser($state, $provider);
             auth()->login($user);
         } catch (\Exception $e) {
-            if (config('app.debug') == true) {
-                $msg = $e->getMessage();
-            } else {
-                $msg = 'Something wrong!';
-            }
+            $msg = (config('app.debug') == true) ? $e->getMessage() : 'Something wrong!';
             return redirect('login')->with('error', $msg);
         }
 
