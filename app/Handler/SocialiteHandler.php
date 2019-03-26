@@ -4,11 +4,16 @@ namespace App\Handler;
 
 use App\Models\SocialiteAccount;
 use App\Models\User;
+use App\Notifications\SocialRegistered as RegisteredNotification;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
 use Laravel\Socialite\Contracts\User as ProviderUser;
 
 class SocialiteHandler
 {
+
+    use Notifiable;
+
     public function createOrGetUser(ProviderUser $providerUser, $provider)
     {
         $account = SocialiteAccount::whereProvider($provider)
@@ -39,14 +44,18 @@ class SocialiteHandler
                     $providedUsername = $providerUser->getNickname();
                 }
 
+                $temporaryPassword = str_random(8);
                 $user = User::create([
                     'username'          => $providedUsername,
                     'email'             => $providerUser->getEmail(),
                     'name'              => $providerUser->getName(),
                     'avatar'            => $providerUser->getAvatar(),
-                    'password'          => str_random(8),
+                    'password'          => $temporaryPassword,
                     'email_verified_at' => now(),
                 ]);
+
+                // Notify user via email and send temporary password
+                $user->notify(new RegisteredNotification($temporaryPassword));
             }
 
             $account->user()->associate($user);

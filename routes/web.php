@@ -6,7 +6,7 @@ Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
 Route::get('updates', function () {
     return view('updates');
-})->name('app.updates');
+})->middleware('auth')->name('app.updates');
 
 // User account.
 Route::get('settings/account', 'User\AccountController@index')->name('user.account');
