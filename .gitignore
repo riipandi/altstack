@@ -7,11 +7,11 @@
 /vendor
 
 # Default assets
-# /public/mix-manifest.json
-# /public/fonts
-# /public/css
-# /public/img
-# /public/js
+/public/mix-manifest.json
+/public/fonts
+/public/css
+/public/img
+/public/js
 
 .phpunit.result.cache
 Homestead.json
