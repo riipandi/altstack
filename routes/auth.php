@@ -9,6 +9,6 @@ Auth::routes([
     'verify'   => true,
 ]);
 
-Route::get('auth', 'Auth\SocialAuthController@index')->name('login');
+Route::get('auth', 'Auth\SocialAuthController@index')->name('auth');
 
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');

@@ -1,16 +1,18 @@
 /node_modules
-/public/css
-/public/fonts
 /public/hot
-/public/img
-/public/js
 /public/storage
 /public/vendor
 /storage/*.key
 /storage/tmp
 /vendor
 
-/public/mix-manifest.json
+# Default assets
+# /public/mix-manifest.json
+# /public/fonts
+# /public/css
+# /public/img
+# /public/js
+
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
