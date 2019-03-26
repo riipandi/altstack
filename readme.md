@@ -42,14 +42,6 @@ php artisan migrate:fresh --seed
 php artisan passport:install
 ```
 
-### Nginx Configuration
-
-```nginx
-location / {
-    try_files $request_uri $request_uri/ /index.php?$query_string;
-}
-```
-
 ### Automatic Versioning
 
 Edit `config/version.yml` file and change the remote git repository value with your own. 
