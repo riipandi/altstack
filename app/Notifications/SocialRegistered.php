@@ -48,7 +48,7 @@ class SocialRegistered extends Notification implements ShouldQueue
              ->subject('User Account Information')
              ->greeting('Hello!')
              ->line('You are receiving this email because you just registered using social account.')
-             ->line('Your temporary password is: <strong>'.$this->password .'</strong>')
+             ->line('Your temporary password is: <strong>'.$this->password.'</strong>')
              ->line('Please change your password immediately.')
              ->action('Account Setting', route('user.account'))
              ->line('Thank you for joining with us.');

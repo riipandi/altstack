@@ -11,7 +11,6 @@ use Laravel\Socialite\Contracts\User as ProviderUser;
 
 class SocialiteHandler
 {
-
     use Notifiable;
 
     public function createOrGetUser(ProviderUser $providerUser, $provider)
