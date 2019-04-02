@@ -65,5 +65,7 @@ If you discover any security related issues, please send an e-mail to
 ## License
 
 Laravel is a trademark of Taylor Otwel, and TailwindCSS is a trademark of Adam Wathan. 
-Gram licensed under the terms of [Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/).
-Please see [license file](./license.txt) for more information.
+Gram licensed under the terms of [Apache License 2.0][choosealicense]. Please see 
+[license file](./license.txt) for more information.
+
+[choosealicense]:https://choosealicense.com/licenses/apache-2.0/
