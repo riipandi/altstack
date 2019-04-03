@@ -46,7 +46,7 @@
                                 @if ($errors->has('password'))
                                     <p class="text-red text-xs italic mt-3">{{ $errors->first('password') }}</p>
                                 @else
-                                  <p class="text-grey-dark text-xs italic mt-3">Make it as long and as crazy as you'd like</p>
+                                    <p class="text-grey-dark text-xs italic mt-3">Make it as long and as crazy as you'd like</p>
                                 @endif
                             </div>
                         </div>
@@ -63,13 +63,18 @@
                                 {{ __('Register') }}
                             </button>
 
-                            <p class="w-full text-xs text-center text-grey-dark mt-6 -mb-1">
+                            <p class="w-full text-xs text-center text-grey-dark mt-8">
                                 Already have an account?
                                 <a class="text-blue hover:text-blue-dark no-underline" href="{{ route('login') }}">Sign In</a>
                             </p>
                         </div>
                     </form>
                 </div>
+
+                <div class="text-center mt-6">
+                    <a href="{{ url('/') }}" class="no-underline text-sm text-white hover:text-blue-lighter">&laquo; back to front page</a>
+                </div>
+
             </div>
         </div>
     </div>

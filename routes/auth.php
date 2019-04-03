@@ -4,8 +4,8 @@
  * Authentication routes.
  */
 Auth::routes([
-    'register' => env('ENABLE_REGISTRATION', false),
-    'reset'    => env('ENABLE_PASSWD_RESET', true),
+    'register' => config('auth.enable_registration'),
+    'reset'    => config('auth.enable_reset_pass'),
     'verify'   => true,
 ]);
 

@@ -79,7 +79,7 @@
                                 {{ __('Login') }}
                             </button>
                             @if (Route::has('register'))
-                                <p class="w-full text-xs text-center text-grey-dark mt-8 -mb-1">
+                                <p class="w-full text-xs text-center text-grey-dark mt-6 -mb-1">
                                     Don't have an account?
                                     <a class="text-blue hover:text-blue-dark no-underline" href="{{ route('register') }}">Sign Up</a>
                                 </p>
@@ -88,6 +88,11 @@
                     </form>
                     @endIf
                 </div>
+
+                <div class="text-center mt-6">
+                    <a href="{{ url('/') }}" class="no-underline text-sm text-white hover:text-blue-lighter">&laquo; back to front page</a>
+                </div>
+
             </div>
         </div>
     </div>

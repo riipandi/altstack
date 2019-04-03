@@ -119,4 +119,8 @@ return [
 
     'remember' => env('ENABLE_REMEMBER', false),
 
+    'enable_registration' => env('ENABLE_REGISTRATION', true),
+
+    'enable_reset_pass' => env('ENABLE_PASSWORD_RESET', true),
+
 ];

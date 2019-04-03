@@ -18,16 +18,19 @@
         @endif
 
         <div class="w-full mx-auto text-center text-5xl mb-8">
-            <h1 class="text-white">{{ config('app.name'), 'Laravel' }}</h1>
+            <h1 class="text-white">
+                {{ config('app.name'), 'Laravel' }}
+                <sup class="text-sm pin-t">v{{ Version::format('release') }}</sup>
+            </h1>
         </div>
 
         <div class="w-full text-center">
             <a class="no-underline hover:text-blue-lighter text-lg text-white" href="//laravel.com/docs">Documentation</a>
-            <a class="no-underline hover:text-blue-lighter text-lg text-white ml-3" href="//laracasts.com">Laracasts</a>
-            <a class="no-underline hover:text-blue-lighter text-lg text-white ml-3" href="//laravel-news.com">News</a>
-            <a class="no-underline hover:text-blue-lighter text-lg text-white ml-3" href="//nova.laravel.com">Nova</a>
-            <a class="no-underline hover:text-blue-lighter text-lg text-white ml-3" href="//forge.laravel.com">Forge</a>
-            <a class="no-underline hover:text-blue-lighter text-lg text-white ml-3" href="//github.com/laravel/laravel">Github</a>
+            <a class="no-underline hover:text-blue-lighter text-lg text-white ml-4" href="//laracasts.com">Laracasts</a>
+            <a class="no-underline hover:text-blue-lighter text-lg text-white ml-4" href="//laravel-news.com">News</a>
+            <a class="no-underline hover:text-blue-lighter text-lg text-white ml-4" href="//nova.laravel.com">Nova</a>
+            <a class="no-underline hover:text-blue-lighter text-lg text-white ml-4" href="//forge.laravel.com">Forge</a>
+            <a class="no-underline hover:text-blue-lighter text-lg text-white ml-4" href="//github.com/laravel/laravel">Github</a>
         </div>
 
     </div>
