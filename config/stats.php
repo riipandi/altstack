@@ -2,7 +2,7 @@
 
 return [
 
-    /**
+    /*
      * List of folders to be analyzed.
      **/
     'paths' => [
@@ -11,7 +11,7 @@ return [
         base_path('tests'),
     ],
 
-    /**
+    /*
      * List of files/folders to be excluded from analysis.
      **/
     'exclude' => [
@@ -19,14 +19,14 @@ return [
         // base_path('app/Services'),
     ],
 
-    /**
+    /*
      * List of your custom Classifiers
      **/
     'custom_component_classifier' => [
         // \App\Classifiers\CustomerExportClassifier::class
     ],
 
-    /**
+    /*
      * The Strategy used to reject Classes from the project statistics.
      *
      * By default all Classes located in
@@ -42,7 +42,7 @@ return [
      **/
     'rejection_strategy' => \Wnx\LaravelStats\RejectionStrategies\RejectVendorClasses::class,
 
-    /**
+    /*
      * Namespaces which should be ignored.
      * Laravel Stats uses the `Str::startsWith()`class to
      * check if a Namespace should be ignored.
