@@ -17,7 +17,6 @@ Route::get('updates', function () {
     return view('updates');
 })->middleware('auth')->name('app.updates');
 
-
 /*
 |--------------------------------------------------------------------------
 | User account routes
