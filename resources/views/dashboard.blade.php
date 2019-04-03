@@ -18,62 +18,6 @@
                     <div>Welcome to your dashboard!</div>
                     <div class="mt-4">
                         <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
-                        <p>This is an example dashboard page!</p>
                     </div>
                 </div>
             </div>
