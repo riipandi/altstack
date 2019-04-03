@@ -1,11 +1,10 @@
 require('./bootstrap');
 
-// Laravel Passport components.
-// Vue.component('passport-client', require('./components/passport/Clients.vue').default);
-// Vue.component('passport-token', require('./components/passport/PersonalAccessTokens.vue').default);
-// Vue.component('passport-authorized', require('./components/passport/AuthorizedClients.vue').default);
+// Load Laravel Passport components.
+Vue.component('passport-clients', require('./components/passport/Clients.vue').default);
+Vue.component('passport-authorized-clients', require('./components/passport/AuthorizedClients.vue').default);
+Vue.component('passport-personal-access-tokens', require('./components/passport/PersonalAccessTokens.vue').default);
 
-// // Other components.
 // Vue.component('update-check', require('./components/UpdateCheck.vue').default);
 Vue.component('toastr-component', require('./components/Toastr.vue').default);
 
@@ -24,7 +23,7 @@ const app = new Vue({
             if (!target.classList.contains(className)) {
                 target.classList.add(className);
             } else {
-              target.classList.toggle(className);
+                target.classList.toggle(className);
             }
         },
         showToastr: function (type, title, msg) {
@@ -66,5 +65,4 @@ if (typeof (sidebar) != 'undefined' && sidebar != null) {
     // This for toastr position fix.
     var toastrObj = document.querySelector('.toast-container');
     toastrObj.classList.add('toast-top-right-override');
-    // toastrObj.classList.remove('toast-top-right');
 }

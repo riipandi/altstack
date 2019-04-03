@@ -8,16 +8,16 @@
 
 ## Introduction
 
-Gram is the Laravel template with TailwindCSS as default preset and ships with some features like 
-Passport, Socialite, and some debugging tools. Gram used for (nearly) all our projects, but you 
-may use our template but please notice that we offer no support whatsoever. We also don't follow 
-semver for this project and won't guarantee that the code (especially the master branch) is stable. 
+Gram is the Laravel template with TailwindCSS as default preset and ships with some features like
+Passport, Socialite, and some debugging tools. Gram used for (nearly) all our projects, but you
+may use our template but please notice that we offer no support whatsoever. We also don't follow
+semver for this project and won't guarantee that the code (especially the master branch) is stable.
 In short: when using this, you're on your own.
 
 ## Quick Start
 
-At least you will need `PHP >= 7.2` and `Nodejs >= 8.15`. You can choose between `PostgreSQL >= 9.6` 
-or `MySQL >= 5.7` or `MariaDB >= 10.3` for your application database. Also, you maybe want to use 
+At least you will need `PHP >= 7.2` and `Nodejs >= 8.15`. You can choose between `PostgreSQL >= 9.6`
+or `MySQL >= 5.7` or `MariaDB >= 10.3` for your application database. Also, you maybe want to use
 `Redis >= 3.2` for session store and caching.
 
 ### Create New Project
@@ -26,7 +26,7 @@ or `MySQL >= 5.7` or `MariaDB >= 10.3` for your application database. Also, you 
 composer create-project ruhaycreative/gram <app_name> <version>
 ```
 
-Change `<app_name>` with your own and `<version>` with this gram version. 
+Change `<app_name>` with your own and `<version>` with this gram version.
 See [release page](https://github.com/ruhaycreative/gram/release) for the version number.
 
 ### Local Installation
@@ -44,7 +44,7 @@ php artisan passport:install
 
 ### Automatic Versioning
 
-Edit `config/version.yml` file and change the remote git repository value with your own. 
+Edit `config/version.yml` file and change the remote git repository value with your own.
 You will need add git hooks, open `.git/hooks/post-commit` and put this code:
 
 ```bash
@@ -54,7 +54,7 @@ php artisan version:refresh
 
 ## Contributing
 
-Current state we won't accept any PR requests to this project. If you have discovered a bug or 
+Current state we won't accept any PR requests to this project. If you have discovered a bug or
 have an idea to improve the code, contact us first before you start coding.
 
 ## Security Issue
@@ -64,8 +64,8 @@ If you discover any security related issues, please send an e-mail to
 
 ## License
 
-Laravel is a trademark of Taylor Otwel, and TailwindCSS is a trademark of Adam Wathan. 
-Gram licensed under the terms of [Apache License 2.0][choosealicense]. Please see 
+Laravel is a trademark of Taylor Otwel, and TailwindCSS is a trademark of Adam Wathan.
+Gram licensed under the terms of [Apache License 2.0][choosealicense]. Please see
 [license file](./license.txt) for more information.
 
 [choosealicense]:https://choosealicense.com/licenses/apache-2.0/

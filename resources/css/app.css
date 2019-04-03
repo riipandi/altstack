@@ -201,6 +201,10 @@ a:focus {
     @apply .bg-grey-lighter .appearance-none .border .border-grey-lighter .rounded .w-full .py-3 .px-4 .text-grey-darker .leading-tight .appearance-none;
 }
 
+.action-link {
+    cursor: pointer;
+}
+
 /* ---------------------------------------------------
     PAGE FOOTER
 ----------------------------------------------------- */

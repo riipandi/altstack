@@ -15,3 +15,8 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('auth', 'Auth\SocialAuthController@index')->name('auth');
 Route::get('auth/{provider}', 'Auth\SocialAuthController@redirectToProvider');
 Route::get('auth/{provider}/callback', 'Auth\SocialAuthController@handleProviderCallback');
+
+// Laravel Passport.
+Route::middleware('auth')->get('passport', function () {
+    return view('passport');
+})->name('passport');
