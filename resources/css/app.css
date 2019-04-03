@@ -166,6 +166,13 @@ a:focus {
     width: 1.2em;
 }
 
+#sidebar ul ul li ul li a:before {
+    @apply .ml-8 .inline-block;
+    font-family: 'Font Awesome 5 Free';
+    content: "\f101";
+    width: 1.4em;
+}
+
 #sidebar ul ul a:hover {
     @apply .bg-blue-darker .text-white;
 }

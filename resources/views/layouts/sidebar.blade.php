@@ -43,8 +43,21 @@
         <li>
             <a href="javascript:;" v-on:click="toggleClass('hidden', 'SubMenu3')" class="dropdown-toggle"><i class="fas fa-fw fa-wrench mx-2"></i> Configuration</a>
             <ul class="collapse list-reset hidden" id="SubMenu3">
-                <li><a href="javascript:;">Sample sub menu</a></li>
-                <li><a href="javascript:;">Sample sub menu</a></li>
+                <li>
+                    <a href="javascript:;" v-on:click="toggleClass('hidden', 'ChildMenu1')" class="dropdown-child">Sample sub menu</a>
+                    <ul class="collapse list-reset hidden" id="ChildMenu1">
+                        <li><a href="javascript:;">Sample child menu</a></li>
+                        <li><a href="javascript:;">Sample child menu</a></li>
+                        <li><a href="javascript:;">Sample child menu</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:;" v-on:click="toggleClass('hidden', 'ChildMenu2')" class="dropdown-child">Sample sub menu</a>
+                    <ul class="collapse list-reset hidden" id="ChildMenu2">
+                        <li><a href="javascript:;">Sample child menu</a></li>
+                        <li><a href="javascript:;">Sample child menu</a></li>
+                    </ul>
+                </li>
                 <li><a href="javascript:;">Sample sub menu</a></li>
                 <li><a href="javascript:;">Sample sub menu</a></li>
             </ul>
