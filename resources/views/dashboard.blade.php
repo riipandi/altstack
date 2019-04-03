@@ -6,7 +6,7 @@
             <div class="flex flex-col break-words bg-white border border-2 rounded shadow-md">
                 <div class="flex items-center justify-between bg-grey-lighter text-grey-darkest py-2 px-6 mb-0 rounded-t">
                     <div class="my-1 font-bold">
-                        <i class="fas fa-home mr-2"></i> Dashboard
+                        <i class="fas fa-chalkboard mr-2"></i> Dashboard
                     </div>
                     <div class="my-1">
                         <button class="btn-xs text-xs bg-green hover:bg-green-light focus:outline-none text-white py-2 px-3 rounded"

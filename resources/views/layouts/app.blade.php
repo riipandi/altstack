@@ -48,9 +48,9 @@
                                 <svg class="h-3 fill-current opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                             </button>
                             <div id="userDropdown" class="dropdown dropdown-user absolute pin-r mr-6 mt-10 py-2 rounded shadow-md invisible">
-                                <a class="py-2 px-4 hover:bg-blue-dark hover:text-white" href="{{ route('user.account') }}"><i class="fas fa-fw fa-user mr-2"></i> Account</a>
-                                <a class="py-2 px-4 hover:bg-blue-dark hover:text-white" href="{{ route('passport') }}"><i class="fas fa-fw fa-passport mr-2"></i> Passport</a>
-                                {{-- <a class="py-2 px-4 hover:bg-blue-dark hover:text-white" href="javascript:;"><i class="fas fa-fw fa-list mr-2"></i> User Logs</a> --}}
+                                <a class="py-2 px-4 hover:bg-blue-dark hover:text-white" href="{{ route('user.account') }}"><i class="fas fa-fw fa-user-circle mr-2"></i> Account</a>
+                                <a class="py-2 px-4 hover:bg-blue-dark hover:text-white" href="{{ route('passport') }}"><i class="fas fa-fw fa-id-card mr-2"></i> Passport</a>
+                                <a class="py-2 px-4 hover:bg-blue-dark hover:text-white" href="javascript:;"><i class="fas fa-fw fa-list mr-2"></i> User Logs</a>
                                 <div class="border border-grey-lightest b-1 my-2 mx-4"></div>
                                 <a class="py-2 px-4 hover:bg-blue-dark hover:text-white" href="{{ route('logout') }}">
                                     <i class="fas fa-fw fa-sign-out-alt mr-2"></i>{{ __('Sign Out ') }}

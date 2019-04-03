@@ -7,16 +7,16 @@
     <ul class="list-reset mt-5">
         <li>
             <a href="{{ route('dashboard') }}">
-                <i class="fas fa-fw fa-tachometer-alt mx-2"></i> Dashboard
+                <i class="fas fa-fw fa-chalkboard mx-2"></i> Dashboard
             </a>
         </li>
         <li>
             <a href="javascript:;">
-                <i class="fas fa-fw fa-cash-register mx-2"></i> Example Menu 01
+                <i class="fas fa-fw fa-store-alt mx-2"></i> Example Menu 01
             </a>
         </li>
         <li>
-            <a href="javascript:;" v-on:click="toggleClass('hidden', 'SubMenu1')" class="dropdown-toggle"><i class="fas fa-fw fa-database mx-2"></i> Example Menu 02</a>
+            <a href="javascript:;" v-on:click="toggleClass('hidden', 'SubMenu1')" class="dropdown-toggle"><i class="fas fa-fw fa-coins mx-2"></i> Example Menu 02</a>
             <ul class="collapse list-reset hidden" id="SubMenu1">
                 <li><a href="javascript:;">Sample sub menu</a></li>
                 <li><a href="javascript:;">Sample sub menu</a></li>
@@ -72,10 +72,10 @@
         </li>
         <p>Get Help</p>
         <li>
-            <a href="javascript:;"><i class="fas fa-fw fa-book mx-2"></i> Documentation</a>
+            <a href="javascript:;"><i class="fab fa-fw fa-readme mx-2"></i> Documentation</a>
         </li>
         <li>
-            <a href="javascript:;"><i class="fas fa-fw fa-mail-bulk mx-2"></i> Contact Support</a>
+            <a href="javascript:;"><i class="fas fa-fw fa-comment-dots mx-2"></i> Contact Support</a>
         </li>
     </ul>
 
