@@ -68,7 +68,7 @@
             </main>
 
             <footer id="footer" class="bg-white text-grey-darker">
-                <div class="block md:flex bg-white">
+                <div class="block md:flex bg-white text-xs tracking-normal">
                     <div class="flex-1 text-center md:text-left mb-0 sm:mb-2 md:mb-0">
                         Copyright &copy; 2019 - Crafted by <a href="//ripandi.id" target="_new" rel="noopener">Aris Ripandi</a>.
                     </div>

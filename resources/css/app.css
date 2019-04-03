@@ -201,16 +201,16 @@ a:focus {
     PAGE FOOTER
 ----------------------------------------------------- */
 #footer {
-    @apply .w-full .text-sm .relative .pb-3;
+    @apply .w-full .relative .pb-3;
     bottom: 0px !important;
     margin: auto auto 0 auto;
     padding: 12px 16px;
 }
 
 #footer a {
-    @apply .text-grey-darkest .no-underline;
+    @apply .no-underline .text-grey-dark;
 }
 
 #footer a:hover {
-    @apply .text-grey-darker;
+    @apply .text-blue;
 }
