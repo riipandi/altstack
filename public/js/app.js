@@ -44093,10 +44093,10 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./resources/css/app.css":
-/*!*******************************!*\
-  !*** ./resources/css/app.css ***!
-  \*******************************/
+/***/ "./resources/css/style.css":
+/*!*********************************!*\
+  !*** ./resources/css/style.css ***!
+  \*********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -44542,14 +44542,14 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!***********************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/css/app.css ***!
-  \***********************************************************/
+/*!*************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/css/style.css ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! D:\Webdir\gram\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Webdir\gram\resources\css\app.css */"./resources/css/app.css");
+module.exports = __webpack_require__(/*! D:\Webdir\gram\resources\css\style.css */"./resources/css/style.css");
 
 
 /***/ })

@@ -1,0 +1,16 @@
+/* Fonts and libraries */
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('~@fortawesome/fontawesome-free/css/fontawesome.css');
+@import url('~@fortawesome/fontawesome-free/css/solid.css');
+@import url('~@fortawesome/fontawesome-free/css/brands.css');
+@import url('~@deveodk/vue-toastr/dist/@deveodk/vue-toastr.css');
+@import url('~microtip/microtip.css');
+
+/* Injects Tailwind's styles */
+@tailwind preflight;
+@tailwind components;
+
+/* Your own styles */
+@import url('app.css');
+
+@tailwind utilities;

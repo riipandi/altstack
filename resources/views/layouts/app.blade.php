@@ -8,7 +8,7 @@
     <meta name="googlebot" content="all, noindex, nofollow">
     <title>{{ config('app.name') }}</title>
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body class="bg-grey-lightest h-screen font-sans antialiased">
     <div id="app" class="wrapper">
