@@ -6994,6 +6994,10 @@ header #progress {
   transition: all .3s;
 }
 
+main {
+  min-height: calc(100vh - 102px);
+}
+
 #sidebar {
   background-color: #3490dc;
   font-size: .875rem;
@@ -7108,6 +7112,10 @@ a:focus {
   appearance: none;
 }
 
+.action-link {
+  cursor: pointer;
+}
+
 /* ---------------------------------------------------
     PAGE FOOTER
 ----------------------------------------------------- */
@@ -7115,12 +7123,10 @@ a:focus {
 #footer {
   width: 100%;
   font-size: .875rem;
-  color: #606f7b;
   position: relative;
-  background-color: #fff;
-  height: 38px;
+  padding-bottom: .75rem;
   margin: auto auto 0 auto;
-  padding: 12px 14px;
+  padding: 12px 16px;
 }
 
 #footer a {

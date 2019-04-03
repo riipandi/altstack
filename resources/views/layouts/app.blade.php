@@ -8,14 +8,12 @@
     <meta name="googlebot" content="all, noindex, nofollow">
     <title>{{ config('app.name') }}</title>
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body class="bg-grey-lightest h-screen font-sans antialiased">
     <div id="app" class="wrapper">
-        <!-- Sidebar  -->
-        @include('layouts.sidebar')
-
         <div id="content">
+
             <header id="navbar" class="inline-flex flex-row bg-white border-t-2 align-middle">
                 <div class="flex-1 text-grey-darker align-middle">
                     <div class="inline-block py-1">
@@ -25,7 +23,9 @@
                                     <i class="fas fa-align-left mr-1"></i>
                                 </button>
                             </div>
-                            <div class="hidden md:block ml-4 font-semibold">{{ option('site_name') }}</div>
+                            <div class="md:block ml-4 font-semibold">
+                                <span class="hidden md:inline-block">{{ config('app.name') }} -</span> {{ option('site_name') }}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -58,25 +58,31 @@
                 </div>
             </header>
 
-            <main class="w-full mx-auto py-10 px-8">
-                {{-- @include('layouts.alert') --}}
-                @include('layouts.toastr')
-                @yield('content')
-            </main>
-
-            <footer id="footer">
-                <div class="text-center pt-2 md:pt-0 md:float-left">
-                    Copyright &copy; 2019 <a href="//ruhaycreative.co.id" target="_new" rel="noopener" aria-label="Made by Ruhay Creative Studio in Indonesia" data-microtip-position="top" role="tooltip">Aris Ripandi</a>.
+            <div class="flex h-full">
+                @include('layouts.sidebar')
+                <div class="flex-1">
+                    <main class="w-full mx-auto py-10 px-8">
+                        {{-- @include('layouts.alert') --}}
+                        @include('layouts.toastr')
+                        @yield('content')
+                    </main>
+                    <footer id="footer" class="bg-white text-grey-darker">
+                        <div class="block md:flex bg-white">
+                            <div class="flex-1 text-center md:text-left mb-0 sm:mb-2 md:mb-0">
+                                Copyright &copy; 2019 - Crafted by <a href="//ripandi.id" target="_new" rel="noopener">Aris Ripandi</a>.
+                            </div>
+                            <div class="flex-1 text-center hidden sm:block md:text-right">
+                                {{ config('app.name') }} <a href="{{ route('app.updates') }}" aria-label="Click here to check for updates" data-microtip-position="top-left" role="tooltip">{{ Version::format('compact') }}</a>
+                            </div>
+                        </div>
+                    </footer>
                 </div>
-                <div class="text-center pt-3 pb-4 md:py-0 md:inline-block md:float-right">
-                    {{ config('app.name') }} <a href="{{ route('app.updates') }}" aria-label="Click here to check for updates" data-microtip-position="top-left" role="tooltip">{{ Version::format('compact') }}</a>
-                </div>
-            </footer>
+            </div>
         </div>
     </div>
 
     <!-- Javascript libraries -->
-    <script src="{{ mix('js/app.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     @stack('scripts')
 </body>
 </html>

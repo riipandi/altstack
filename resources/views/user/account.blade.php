@@ -117,6 +117,7 @@
                         </div>
                     </div>
 
+                    @if (Auth()->user()->email != config('app.superuser'))
                     <!-- row -->
                     <div class="flex flex-col break-words bg-white border border-2 rounded shadow-md">
                         <div class="tracking-wide font-semibold bg-grey-lightest text-sm text-grey-darker py-4 px-6 mb-0 rounded-t">Delete Account</div>
@@ -131,6 +132,7 @@
                             </div>
                         </div>
                     </div>
+                    @endIf
                 </div>
             </div>
         </div>

@@ -1,3 +1,5 @@
+import VueToastr from '@deveodk/vue-toastr';
+
 /**
  * Register main modules.
  */
@@ -6,7 +8,6 @@ window.$ = window.jQuery = require('jquery');
 window.Vue = require('vue');
 
 // Vue plugins.
-import VueToastr from '@deveodk/vue-toastr';
 Vue.use(VueToastr)
 
 /**

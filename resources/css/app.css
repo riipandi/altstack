@@ -124,6 +124,10 @@ header #progress {
     transition: all 0.3s;
 }
 
+main {
+    min-height: calc(100vh - 102px);
+}
+
 #sidebar {
     @apply .bg-blue .text-sm .pb-6 .text-white;
     min-width: 250px;
@@ -209,10 +213,9 @@ a:focus {
     PAGE FOOTER
 ----------------------------------------------------- */
 #footer {
-    @apply .w-full .text-sm .text-grey-darker .relative .bg-white;
-    height: 38px;
+    @apply .w-full .text-sm .relative .pb-3;
     margin: auto auto 0 auto;
-    padding: 12px 14px;
+    padding: 12px 16px;
 }
 
 #footer a {
