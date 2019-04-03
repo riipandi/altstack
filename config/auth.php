@@ -116,4 +116,7 @@ return [
     |
     */
     'native' => env('AUTH_NATIVE', true),
+
+    'remember' => env('ENABLE_REMEMBER', false),
+
 ];

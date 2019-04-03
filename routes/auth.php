@@ -17,6 +17,6 @@ Route::get('auth/{provider}', 'Auth\SocialAuthController@redirectToProvider');
 Route::get('auth/{provider}/callback', 'Auth\SocialAuthController@handleProviderCallback');
 
 // Laravel Passport.
-Route::middleware('auth')->get('passport', function () {
+Route::middleware('auth')->get('settings/passport', function () {
     return view('passport');
 })->name('passport');

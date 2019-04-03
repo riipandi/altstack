@@ -64,6 +64,7 @@
                             @endif
                         </div>
 
+                        @if (config('auth.remember') == true)
                         <div class="flex flex-wrap items-center mb-6">
                             <div class="form-switch inline-block align-middle">
                                 <input type="checkbox" class="form-switch-checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
@@ -71,6 +72,7 @@
                             </div>
                             <label class="text-sm text-grey-darker cursor-pointer" for="remember">Remember me!</label>
                         </div>
+                        @endif
 
                         <div class="flex flex-wrap items-center">
                             <button type="submit" class="w-full bg-blue hover:bg-blue-dark text-white py-3 px-8 rounded focus:outline-none focus:shadow-outline font-semibold">
