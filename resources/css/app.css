@@ -214,6 +214,7 @@ a:focus {
 ----------------------------------------------------- */
 #footer {
     @apply .w-full .text-sm .relative .pb-3;
+    bottom: 0px !important;
     margin: auto auto 0 auto;
     padding: 12px 16px;
 }

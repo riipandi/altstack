@@ -12,6 +12,9 @@
 </head>
 <body class="bg-grey-lightest h-screen font-sans antialiased">
     <div id="app" class="wrapper">
+
+        @include('layouts.sidebar')
+
         <div id="content">
 
             <header id="navbar" class="inline-flex flex-row bg-white border-t-2 align-middle">
@@ -58,26 +61,23 @@
                 </div>
             </header>
 
-            <div class="flex h-full">
-                @include('layouts.sidebar')
-                <div class="flex-1">
-                    <main class="w-full mx-auto py-10 px-8">
-                        {{-- @include('layouts.alert') --}}
-                        @include('layouts.toastr')
-                        @yield('content')
-                    </main>
-                    <footer id="footer" class="bg-white text-grey-darker">
-                        <div class="block md:flex bg-white">
-                            <div class="flex-1 text-center md:text-left mb-0 sm:mb-2 md:mb-0">
-                                Copyright &copy; 2019 - Crafted by <a href="//ripandi.id" target="_new" rel="noopener">Aris Ripandi</a>.
-                            </div>
-                            <div class="flex-1 text-center hidden sm:block md:text-right">
-                                {{ config('app.name') }} <a href="{{ route('app.updates') }}" aria-label="Click here to check for updates" data-microtip-position="top-left" role="tooltip">{{ Version::format('compact') }}</a>
-                            </div>
-                        </div>
-                    </footer>
+            <main class="w-full mx-auto py-10 px-8">
+                {{-- @include('layouts.alert') --}}
+                @include('layouts.toastr')
+                @yield('content')
+            </main>
+
+            <footer id="footer" class="bg-white text-grey-darker">
+                <div class="block md:flex bg-white">
+                    <div class="flex-1 text-center md:text-left mb-0 sm:mb-2 md:mb-0">
+                        Copyright &copy; 2019 - Crafted by <a href="//ripandi.id" target="_new" rel="noopener">Aris Ripandi</a>.
+                    </div>
+                    <div class="flex-1 text-center hidden sm:block md:text-right">
+                        {{ config('app.name') }} <a href="{{ route('app.updates') }}" aria-label="Click here to check for updates" data-microtip-position="top-left" role="tooltip">{{ Version::format('compact') }}</a>
+                    </div>
                 </div>
-            </div>
+            </footer>
+
         </div>
     </div>
 

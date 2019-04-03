@@ -1,8 +1,8 @@
 <nav id="sidebar" class="leading-tight fill">
 
-    {{-- <div class="sidebar-header">
+    <div class="sidebar-header">
         <span class="font-semibold text-lg">{{ config('app.name') }}</span>
-    </div> --}}
+    </div>
 
     <ul class="list-reset mt-5">
         <li>

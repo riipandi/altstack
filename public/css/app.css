@@ -7125,6 +7125,7 @@ a:focus {
   font-size: .875rem;
   position: relative;
   padding-bottom: .75rem;
+  bottom: 0px !important;
   margin: auto auto 0 auto;
   padding: 12px 16px;
 }
