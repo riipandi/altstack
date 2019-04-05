@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Handler\SocialiteHandler;
 use App\Http\Controllers\Controller;
-use Socialite;
 use SEO;
+use Socialite;
 
 class SocialAuthController extends Controller
 {

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use SEO;
 
-
 class WelcomeController extends Controller
 {
     /**
