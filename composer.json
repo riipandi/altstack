@@ -9,7 +9,7 @@
         "scaffolding",
         "tailwind"
     ],
-    "license": "MIT",
+    "license": "Apache-2.0",
     "require": {
         "php": "^7.2.1",
         "appstract/laravel-options": "^2.2",
