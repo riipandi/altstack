@@ -5,9 +5,15 @@ namespace App\Http\Controllers\Auth;
 use App\Handler\SocialiteHandler;
 use App\Http\Controllers\Controller;
 use Socialite;
+use SEO;
 
 class SocialAuthController extends Controller
 {
+    public function __construct()
+    {
+        SEO::setTitle('Social Authentication');
+    }
+
     /**
      * Create a redirect method to twitter api.
      *

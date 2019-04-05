@@ -6,7 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="robots" content="all, noindex, nofollow">
     <meta name="googlebot" content="all, noindex, nofollow">
-    <title>{{ config('app.name') }}</title>
+    {!! SEO::generate() !!}
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>

@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use SEO;
+
+
 class WelcomeController extends Controller
 {
     /**
@@ -21,6 +24,8 @@ class WelcomeController extends Controller
      */
     public function index()
     {
+        SEO::setTitle('Homepage');
+
         return view('welcome');
     }
 }

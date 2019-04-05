@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
+use SEO;
 
 class RegisterController extends Controller
 {
@@ -26,6 +27,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
+        SEO::setTitle('Sign Up');
         $this->middleware('guest');
     }
 

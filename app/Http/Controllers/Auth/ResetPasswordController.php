@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Support\Str;
+use SEO;
 
 class ResetPasswordController extends Controller
 {
@@ -25,6 +26,7 @@ class ResetPasswordController extends Controller
      */
     public function __construct()
     {
+        SEO::setTitle('Password Reset');
         // $this->middleware('guest');
     }
 

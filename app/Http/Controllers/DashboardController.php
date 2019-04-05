@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use SEO;
+
 class DashboardController extends Controller
 {
     /**
@@ -21,6 +23,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
+        SEO::setTitle('Dashboard');
+
         return view('dashboard');
     }
 }

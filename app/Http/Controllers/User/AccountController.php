@@ -7,6 +7,7 @@ use App\Models\PasswordHistory;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use SEO;
 
 class AccountController extends Controller
 {
@@ -27,6 +28,8 @@ class AccountController extends Controller
      */
     public function index()
     {
+        SEO::setTitle('Account Setting');
+
         return view('user.account');
     }
 
