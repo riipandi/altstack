@@ -86,8 +86,8 @@ Gram licensed under the terms of [Apache License 2.0][choosealicense]. Please se
 [license file](./license.txt) for more information.
 
 ## Screenshots
-![Gram Screenshot 3](./resources/img/screenshot-3.jpg)
-![Gram Screenshot 5](./resources/img/screenshot-5.jpg)
+![Gram Screenshot 3](./resources/img/screenshot-3.png)
+![Gram Screenshot 5](./resources/img/screenshot-5.png)
 
 [choosealicense]:https://choosealicense.com/licenses/apache-2.0/
 [releasepage]:https://github.com/ruhaycreative/gram/releases
