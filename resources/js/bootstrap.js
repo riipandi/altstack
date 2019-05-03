@@ -5,6 +5,10 @@ import VueToastr from '@deveodk/vue-toastr';
  */
 window._ = require('lodash');
 window.$ = window.jQuery = require('jquery');
+
+window.moment = require('moment');
+window.flatpickr = require('flatpickr');
+
 window.Vue = require('vue');
 
 // Vue plugins.

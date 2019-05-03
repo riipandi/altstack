@@ -16,18 +16,34 @@ In short: when using this, you're on your own.
 
 ## Quick Start
 
-At least you will need `PHP >= 7.2` and `Nodejs >= 8.15`. You can choose between `PostgreSQL >= 9.6`
-or `MySQL >= 5.7` or `MariaDB >= 10.3` for your application database. Also, you maybe want to use
-`Redis >= 3.2` for session store and caching.
+At least you will need `PHP >= 7.2` and `Nodejs >= 8.15`. For database backend, you can choose between
+`PostgreSQL >= 9.6` or `MySQL >= 5.7` or `MariaDB >= 10.3` or any other database engine that supported
+by Laravel. Also, you maybe want to use `Redis >= 3.2` for session store and or caching storage.
 
 ### Create New Project
 
 ```
-composer create-project ruhaycreative/gram <app_name> <version>
+composer create-project presethub/laravel-base <app_name>
 ```
 
-Change `<app_name>` with your own and `<version>` with this gram version.
-See [release page](https://github.com/ruhaycreative/gram/release) for the version number.
+Or, if you want to use spesific version:
+
+```
+composer create-project presethub/laravel-base <app_name> <version>
+```
+
+Change `<app_name>` with your own and `<version>` with release version.
+See [release page][releasepage] for the version number.
+
+
+#### Package Version
+
+The versioning number will follow the release of the Laravel version, followed by the package version release number:
+
+```
+a.b.c  =>  a.b are Laravel version, c is package version.
+5.8.1  =>  Laravel 5.8 and 1 is release number / revision.
+```
 
 ### Local Installation
 
@@ -37,6 +53,7 @@ Edit or create `.env` file and then execute:
 composer install
 npm i --no-optional
 npm run development
+
 php artisan web-tinker:install
 php artisan migrate:fresh --seed
 php artisan passport:install
@@ -68,4 +85,9 @@ Laravel is a trademark of Taylor Otwel, and TailwindCSS is a trademark of Adam W
 Gram licensed under the terms of [Apache License 2.0][choosealicense]. Please see
 [license file](./license.txt) for more information.
 
+## Screenshots
+![Gram Screenshot 3](./resources/img/screenshot-3.jpg)
+![Gram Screenshot 5](./resources/img/screenshot-5.jpg)
+
 [choosealicense]:https://choosealicense.com/licenses/apache-2.0/
+[releasepage]:https://github.com/ruhaycreative/gram/releases

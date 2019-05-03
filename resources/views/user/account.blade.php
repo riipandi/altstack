@@ -32,9 +32,7 @@
                                     </div>
                                     <div class="md:w-2/3">
                                         <input class="{{ $errors->has('name') ? 'border-red ' : '' }}focus:outline-none focus:bg-white focus:border-grey" name="name" id="name" value="{{ old('name', auth()->user()->name) }}" type="text" required>
-                                        @if ($errors->has('name'))
-                                            <p class="text-red text-xs italic mt-2">{{ $errors->first('name') }}</p>
-                                        @endif
+                                        @error('name')<p class="text-red text-xs italic mt-2">{{ $message }}</p>@enderror
                                     </div>
                                 </div>
                                 <div class="md:flex md:items-center mb-6">
@@ -43,9 +41,7 @@
                                     </div>
                                     <div class="md:w-2/3">
                                         <input class="{{ $errors->has('email') ? 'border-red ' : '' }}focus:outline-none focus:bg-white focus:border-grey" name="email" id="email" value="{{ old('email', auth()->user()->email) }}" type="email" required>
-                                        @if ($errors->has('email'))
-                                            <p class="text-red text-xs italic mt-2">{{ $errors->first('email') }}</p>
-                                        @endif
+                                        @error('email')<p class="text-red text-xs italic mt-2">{{ $message }}</p>@enderror
                                     </div>
                                 </div>
                                 <div class="md:flex md:items-center mb-6">
@@ -54,9 +50,7 @@
                                     </div>
                                     <div class="md:w-2/3">
                                         <input class="{{ $errors->has('username') ? 'border-red ' : '' }}focus:outline-none focus:bg-white focus:border-grey" name="username" id="username" value="{{ old('username', auth()->user()->username) }}" type="text" required>
-                                        @if ($errors->has('username'))
-                                            <p class="text-red text-xs italic mt-2">{{ $errors->first('username') }}</p>
-                                        @endif
+                                        @error('username')<p class="text-red text-xs italic mt-2">{{ $message }}</p>@enderror
                                     </div>
                                 </div>
                                 <div class="md:flex md:items-center mb-6">
@@ -65,9 +59,8 @@
                                     </div>
                                     <div class="md:w-2/3">
                                         <input class="{{ $errors->has('oldpassword') ? 'border-red ' : '' }}focus:outline-none focus:bg-white focus:border-grey" name="oldpassword" id="oldpassword" type="password" placeholder="******************" required>
-                                        @if ($errors->has('oldpassword'))
-                                            <p class="text-red text-xs italic mt-2">{{ $errors->first('oldpassword') }}</p>
-                                        @endif
+                                        @error('oldpassword')<p class="text-red text-xs italic mt-2">{{ $message }}</p>@enderror
+
                                         <a class="mt-2 float-right text-xs text-blue hover:text-blue-dark whitespace-no-wrap no-underline ml-auto focus:outline-none" href="{{ route('password.request') }}" tabindex="-1">
                                             {{ __('Forgot Your Password?') }}
                                         </a>
@@ -89,9 +82,7 @@
                                         </div>
                                         <div class="md:w-2/3">
                                             <input class="{{ $errors->has('oldpassword') ? 'border-red ' : '' }}bg-grey-lighter appearance-none border border-grey-lighter rounded w-full py-3 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-grey appearance-none" name="newpassword" id="newpassword" type="password" placeholder="******************">
-                                            @if ($errors->has('newpassword'))
-                                                <p class="text-red text-xs italic mt-2">{{ $errors->first('newpassword') }}</p>
-                                            @endif
+                                            @error('newpassword')<p class="text-red text-xs italic mt-2">{{ $message }}</p>@enderror
                                         </div>
                                     </div>
                                     <div class="md:flex md:items-center mb-6">

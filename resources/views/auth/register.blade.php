@@ -13,9 +13,7 @@
                             <div class="w-full px-3">
                                 <label for="name" class="block text-grey-darker text-sm font-bold mb-2">{{ __('Your Name') }}</label>
                                 <input id="name" type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline{{ $errors->has('name') ? ' border-red' : '' }}" name="name" value="{{ old('name') }}" required>
-                                @if ($errors->has('name'))
-                                    <p class="text-red text-xs italic mt-3">{{ $errors->first('name') }}</p>
-                                @endif
+                                @error('name')<p class="text-red text-xs italic mt-3">{{ $message }}</p>@enderror
                             </div>
                         </div>
 
@@ -23,9 +21,7 @@
                             <div class="w-full px-3">
                                 <label for="email" class="block text-grey-darker text-sm font-bold mb-2">{{ __('E-Mail Address') }}</label>
                                 <input id="email" type="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline{{ $errors->has('email') ? ' border-red' : '' }}" name="email" value="{{ old('email') }}" required>
-                                @if ($errors->has('email'))
-                                    <p class="text-red text-xs italic mt-3">{{ $errors->first('email') }}</p>
-                                @endif
+                                @error('email')<p class="text-red text-xs italic mt-3">{{ $message }}</p>@enderror
                             </div>
                         </div>
 
@@ -33,9 +29,7 @@
                             <div class="w-full px-3">
                                 <label for="username" class="block text-grey-darker text-sm font-bold mb-2">{{ __('Username') }}</label>
                                 <input id="username" type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline{{ $errors->has('username') ? ' border-red' : '' }}" name="username" value="{{ old('username') }}" required>
-                                @if ($errors->has('username'))
-                                    <p class="text-red text-xs italic mt-3">{{ $errors->first('username') }}</p>
-                                @endif
+                                @error('username')<p class="text-red text-xs italic mt-3">{{ $message }}</p>@enderror
                             </div>
                         </div>
 
@@ -43,11 +37,11 @@
                             <div class="w-full px-3">
                                 <label for="password" class="block text-grey-darker text-sm font-bold mb-2">{{ __('Password') }}</label>
                                 <input id="password" type="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline{{ $errors->has('password') ? ' border-red' : '' }}" name="password" required>
-                                @if ($errors->has('password'))
-                                    <p class="text-red text-xs italic mt-3">{{ $errors->first('password') }}</p>
+                                @error('password')
+                                    <p class="text-red text-xs italic mt-3">{{ $message }}</p>
                                 @else
                                     <p class="text-grey-dark text-xs italic mt-3">Make it as long and as crazy as you'd like</p>
-                                @endif
+                                @enderror
                             </div>
                         </div>
 
