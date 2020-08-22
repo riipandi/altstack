@@ -1,13 +1,26 @@
-let mix = require('laravel-mix');
+const mix = require('laravel-mix');
 
-require('laravel-mix-tailwind');
-require('laravel-mix-purgecss');
-
-mix.copy('resources/img/', 'public/img/')
-    .js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/style.css', 'public/css')
-    .tailwind().purgeCss();
-
+//-------------------------------------------------------------------------------------------------
+// Mix configuration...
+//-------------------------------------------------------------------------------------------------
 if (mix.inProduction()) {
-    mix.version();
+  mix.disableNotifications().version();
+  mix.options({
+    postCss: [require('autoprefixer')],
+    uglify: {
+      uglifyOptions: {
+        compress: { drop_console: true }
+      }
+    }
+  });
 }
+
+//-------------------------------------------------------------------------------------------------
+// Main resources...
+//-------------------------------------------------------------------------------------------------
+mix
+  .js('resources/js/app.js', 'public/assets')
+  .postCss('resources/css/style.css', 'public/assets', [require('tailwindcss')])
+  .sourceMaps();
+
+// mix.copyDirectory('resources/img', 'public/images');

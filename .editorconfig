@@ -8,9 +8,15 @@ indent_style = space
 indent_size = 4
 trim_trailing_whitespace = true
 
-[*.{md,txt}]
+[*.{js,jsx,ts,tsx,css,scss,vue,yml}]
+indent_size = 2
+
+[*.md]
+max_line_length = off
 trim_trailing_whitespace = false
+
+[*.txt]
 insert_final_newline = false
 
-[*.yml]
-indent_size = 2
+[{Makefile,**.mk}]
+indent_style = tab

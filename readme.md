@@ -1,93 +1,81 @@
-# 📦 Gram - A Laravel Starter Pack
-
-[![Build Status](https://travis-ci.org/ruhaycreative/gram.svg?branch=master)](https://travis-ci.org/ruhaycreative/gram)
-[![StyleCI Status](https://github.styleci.io/repos/174728418/shield?branch=master)](https://github.styleci.io/repos/174728418)
-[![Total Download](https://poser.pugx.org/ruhaycreative/gram/d/total.svg?format=flat-square)](https://packagist.org/packages/ruhaycreative/gram)
-[![Latest Stable Version](https://poser.pugx.org/ruhaycreative/gram/v/stable.svg?format=flat-square)](https://packagist.org/packages/ruhaycreative/gram)
+# ⎇ Alt Stack - An alternative Laravel stack
+<!-- [![Build Status](https://travis-ci.org/riipandi/altstack.svg?branch=master)](https://travis-ci.org/riipandi/altstack) -->
+[![Total Download](https://poser.pugx.org/riipandi/altstack/d/total.svg?format=flat-square)](https://packagist.org/packages/riipandi/altstack)
+[![Latest Stable Version](https://poser.pugx.org/riipandi/altstack/v/stable.svg?format=flat-square)](https://packagist.org/packages/riipandi/altstack)
 [![License](https://img.shields.io/badge/license-Apache%202-blue.svg?style=flat-square)](https://choosealicense.com/licenses/apache-2.0/)
 
 ## Introduction
+This is the Laravel template with Tailwind and Alpine.js as default preset and ships with some features like
+user management with UUID for primary key, and Two Factor Authentication. I'm using this template for (nearly)
+all my personal projects and professional projects, but you may use my template but please notice that we
+offer no support whatsoever. We also don't follow semver for this project and won't guarantee that the code
+(especially the master branch) is stable.
 
-Gram is the Laravel template with TailwindCSS as default preset and ships with some features like
-Passport, Socialite, and some debugging tools. Gram used for (nearly) all our projects, but you
-may use our template but please notice that we offer no support whatsoever. We also don't follow
-semver for this project and won't guarantee that the code (especially the master branch) is stable.
-In short: when using this, you're on your own.
+> In short: when using this, you're on your own.
 
 ## Quick Start
-
-At least you will need `PHP >= 7.2` and `Nodejs >= 8.15`. For database backend, you can choose between
+At least you will need `PHP >= 7.2.5` and `Nodejs >= 12.16`. For database backend, you can choose between
 `PostgreSQL >= 9.6` or `MySQL >= 5.7` or `MariaDB >= 10.3` or any other database engine that supported
 by Laravel. Also, you maybe want to use `Redis >= 3.2` for session store and or caching storage.
 
+By default I'm using PostgreSQL for main database. But, you can change it via `.env` configuration file.
+
+### Create PostgreSQL database
+```sql
+-- sudo -u postgres psql
+DROP DATABASE IF EXISTS "homestead"; DROP ROLE IF EXISTS "homestead";
+CREATE ROLE "homestead" SUPERUSER CREATEDB CREATEROLE LOGIN ENCRYPTED PASSWORD 'securepwd';
+CREATE DATABASE "homestead"; GRANT ALL PRIVILEGES ON DATABASE "homestead" TO "homestead";
+```
+
 ### Create New Project
+```bash
+# Use latest version:
+composer create-project riipandi/altstack <app_name>
 
-```
-composer create-project presethub/laravel-base <app_name>
-```
-
-Or, if you want to use spesific version:
-
-```
-composer create-project presethub/laravel-base <app_name> <version>
+# If you want to use spesific version:
+composer create-project riipandi/altstack <app_name> <version>
 ```
 
 Change `<app_name>` with your own and `<version>` with release version.
 See [release page][releasepage] for the version number.
 
-
 #### Package Version
-
 The versioning number will follow the release of the Laravel version, followed by the package version release number:
 
 ```
-a.b.c  =>  a.b are Laravel version, c is package version.
-5.8.1  =>  Laravel 5.8 and 1 is release number / revision.
+x.y.z  =>  x is Laravel version, y and z are Larva version.
+7.1.3  =>  Laravel 7.x.x, Larva version 1 revision 3.
 ```
 
 ### Local Installation
-
 Edit or create `.env` file and then execute:
 
 ```bash
-composer install
-npm i --no-optional
-npm run development
-
-php artisan web-tinker:install
+# Composer dependencies
+composer install --no-suggest
+php artisan key:generate --force
 php artisan migrate:fresh --seed
-php artisan passport:install
-```
 
-### Automatic Versioning
-
-Edit `config/version.yml` file and change the remote git repository value with your own.
-You will need add git hooks, open `.git/hooks/post-commit` and put this code:
-
-```bash
-#!/bin/sh
-php artisan version:refresh
+# Compiling resources
+npm install --no-optional --no-audit
+npm run dev
 ```
 
 ## Contributing
-
-Current state we won't accept any PR requests to this project. If you have discovered a bug or
-have an idea to improve the code, contact us first before you start coding.
+Current state we won't accept any PR requests to this project. If you have discovered a bug or have an
+idea to improve the code, contact us first before you start coding.
 
 ## Security Issue
+If you discover any security related issues, please send an e-mail to [riipandi@gmail.com](mailto:riipandi@gmail.com)
+instead of using the issue tracker.
 
-If you discover any security related issues, please send an e-mail to
-[dev@ruhaycreative.com](mailto:dev@ruhaycreative.com) instead of using the issue tracker.
+## LICENSE
+Laravel is a trademark of Taylor Otwell, TailwindCSS is a trademark of Adam Wathan, and Alpine.js is a
+trademark of Caleb Porzio. Both of them are licensed under the terms of the MIT License. This template
+licensed under the terms of [Apache License 2.0][choosealicense].
 
-## License
-
-Laravel is a trademark of Taylor Otwel, and TailwindCSS is a trademark of Adam Wathan.
-Gram licensed under the terms of [Apache License 2.0][choosealicense]. Please see
-[license file](./license.txt) for more information.
-
-## Screenshots
-![Gram Screenshot 3](./resources/img/screenshot-3.png)
-![Gram Screenshot 5](./resources/img/screenshot-5.png)
+Please see [license file](./license.txt) for more information.
 
 [choosealicense]:https://choosealicense.com/licenses/apache-2.0/
-[releasepage]:https://github.com/ruhaycreative/gram/releases
+[releasepage]:https://github.com/riipandi/altstack/releases

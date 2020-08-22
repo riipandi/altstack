@@ -1,16 +1,12 @@
-/* Fonts and libraries */
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-@import url('~@fortawesome/fontawesome-free/css/fontawesome.css');
-@import url('~@fortawesome/fontawesome-free/css/solid.css');
-@import url('~@fortawesome/fontawesome-free/css/brands.css');
-@import url('~@deveodk/vue-toastr/dist/@deveodk/vue-toastr.css');
-@import url('~microtip/microtip.css');
+/* Tailwind Base components */
+@import '~tailwindcss/base.css';
+@import '~tailwindcss/components.css';
 
-/* Injects Tailwind's styles */
-@tailwind preflight;
-@tailwind components;
+/* Libraries and custom styles */
+@import '~notyf/notyf.min.css';
 
-/* Your own styles */
-@import url('app.css');
+/* Hide annoying Google reCAPTCHA v3 Badge */
+.grecaptcha-badge { visibility: hidden; }
 
-@tailwind utilities;
+/* Tailwind utils */
+@import '~tailwindcss/utilities.css';

@@ -17,12 +17,21 @@ class RouteServiceProvider extends ServiceProvider
     protected $namespace = 'App\Http\Controllers';
 
     /**
+     * The path to the "home" route for your application.
+     *
+     * @var string
+     */
+    public const HOME = '/home';
+
+    /**
      * Define your route model bindings, pattern filters, etc.
      *
      * @return void
      */
     public function boot()
     {
+        //
+
         parent::boot();
     }
 
@@ -34,17 +43,8 @@ class RouteServiceProvider extends ServiceProvider
     public function map()
     {
         $this->mapApiRoutes();
-
-        $this->mapWebRoutes();
-
         $this->mapAuthRoutes();
-
-        // Register log viewer route.
-        if (config('app.debug') == true) {
-            Route::get('logs',
-                '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')
-                ->name('log.viewer');
-        }
+        $this->mapWebRoutes();
     }
 
     /**
@@ -77,13 +77,14 @@ class RouteServiceProvider extends ServiceProvider
     }
 
     /**
-     * Web authentication routes.
+     * Define the "auth" routes for the application.
      *
      * @return void
      */
     protected function mapAuthRoutes()
     {
-        Route::middleware('web')
+        Route::prefix('auth')
+            ->middleware('web')
             ->namespace($this->namespace)
             ->group(base_path('routes/auth.php'));
     }

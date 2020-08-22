@@ -1,29 +1,38 @@
 {
-    "private": true,
-    "scripts": {
-        "dev": "npm run development",
-        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "watch": "npm run development -- --watch",
-        "watch-poll": "npm run watch -- --watch-poll",
-        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "prod": "npm run production",
-        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
-    },
-    "devDependencies": {
-        "@deveodk/vue-toastr": "^1.0.4",
-        "@fortawesome/fontawesome-free": "^5.8.1",
-        "axios": "^0.18.0",
-        "cross-env": "^5.2.0",
-        "flatpickr": "^4.5.7",
-        "jquery": "^3.4.1",
-        "laravel-mix": "^4.0.15",
-        "laravel-mix-purgecss": "^4.1.0",
-        "laravel-mix-tailwind": "^0.1.0",
-        "lodash": "^4.17.11",
-        "microtip": "^0.2.2",
-        "moment": "^2.24.0",
-        "tailwindcss": "^0.7.4",
-        "vue": "2.6.10",
-        "vue-template-compiler": "2.6.10"
-    }
+  "private": true,
+  "scripts": {
+    "dev": "npm run development",
+    "deploy": "echo \"Error: not yet specified\" && exit 1",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --disable-host-check --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch-poll": "npm run watch -- --watch-poll",
+    "watch": "npm run development -- --watch",
+    "prod": "npm run production"
+  },
+  "prettier": {
+    "arrowParens": "avoid",
+    "bracketSpacing": true,
+    "jsxBracketSameLine": true,
+    "printWidth": 120,
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "none",
+    "useTabs": false
+  },
+  "devDependencies": {
+    "@tailwindcss/ui": "^0.5.0",
+    "alpinejs": "^2.6.0",
+    "axios": "^0.20.0",
+    "cleave.js": "^1.6.0",
+    "cross-env": "^7.0.2",
+    "laravel-mix": "^5.0.5",
+    "lodash": "^4.17.20",
+    "notyf": "^3.9.0",
+    "prettier": "^2.0.5",
+    "tailwindcss": "^1.7.3",
+    "vue-template-compiler": "^2.6.12"
+  },
+  "dependencies": {}
 }

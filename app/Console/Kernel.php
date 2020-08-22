@@ -19,16 +19,12 @@ class Kernel extends ConsoleKernel
     /**
      * Define the application's command schedule.
      *
-     * @param \Illuminate\Console\Scheduling\Schedule $schedule
-     *
+     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
      * @return void
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('telescope:prune --hours=48')->daily();
-
-        $schedule->command('backup:clean')->weekly()->at('01:00');
-        $schedule->command('backup:run')->weekly()->at('02:00');
+        // $schedule->command('inspire')->hourly();
     }
 
     /**
