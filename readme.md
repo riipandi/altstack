@@ -41,7 +41,7 @@ Change `<app_name>` with your own and `<version>` with release version.
 See [release page][releasepage] for the version number.
 
 #### Package Version
-The versioning number will follow the release of the Laravel version, followed by the package version release number:
+The versioning number will follow the release of the Laravel version, followed by the package release number:
 
 ```
 x.y  =>  x is Laravel version, y are Alt Stack version.
