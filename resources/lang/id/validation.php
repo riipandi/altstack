@@ -133,7 +133,7 @@ return [
     'custom' => [
         'g-recaptcha-response' => [
             'required' => 'Pastikan bahwa kamu bukan robot!',
-            'captcha' => 'Captcha error! coba lagi atau hubungi administrator.',
+            'captcha'  => 'Captcha error! coba lagi atau hubungi administrator.',
         ],
     ],
 

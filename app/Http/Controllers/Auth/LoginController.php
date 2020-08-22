@@ -35,7 +35,8 @@ class LoginController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param array $data
+     *
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -53,7 +54,7 @@ class LoginController extends Controller
      */
     public function logout(Request $request)
     {
-        if (! $this->guard('web')->check()) {
+        if (!$this->guard('web')->check()) {
             return redirect(route('login'))->withWarning('You have not logged in before!');
         }
 
