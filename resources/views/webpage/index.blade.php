@@ -1,4 +1,5 @@
 @extends('layouts.site')
+@section('fulltitle', 'Alt Stack - An alternative full-stack development solution')
 
 @section('content')
     <div class="flex flex-col">

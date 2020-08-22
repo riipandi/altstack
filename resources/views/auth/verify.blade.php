@@ -1,4 +1,5 @@
 @extends('layouts.auth')
+@section('title', __('Email Verification'))
 
 @section('content')
     <div class="container mx-auto">

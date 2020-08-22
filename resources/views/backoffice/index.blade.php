@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'User Dashboard')
 
 @section('content')
     <div class="flex items-center">

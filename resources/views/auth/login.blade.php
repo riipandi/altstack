@@ -1,4 +1,5 @@
 @extends('layouts.auth')
+@section('title', __('Login'))
 
 @section('content')
     <div class="container mx-auto">
