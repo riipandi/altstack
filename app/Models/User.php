@@ -11,7 +11,8 @@ use Illuminate\Support\Facades\Storage;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use Notifiable, SoftDeletes;
+    use Notifiable;
+    use SoftDeletes;
 
     // The attributes that are mass assignable.
     protected $fillable = [
@@ -54,11 +55,11 @@ class User extends Authenticatable implements MustVerifyEmail
     // Get user avatar url.
     public function getAvatarAttribute($value)
     {
-        if (! $value) {
+        if (!$value) {
             return asset('images/default-avatar.png');
         }
 
-        if (! filter_var($value, FILTER_VALIDATE_URL)) {
+        if (!filter_var($value, FILTER_VALIDATE_URL)) {
             return Storage::url('avatars/'.$value);
         }
 
