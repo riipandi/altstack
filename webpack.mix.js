@@ -23,4 +23,4 @@ mix
   .postCss('resources/css/style.css', 'public/assets', [require('tailwindcss')])
   .sourceMaps();
 
-// mix.copyDirectory('resources/img', 'public/images');
+mix.copyDirectory('resources/img', 'public/images');
