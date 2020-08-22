@@ -44,8 +44,8 @@ See [release page][releasepage] for the version number.
 The versioning number will follow the release of the Laravel version, followed by the package version release number:
 
 ```
-x.y.z  =>  x is Laravel version, y and z are Larva version.
-7.1.3  =>  Laravel 7.x.x, Larva version 1 revision 3.
+x.y  =>  x is Laravel version, y are AltStack version.
+7.5  =>  Laravel 7.x.x, AltStack revision 5.
 ```
 
 ### Local Installation
