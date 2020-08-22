@@ -1,7 +1,7 @@
 {
   "name": "riipandi/altstack",
   "type": "project",
-  "description": "Alpine.js, Tailwind, and Laravel. An alternative full-stack development solution.",
+  "description": "Alpine.js, Laravel, and Tailwind. An alternative full-stack development solution.",
   "keywords": [
     "framework",
     "alpinejs",
