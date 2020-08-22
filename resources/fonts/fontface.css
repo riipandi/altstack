@@ -1,0 +1,152 @@
+/*   Fonts taken from: http://www.cufonfonts.com   */
+
+/* ------------------------------------------- Font weight 100 -------------------------------------------  */
+@font-face {
+  font-family: 'Hartwell Alt';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: local('Hartwell Alt Thin'), url('Hartwell Alt Thin.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Hartwell Alt';
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src: local('Hartwell Alt Thin Italic'), url('Hartwell Alt Thin Italic.woff') format('woff');
+}
+
+/* ------------------------------------------- Font weight 200 -------------------------------------------  */
+@font-face {
+  font-family: 'Hartwell Alt';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: local('Hartwell Alt Ultralight'), url('Hartwell Alt Ultralight.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Hartwell Alt';
+  font-style: italic;
+  font-weight: 200;
+  font-display: swap;
+  src: local('Hartwell Alt Ultralight Italic'), url('Hartwell Alt Ultralight Italic.woff') format('woff');
+}
+
+/* ------------------------------------------- Font weight 300 -------------------------------------------  */
+@font-face {
+  font-family: 'Hartwell Alt';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Hartwell Alt Light'), url('Hartwell Alt Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Hartwell Alt';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Hartwell Alt Light Italic'), url('Hartwell Alt Light Italic.woff') format('woff');
+}
+
+/* ------------------------------------------- Font weight 400 -------------------------------------------  */
+@font-face {
+  font-family: 'Hartwell Alt';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Hartwell Alt Regular'), url('Hartwell Alt Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Hartwell Alt';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Hartwell Alt Italic'), url('Hartwell Alt Regular Italic.woff') format('woff');
+}
+
+/* ------------------------------------------- Font weight 500 -------------------------------------------  */
+@font-face {
+  font-family: 'Hartwell Alt';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Hartwell Alt Medium'), url('Hartwell Alt Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Hartwell Alt';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Hartwell Alt Medium Italic'), url('Hartwell Alt Medium Italic.woff') format('woff');
+}
+
+/* ------------------------------------------- Font weight 600 -------------------------------------------  */
+@font-face {
+  font-family: 'Hartwell Alt';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Hartwell Alt Semibold'), url('Hartwell Alt Semibold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Hartwell Alt';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Hartwell Alt Semibold Italic'), url('Hartwell Alt Semibold Italic.woff') format('woff');
+}
+
+/* ------------------------------------------- Font weight 700 -------------------------------------------  */
+@font-face {
+  font-family: 'Hartwell Alt';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Hartwell Alt Bold'), url('Hartwell Alt Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Hartwell Alt';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Hartwell Alt Bold Italic'), url('Hartwell Alt Bold Italic.woff') format('woff');
+}
+
+/* ------------------------------------------- Font weight 800 -------------------------------------------  */
+@font-face {
+  font-family: 'Hartwell Alt';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: local('Hartwell Alt Black'), url('Hartwell Alt Black.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Hartwell Alt';
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: local('Hartwell Alt Black Italic'), url('Hartwell Alt Black Italic.woff') format('woff');
+}
+
+/* ------------------------------------------- Font weight 900 -------------------------------------------  */
+@font-face {
+  font-family: 'Hartwell Alt';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Hartwell Alt Heavy'), url('Hartwell Alt Heavy.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Hartwell Alt';
+  font-style: italic;
+  font-weight: 900;
+  src: local('Hartwell Alt Heavy Italic'), url('Hartwell Alt Heavy Italic.woff') format('woff');
+}

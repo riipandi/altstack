@@ -1,5 +1,10 @@
-/* Tailwind Base components */
+/* Tailwind base */
 @import '~tailwindcss/base.css';
+
+/* Fontface */
+@import '../fonts/fontface.css';
+
+/* Tailwind components */
 @import '~tailwindcss/components.css';
 
 /* Libraries and custom styles */

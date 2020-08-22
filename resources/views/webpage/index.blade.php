@@ -19,7 +19,7 @@
         <div class="min-h-screen flex items-center justify-center">
             <div class="flex flex-col justify-around h-full">
                 <div>
-                    <h1 class="text-gray-600 text-center font-normal tracking-wider text-5xl mb-10">
+                    <h1 class="text-gray-600 text-center font-medium tracking-wider text-5xl mb-10">
                         {{ config('app.name', 'Laravel') }}
                     </h1>
                     <ul class="list-reset">
