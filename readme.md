@@ -1,5 +1,6 @@
 # ⎇ Alt Stack - An alternative Laravel stack
 <!-- [![Build Status](https://travis-ci.org/riipandi/altstack.svg?branch=master)](https://travis-ci.org/riipandi/altstack) -->
+[![StyleCI](https://github.styleci.io/repos/174728418/shield?branch=master)](https://github.styleci.io/repos/174728418?branch=master)
 [![Total Download](https://poser.pugx.org/riipandi/altstack/d/total.svg?format=flat-square)](https://packagist.org/packages/riipandi/altstack)
 [![Latest Stable Version](https://poser.pugx.org/riipandi/altstack/v/stable.svg?format=flat-square)](https://packagist.org/packages/riipandi/altstack)
 [![License](https://img.shields.io/badge/license-Apache%202-blue.svg?style=flat-square)](https://choosealicense.com/licenses/apache-2.0/)
