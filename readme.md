@@ -56,6 +56,7 @@ Edit or create `.env` file and then execute:
 composer install --no-suggest
 php artisan key:generate --force
 php artisan migrate:fresh --seed
+php artisan vendor:publish --tag=blade-heroicons --force
 
 # Compiling resources
 npm install --no-optional --no-audit

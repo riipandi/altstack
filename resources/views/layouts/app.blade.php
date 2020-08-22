@@ -23,13 +23,11 @@
                         @endif
                     @else
                         <span class="text-gray-300 text-sm pr-4">{{ Auth::user()->name }}</span>
-                        <a href="{{ route('logout') }}"
-                            class="no-underline hover:underline text-gray-300 text-sm p-3"
-                            onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
-                            {{ csrf_field() }}
-                        </form>
+                        <a href="{{ route('logout') }}" class="no-underline hover:underline text-gray-300 text-sm p-3"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }} <x-heroicon-o-logout class="inline ml-2 w-4 h-4 text-gray-200"/>
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">{{ csrf_field() }}</form>
                     @endguest
                 </div>
             </div>
