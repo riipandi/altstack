@@ -15,13 +15,13 @@
                         @csrf
 
                         <div class="flex flex-wrap mb-6">
-                            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">
-                                {{ __('E-Mail Address') }}:
+                            <label for="identity" class="block text-gray-700 text-sm font-bold mb-2">
+                                {{ __('Username or E-Mail') }}:
                             </label>
 
-                            <input id="email" type="email" class="form-input w-full @error('email') border-red-500 @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                            <input id="identity" type="identity" class="form-input w-full @error('identity') border-red-500 @enderror" name="identity" value="{{ old('identity') }}" autocomplete="identity" autofocus>
 
-                            @error('email')
+                            @error('identity')
                                 <p class="text-red-500 text-xs italic mt-4">
                                     {{ $message }}
                                 </p>
@@ -33,7 +33,7 @@
                                 {{ __('Password') }}:
                             </label>
 
-                            <input id="password" type="password" class="form-input w-full @error('password') border-red-500 @enderror" name="password" required>
+                            <input id="password" type="password" class="form-input w-full @error('password') border-red-500 @enderror" name="password">
 
                             @error('password')
                                 <p class="text-red-500 text-xs italic mt-4">

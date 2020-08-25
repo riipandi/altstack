@@ -33,18 +33,31 @@ class LoginController extends Controller
     }
 
     /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param array $data
-     *
-     * @return \Illuminate\Contracts\Validation\Validator
+     * Login with username or email.
      */
-    protected function validator(array $data)
+    public function login(Request $request)
     {
-        return Validator::make($data, [
-            'email'    => ['required', 'string', 'email'],
-            'password' => ['required', 'string'],
+        $this->validate($request, [
+            'identity' => 'required',
+            'password' => 'required',
         ]);
+
+        $identity = $request->input('identity');
+        $remember = $request->input('remember');
+        $loginType = filter_var($identity, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+        $request->merge([$loginType => $identity]);
+
+        if (auth()->attempt($request->only($loginType, 'password'), $remember)) {
+            return redirect()
+                ->intended($this->redirectPath())
+                ->withSuccess('Welcome back '.auth()->user()->first_name);
+        }
+
+        return redirect()->back()
+            ->withInput()
+            ->withErrors([
+                'identity' => __('These credentials do not match our records.'),
+            ]);
     }
 
     /**
@@ -54,7 +67,7 @@ class LoginController extends Controller
      */
     public function logout(Request $request)
     {
-        if (!$this->guard('web')->check()) {
+        if (! $this->guard('web')->check()) {
             return redirect(route('login'))->withWarning('You have not logged in before!');
         }
 
