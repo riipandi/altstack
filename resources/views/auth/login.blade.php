@@ -70,7 +70,11 @@
                             @endif
                         </div>
                     </form>
-
+                </div>
+                <div class="w-full text-sm text-center text-gray-700 mt-8">
+                    <a class="text-gray-100 hover:text-blue-200 no-underline" href="{{ route('landing') }}">
+                        {!! __('&larr; back to homepage') !!}
+                    </a>
                 </div>
             </div>
         </div>
