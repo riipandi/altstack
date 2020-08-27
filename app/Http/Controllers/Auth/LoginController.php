@@ -69,7 +69,7 @@ class LoginController extends Controller
      */
     public function logout(Request $request)
     {
-        if (! $this->guard('web')->check()) {
+        if (!$this->guard('web')->check()) {
             return redirect(route('login'))->withWarning('You have not logged in before!');
         }
 
