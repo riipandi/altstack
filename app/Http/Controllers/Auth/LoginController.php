@@ -11,6 +11,9 @@ class LoginController extends Controller
 {
     use AuthenticatesUsers;
 
+    protected $maxAttempts = 3;  // Default is 5
+    protected $decayMinutes = 2; // Default is 1
+
     /**
      * Create a new controller instance.
      *
@@ -66,7 +69,7 @@ class LoginController extends Controller
      */
     public function logout(Request $request)
     {
-        if (!$this->guard('web')->check()) {
+        if (! $this->guard('web')->check()) {
             return redirect(route('login'))->withWarning('You have not logged in before!');
         }
 
