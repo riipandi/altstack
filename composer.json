@@ -38,7 +38,8 @@
     "laravel/ui": "^2.1",
     "league/flysystem-aws-s3-v3": "^1.0",
     "riipandi/laravel-optikey": "^1.2",
-    "theiconic/name-parser": "^1.2"
+    "theiconic/name-parser": "^1.2",
+    "watson/active": "^5.0"
   },
   "require-dev": {
     "facade/ignition": "^2.0",
