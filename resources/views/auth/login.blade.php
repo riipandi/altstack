@@ -19,7 +19,7 @@
                                 {{ __('Username or E-Mail') }}:
                             </label>
 
-                            <input id="identity" type="identity" class="form-input w-full @error('identity') border-red-500 @enderror" name="identity" value="{{ old('identity') }}" autocomplete="identity" autofocus>
+                            <input id="identity" type="text" class="form-input w-full @error('identity') border-red-500 @enderror" name="identity" value="{{ old('identity') }}" autocomplete="identity" autofocus>
 
                             @error('identity')
                                 <p class="text-red-500 text-xs italic mt-4">

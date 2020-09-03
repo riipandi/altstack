@@ -10,7 +10,7 @@ class DefaultUserSeeder extends Seeder
     {
         App\Models\User::create([
             'name'              => 'Admin Sistem',
-            'email'             => 'admin@localhost',
+            'email'             => 'admin@example.org',
             'username'          => 'admin',
             'password'          => Hash::make('passw0rd'),
             'remember_token'    => Str::random(12),
