@@ -276,7 +276,7 @@
                 <div class="relative" x-data="{ open: false }" x-cloak>
                     <div @click="open = !open"
                         class="cursor-pointer font-bold w-10 h-10 bg-blue-200 text-blue-600 flex items-center justify-center rounded-full">
-                        <img src="{{ Auth::user()->avatar }}" class="h-8 w-auto" alt="User Avatar">
+                        <img src="{{ Auth::user()->avatar }}" class="object-cover rounded-full h-8 w-full" alt="User Avatar">
                     </div>
                     <div x-show.transition="open" @click.away="open = false" class="absolute top-0 mt-12 right-0 w-48 bg-white py-2 shadow-md border border-gray-100 rounded-lg z-40">
                         <a href="javascript:;" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600">
