@@ -50,16 +50,12 @@ class LoginController extends Controller
         $request->merge([$loginType => $identity]);
 
         if (auth()->attempt($request->only($loginType, 'password'), $remember)) {
-            return redirect()
-                ->intended($this->redirectPath())
-                ->withSuccess('Welcome back '.auth()->user()->first_name);
+            $returnUrl = ! empty($request->input('next')) ? $request->input('next') : $this->redirectPath();
+
+            return redirect($returnUrl)->withSuccess('Welcome back '.auth()->user()->first_name);
         }
 
-        return redirect()->back()
-            ->withInput()
-            ->withErrors([
-                'identity' => __('These credentials do not match our records.'),
-            ]);
+        return redirect()->back()->withInput()->withErrors(['identity' => __('These credentials do not match our records.')]);
     }
 
     /**
@@ -69,7 +65,7 @@ class LoginController extends Controller
      */
     public function logout(Request $request)
     {
-        if (!$this->guard('web')->check()) {
+        if (! $this->guard('web')->check()) {
             return redirect(route('login'))->withWarning('You have not logged in before!');
         }
 
@@ -81,9 +77,9 @@ class LoginController extends Controller
 
     public function authenticated(Request $request, $user)
     {
-        return redirect()
-            ->intended($this->redirectPath())
-            ->withSuccess('Welcome back '.$user->name.'!');
+        $returnUrl = ! empty($request->input('next')) ? $request->input('next') : $this->redirectPath();
+
+        return redirect($returnUrl)->withSuccess('Welcome back '.$user->name.'!');
     }
 
     /**

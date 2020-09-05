@@ -12,7 +12,8 @@
                     </div>
 
                     <form class="w-full p-6" method="POST" action="{{ route('login') }}" autocomplete="off">
-                        @csrf
+                        @csrf <input type="hidden" name="next" value="{{ Request()->next }}">
+
                         <div class="flex flex-wrap mb-6">
                             <label for="identity" class="block text-gray-700 text-sm font-bold mb-2">{{ __('Username or E-Mail') }}:</label>
                             <input id="identity" type="text" class="form-input w-full @error('identity') border-red-500 @enderror" name="identity" value="{{ old('identity') }}" autofocus>
