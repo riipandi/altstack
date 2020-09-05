@@ -46,8 +46,7 @@
     "fzaninotto/faker": "^1.9.1",
     "mockery/mockery": "^1.3.1",
     "nunomaduro/collision": "^4.1",
-    "phpunit/phpunit": "^9.3",
-    "stefanbauer/tailwindcss-breakpoint-detector": "^1.0"
+    "phpunit/phpunit": "^9.3"
   },
   "config": {
     "optimize-autoloader": true,
