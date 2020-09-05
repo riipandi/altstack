@@ -42,6 +42,7 @@ class LoginController extends Controller
         $this->validate($request, [
             'identity' => 'required',
             'password' => 'required',
+            // 'g-recaptcha-response' => 'required|captcha',
         ]);
 
         $identity = $request->input('identity');
