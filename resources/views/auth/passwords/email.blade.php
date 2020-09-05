@@ -18,21 +18,12 @@
                         {{ __('Reset Password') }}
                     </div>
 
-                    <form class="w-full p-6" method="POST" action="{{ route('password.email') }}">
+                    <form class="w-full p-6" method="POST" action="{{ route('password.email') }}" autocomplete="off">
                         @csrf
-
                         <div class="flex flex-wrap mb-6">
-                            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">
-                                {{ __('E-Mail Address') }}:
-                            </label>
-
-                            <input id="email" type="email" class="form-input w-full @error('email') border-red-500 @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                            @error('email')
-                                <p class="text-red-500 text-xs italic mt-4">
-                                    {{ $message }}
-                                </p>
-                            @enderror
+                            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">{{ __('E-Mail Address') }}:</label>
+                            <input id="email" type="email" class="form-input w-full @error('email') border-red-500 @enderror" name="email" value="{{ old('email') }}" required autofocus>
+                            @error('email')<p class="text-red-500 text-xs italic mt-4">{{ $message }}</p>@enderror
                         </div>
 
                         <div class="flex flex-wrap">

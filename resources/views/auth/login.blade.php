@@ -11,35 +11,18 @@
                         {{ __('Login') }}
                     </div>
 
-                    <form class="w-full p-6" method="POST" action="{{ route('login') }}">
+                    <form class="w-full p-6" method="POST" action="{{ route('login') }}" autocomplete="off">
                         @csrf
-
                         <div class="flex flex-wrap mb-6">
-                            <label for="identity" class="block text-gray-700 text-sm font-bold mb-2">
-                                {{ __('Username or E-Mail') }}:
-                            </label>
-
-                            <input id="identity" type="text" class="form-input w-full @error('identity') border-red-500 @enderror" name="identity" value="{{ old('identity') }}" autocomplete="identity" autofocus>
-
-                            @error('identity')
-                                <p class="text-red-500 text-xs italic mt-4">
-                                    {{ $message }}
-                                </p>
-                            @enderror
+                            <label for="identity" class="block text-gray-700 text-sm font-bold mb-2">{{ __('Username or E-Mail') }}:</label>
+                            <input id="identity" type="text" class="form-input w-full @error('identity') border-red-500 @enderror" name="identity" value="{{ old('identity') }}" autofocus>
+                            @error('identity')<p class="text-red-500 text-xs italic mt-4">{{ $message }}</p>@enderror
                         </div>
 
                         <div class="flex flex-wrap mb-6">
-                            <label for="password" class="block text-gray-700 text-sm font-bold mb-2">
-                                {{ __('Password') }}:
-                            </label>
-
+                            <label for="password" class="block text-gray-700 text-sm font-bold mb-2">{{ __('Password') }}:</label>
                             <input id="password" type="password" class="form-input w-full @error('password') border-red-500 @enderror" name="password">
-
-                            @error('password')
-                                <p class="text-red-500 text-xs italic mt-4">
-                                    {{ $message }}
-                                </p>
-                            @enderror
+                            @error('password')<p class="text-red-500 text-xs italic mt-4">{{ $message }}</p>@enderror
                         </div>
 
                         <div class="flex mb-6">

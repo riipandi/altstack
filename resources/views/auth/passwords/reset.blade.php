@@ -11,45 +11,26 @@
                         {{ __('Reset Password') }}
                     </div>
 
-                    <form class="w-full p-6" method="POST" action="{{ route('password.update') }}">
+                    <form class="w-full p-6" method="POST" action="{{ route('password.update') }}" autocomplete="off">
                         @csrf
 
                         <input type="hidden" name="token" value="{{ $token }}">
 
                         <div class="flex flex-wrap mb-6">
-                            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">
-                                {{ __('E-Mail Address') }}:
-                            </label>
-
-                            <input id="email" type="email" class="form-input w-full @error('email') border-red-500 @enderror" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
-
-                            @error('email')
-                                <p class="text-red-500 text-xs italic mt-4">
-                                    {{ $message }}
-                                </p>
-                            @enderror
+                            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">{{ __('E-Mail Address') }}:</label>
+                            <input id="email" type="email" class="form-input w-full @error('email') border-red-500 @enderror" name="email" value="{{ $email ?? old('email') }}" required autofocus>
+                            @error('email')<p class="text-red-500 text-xs italic mt-4">{{ $message }}</p>@enderror
                         </div>
 
                         <div class="flex flex-wrap mb-6">
-                            <label for="password" class="block text-gray-700 text-sm font-bold mb-2">
-                                {{ __('Password') }}:
-                            </label>
-
-                            <input id="password" type="password" class="form-input w-full @error('password') border-red-500 @enderror" name="password" required autocomplete="new-password">
-
-                            @error('password')
-                                <p class="text-red-500 text-xs italic mt-4">
-                                    {{ $message }}
-                                </p>
-                            @enderror
+                            <label for="password" class="block text-gray-700 text-sm font-bold mb-2">{{ __('Password') }}:</label>
+                            <input id="password" type="password" class="form-input w-full @error('password') border-red-500 @enderror" name="password" required>
+                            @error('password')<p class="text-red-500 text-xs italic mt-4">{{ $message }}</p>@enderror
                         </div>
 
                         <div class="flex flex-wrap mb-6">
-                            <label for="password-confirm" class="block text-gray-700 text-sm font-bold mb-2">
-                                {{ __('Confirm Password') }}:
-                            </label>
-
-                            <input id="password-confirm" type="password" class="form-input w-full" name="password_confirmation" required autocomplete="new-password">
+                            <label for="password-confirm" class="block text-gray-700 text-sm font-bold mb-2">{{ __('Confirm Password') }}:</label>
+                            <input id="password-confirm" type="password" class="form-input w-full" name="password_confirmation" required>
                         </div>
 
                         <div class="flex flex-wrap">

@@ -11,25 +11,16 @@
                         {{ __('Confirm Password') }}
                     </div>
 
-                    <form class="w-full p-6" method="POST" action="{{ route('password.confirm') }}">
+                    <form class="w-full p-6" method="POST" action="{{ route('password.confirm') }}" autocomplete="off">
                         @csrf
-
                         <p class="leading-normal">
                             {{ __('Please confirm your password before continuing.') }}
                         </p>
 
                         <div class="flex flex-wrap my-6">
-                            <label for="password" class="block text-gray-700 text-sm font-bold mb-2">
-                                {{ __('Password') }}:
-                            </label>
-
-                            <input id="password" type="password" class="form-input w-full @error('password') border-red-500 @enderror" name="password" required autocomplete="new-password">
-
-                            @error('password')
-                                <p class="text-red-500 text-xs italic mt-4">
-                                    {{ $message }}
-                                </p>
-                            @enderror
+                            <label for="password" class="block text-gray-700 text-sm font-bold mb-2">{{ __('Password') }}:</label>
+                            <input id="password" type="password" class="form-input w-full @error('password') border-red-500 @enderror" name="password" required>
+                            @error('password')<p class="text-red-500 text-xs italic mt-4">{{ $message }}</p>@enderror
                         </div>
 
                         <div class="flex flex-wrap items-center">
