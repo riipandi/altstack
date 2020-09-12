@@ -1,22 +1,26 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------------------------------
-| Site Routes
-|--------------------------------------------------------------------------------------------------
-*/
-
-// Landing page...
-Route::view('/', 'webpage.index')->name('landing');
+use Illuminate\Support\Facades\Route;
 
 /*
-|--------------------------------------------------------------------------------------------------
-| Backoffice Routes
-|--------------------------------------------------------------------------------------------------
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
 */
 
-// User home page...
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
 
 /*
 |--------------------------------------------------------------------------------------------------
@@ -25,5 +29,3 @@ Route::get('/home', 'HomeController@index')->name('home');
 */
 
 Route::redirect('.env', 'https://github.com/riipandi', 302);
-Route::redirect('logout', '/auth/logout', 302);
-Route::redirect('login', '/auth/login', 302);

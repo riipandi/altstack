@@ -3,30 +3,62 @@
 namespace App\Models;
 
 use Carbon\Carbon;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Support\Facades\Storage;
+// use Illuminate\Database\Eloquent\SoftDeletes;
+use Laravel\Fortify\TwoFactorAuthenticatable;
+use Laravel\Jetstream\HasProfilePhoto;
+use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable implements MustVerifyEmail
+class User extends Authenticatable
 {
+    use HasApiTokens;
+    use HasFactory;
+    use HasProfilePhoto;
     use Notifiable;
-    use SoftDeletes;
+    // use SoftDeletes;
+    use TwoFactorAuthenticatable;
 
-    // The attributes that are mass assignable.
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
-        'name', 'email', 'username', 'password', 'avatar',
+        'name',
+        'email',
+        'password',
     ];
 
-    // The attributes that should be hidden for arrays.
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
+        'two_factor_recovery_codes',
+        'two_factor_secret',
     ];
 
-    // The attributes that should be cast to native types.
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
     protected $casts = [
         'email_verified_at' => 'datetime',
+    ];
+
+    /**
+     * The accessors to append to the model's array form.
+     *
+     * @var array
+     */
+    protected $appends = [
+        'profile_photo_url',
     ];
 
     // Get user first name.
@@ -42,33 +74,5 @@ class User extends Authenticatable implements MustVerifyEmail
     public function getCreatedAtAttribute()
     {
         return Carbon::parse($this->attributes['created_at'])->format('d F Y H:i');
-    }
-
-    // Get updated date attribute.
-    public function getUpdatedAtAttribute()
-    {
-        return Carbon::parse($this->attributes['updated_at'])
-            ->locale(config('app.locale'))
-            ->diffForHumans();
-    }
-
-    // Get user avatar url.
-    public function getAvatarAttribute($value)
-    {
-        if (!$value) {
-            return asset('images/default-avatar.png');
-        }
-
-        if (!filter_var($value, FILTER_VALIDATE_URL)) {
-            return Storage::url('avatars/'.$value);
-        }
-
-        return $value;
-    }
-
-    // Set username attribute to lowercase.
-    public function setUsernameAttribute($value)
-    {
-        $this->attributes['username'] = strtolower($value);
     }
 }

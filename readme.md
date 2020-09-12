@@ -15,7 +15,7 @@ offer no support whatsoever. We also don't follow semver for this project and wo
 > In short: when using this, you're on your own.
 
 ## Quick Start
-At least you will need `PHP >= 7.2.5` and `Nodejs >= 12.16`. For database backend, you can choose between
+At least you will need `PHP >= 7.3.5` and `Nodejs >= 12.16`. For database backend, you can choose between
 `PostgreSQL >= 9.6` or `MySQL >= 5.7` or `MariaDB >= 10.3` or any other database engine that supported
 by Laravel. Also, you maybe want to use `Redis >= 3.2` for session store and or caching storage.
 
@@ -57,7 +57,10 @@ Edit or create `.env` file and then execute:
 composer install --no-suggest
 php artisan key:generate --force
 php artisan migrate:fresh --seed
+
+# Publish vendor components
 php artisan vendor:publish --tag=blade-heroicons --force
+php artisan livewire:publish --assets --force
 
 # Compiling resources
 npm install --no-optional --no-audit

@@ -1,0 +1,2 @@
+/* Hide annoying Google reCAPTCHA v3 Badge */
+.grecaptcha-badge { visibility: hidden; }

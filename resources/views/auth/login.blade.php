@@ -1,66 +1,48 @@
-@extends('layouts.auth')
-@section('title', __('Login'))
+<x-guest-layout>
+    <x-jet-authentication-card>
+        <x-slot name="logo">
+            <x-jet-authentication-card-logo />
+        </x-slot>
 
-@section('content')
-    <div class="container mx-auto">
-        <div class="flex flex-wrap justify-center">
-            <div class="w-full max-w-sm">
-                <div class="flex flex-col break-words bg-white border-2 rounded shadow-md">
+        <x-jet-validation-errors class="mb-4" />
 
-                    <div class="font-semibold bg-gray-200 text-gray-700 py-3 px-6 mb-0">
-                        {{ __('Login') }}
-                    </div>
-
-                    <form class="w-full p-6" method="POST" action="{{ route('login') }}" autocomplete="off">
-                        @csrf <input type="hidden" name="next" value="{{ Request()->next }}">
-
-                        <div class="flex flex-wrap mb-6">
-                            <label for="identity" class="block text-gray-700 text-sm font-bold mb-2">{{ __('Username or E-Mail') }}:</label>
-                            <input id="identity" type="text" class="form-input w-full @error('identity') border-red-500 @enderror" name="identity" value="{{ old('identity') }}" autofocus>
-                            @error('identity')<p class="text-red-500 text-xs italic mt-4">{{ $message }}</p>@enderror
-                        </div>
-
-                        <div class="flex flex-wrap mb-6">
-                            <label for="password" class="block text-gray-700 text-sm font-bold mb-2">{{ __('Password') }}:</label>
-                            <input id="password" type="password" class="form-input w-full @error('password') border-red-500 @enderror" name="password">
-                            @error('password')<p class="text-red-500 text-xs italic mt-4">{{ $message }}</p>@enderror
-                        </div>
-
-                        <div class="flex mb-6">
-                            <label class="inline-flex items-center text-sm text-gray-700" for="remember">
-                                <input type="checkbox" name="remember" id="remember" class="form-checkbox" {{ old('remember') ? 'checked' : '' }}>
-                                <span class="ml-2">{{ __('Remember Me') }}</span>
-                            </label>
-                        </div>
-
-                        <div class="flex flex-wrap items-center">
-                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-gray-100 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                                {{ __('Login') }}
-                            </button>
-
-                            @if (Route::has('password.request'))
-                                <a class="text-sm text-blue-500 hover:text-blue-700 whitespace-no-wrap no-underline ml-auto" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
-                                </a>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <p class="w-full text-xs text-center text-gray-700 mt-8 -mb-4">
-                                    {{ __("Don't have an account?") }}
-                                    <a class="text-blue-500 hover:text-blue-700 no-underline" href="{{ route('register') }}">
-                                        {{ __('Register') }}
-                                    </a>
-                                </p>
-                            @endif
-                        </div>
-                    </form>
-                </div>
-                <div class="w-full text-sm text-center text-gray-700 mt-8">
-                    <a class="text-gray-100 hover:text-blue-200 no-underline" href="{{ route('landing') }}">
-                        {!! __('&larr; back to homepage') !!}
-                    </a>
-                </div>
+        @if (session('status'))
+            <div class="mb-4 font-medium text-sm text-green-600">
+                {{ session('status') }}
             </div>
-        </div>
-    </div>
-@endsection
+        @endif
+
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
+
+            <div>
+                <x-jet-label value="Email" />
+                <x-jet-input class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+            </div>
+
+            <div class="mt-4">
+                <x-jet-label value="Password" />
+                <x-jet-input class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
+            </div>
+
+            <div class="block mt-4">
+                <label class="flex items-center">
+                    <input type="checkbox" class="form-checkbox" name="remember">
+                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                </label>
+            </div>
+
+            <div class="flex items-center justify-end mt-4">
+                @if (Route::has('password.request'))
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
+                        {{ __('Forgot your password?') }}
+                    </a>
+                @endif
+
+                <x-jet-button class="ml-4">
+                    {{ __('Login') }}
+                </x-jet-button>
+            </div>
+        </form>
+    </x-jet-authentication-card>
+</x-guest-layout>

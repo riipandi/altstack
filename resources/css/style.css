@@ -1,17 +1,4 @@
-/* Tailwind base */
-@import '~tailwindcss/base.css';
-
-/* Fontface */
-@import '../fonts/fontface.css';
-
-/* Tailwind components */
-@import '~tailwindcss/components.css';
-
-/* Libraries and custom styles */
-@import '~notyf/notyf.min.css';
-
-/* Hide annoying Google reCAPTCHA v3 Badge */
-.grecaptcha-badge { visibility: hidden; }
-
-/* Tailwind utils */
-@import '~tailwindcss/utilities.css';
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import './app.css';
+@import 'tailwindcss/utilities';

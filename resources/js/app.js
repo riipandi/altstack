@@ -1,7 +1,6 @@
 import 'alpinejs';
 import { Notyf } from 'notyf';
-
-// const isProd = process.env.NODE_ENV === 'production';
+import { smoothScrollAnchor } from 'smooth-scroll-anchor';
 
 //-------------------------------------------------------------------------------------------------
 // Common libraries...
@@ -49,3 +48,10 @@ window.notyf = new Notyf({
 // cleave.js validator
 window.Cleave = require('cleave.js').default;
 require('cleave.js/dist/addons/cleave-phone.id');
+
+// Smooth scrolling anchor
+window.smoothScrollAnchor = new smoothScrollAnchor({
+  behaviour: 'smooth', // [smooth | auto] Smooth animated scroll or instant
+  block: 'start', // [start | center | end | nearest] Alignment of the target element when it's finished scrolling
+  offset: 0 // Optional offset of the target scroll position. Handy if you have a fixed header!
+});

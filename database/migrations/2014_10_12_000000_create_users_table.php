@@ -17,15 +17,12 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('username', 30)->unique();
-            $table->string('password');
-            $table->string('avatar')->nullable();
-            $table->rememberToken();
-            $table->timestamps();
             $table->timestamp('email_verified_at')->nullable();
-            $table->softDeletes();
-
-            $table->index(['id', 'email', 'username']);
+            $table->string('password');
+            $table->rememberToken();
+            $table->string('current_team_id')->nullable();
+            $table->text('profile_photo_path')->nullable();
+            $table->timestamps();
         });
     }
 

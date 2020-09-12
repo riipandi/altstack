@@ -2,36 +2,43 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
-  future: { removeDeprecatedGapUtilities: true },
+  future: {
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true
+  },
   purge: isProd
     ? {
-        content: [
-          './app/**/*.php',
-          './resources/**/*.css',
-          './resources/**/*.html',
-          './resources/**/*.js',
-          './resources/**/*.jsx',
-          './resources/**/*.ts',
-          './resources/**/*.tsx',
-          './resources/**/*.php',
-          './resources/**/*.vue'
-        ],
+        content: ['./storage/framework/views/*.php', './resources/views/**/*.blade.php'],
         options: {
-          defaultExtractor: content => content.match(/[\w-/.:]+(?<!:)/g) || [],
-          whitelistPatterns: [/-active$/, /-enter$/, /-leave-to$/, /show$/]
+          whitelist: ['mode-dark']
         }
       }
     : false,
   theme: {
-    fontFamily: {
-      sans: ["'Hartwell Alt'", "'Inter'", ...defaultTheme.fontFamily.sans]
+    extend: {
+      fontFamily: {
+        sans: ["'Robert Sans'", "'Inter'", ...defaultTheme.fontFamily.sans]
+      },
+      colors: {
+        primary: '#6875F5',
+        secondary: '#FF9900'
+      }
     },
-    extend: {}
+    darkSelector: '.mode-dark'
   },
-  variants: {},
+
+  variants: {
+    opacity: ['responsive', 'hover', 'focus', 'disabled'],
+    backgroundColor: ['dark', 'dark-hover', 'dark-group-hover', 'dark-even', 'dark-odd'],
+    borderColor: ['dark', 'dark-disabled', 'dark-focus', 'dark-focus-within'],
+    textColor: ['dark', 'dark-hover', 'dark-active', 'dark-placeholder']
+  },
+
   plugins: [
+    require('tailwindcss-dark-mode')(),
     require('@tailwindcss/ui')({
       layout: 'sidebar'
-    })
+    }),
+    require('@tailwindcss/typography')
   ]
 };

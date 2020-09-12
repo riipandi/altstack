@@ -6,7 +6,6 @@ const mix = require('laravel-mix');
 if (mix.inProduction()) {
   mix.disableNotifications().version();
   mix.options({
-    postCss: [require('autoprefixer')],
     uglify: {
       uglifyOptions: {
         compress: { drop_console: true }
@@ -18,8 +17,7 @@ if (mix.inProduction()) {
 mix.webpackConfig({
   resolve: {
     alias: {
-      '@': path.resolve('resources/js')
-      // '~': path.resolve('resources/css'),
+      '@js': path.resolve('resources/js')
     }
   }
 });
@@ -29,7 +27,7 @@ mix.webpackConfig({
 //-------------------------------------------------------------------------------------------------
 mix
   .js('resources/js/app.js', 'public/assets')
-  .postCss('resources/css/style.css', 'public/assets', [require('tailwindcss')])
-  .sourceMaps();
+  .postCss('resources/fonts/fontface.css', 'public/assets')
+  .postCss('resources/css/style.css', 'public/assets', [require('postcss-import'), require('tailwindcss')]);
 
 mix.copyDirectory('resources/img', 'public/images');
