@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,4 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 */
 
 Route::redirect('.env', 'https://github.com/riipandi', 302);
+Route::get('logout', [AuthController::class, 'destroy'])->name('logout');
