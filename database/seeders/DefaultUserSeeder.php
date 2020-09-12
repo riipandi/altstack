@@ -18,6 +18,7 @@ class DefaultUserSeeder extends Seeder
     {
         User::create([
             'name'              => 'Admin Sistem',
+            'username'          => 'admin',
             'email'             => 'admin@example.org',
             'password'          => Hash::make('passw0rd'),
             'remember_token'    => Str::random(12),
