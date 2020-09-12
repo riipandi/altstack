@@ -16,8 +16,8 @@
             @csrf
 
             <div>
-                <x-jet-label value="Username or email" />
-                <x-jet-input class="block mt-1 w-full" type="text" name="identity" :value="old('identity')" required autofocus />
+                <x-jet-label value="Email" />
+                <x-jet-input class="block mt-1 w-full" type="text" name="email" :value="old('email')" required autofocus />
             </div>
 
             <div class="mt-4">
