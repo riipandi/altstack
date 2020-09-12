@@ -4,6 +4,7 @@
   "description": "Alpine.js, Laravel, and Tailwind. An alternative full-stack development solution.",
   "keywords": [
     "framework",
+    "livewire",
     "alpinejs",
     "laravel",
     "tailwindcss"
