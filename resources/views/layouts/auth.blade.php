@@ -1,8 +1,8 @@
 @extends('layouts.base')
 
 @push('meta')
-    <meta name="robots" content="index, follow">
-    <meta name="googlebot" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
 @endpush
 
 @section('body')

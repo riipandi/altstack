@@ -27,5 +27,20 @@
     </head>
     <body class="antialiased">
         @yield('body')
+
+        {{-- Alert --}}
+        @if (session('resent'))
+            <script>notyf.open({type: 'success', message: "{{ __('Link untuk verifikasi berhasil dikirim ke email Anda.') }}"});</script>
+        @endif
+        @if (session('verified'))
+            <script>notyf.open({type: 'success', message: "Selamat datang di {{ config('app.name') }}! Email Anda sudah terverifikasi."});</script>
+        @endif
+        @if (($msg = session('status')) || ($msg = session('message')) || ($msg = session('info')))
+            <script>notyf.open({ type: 'info', message: '{{ $msg }}' });</script>
+        @endif
+        @if ($msg = session('success'))<script>notyf.open({ type: 'success', message: '{{ $msg }}' });</script>@endif
+        @if ($msg = session('warning'))<script>notyf.open({ type: 'warning', message: '{{ $msg }}' });</script>@endif
+        @if ($msg = session('error'))<script>notyf.open({ type: 'error', message: '{{ $msg }}' });</script>@endif
+        {{-- // Alert --}}
     </body>
 </html>
