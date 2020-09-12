@@ -5,9 +5,9 @@ namespace App\Actions\Fortify;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 use Laravel\Fortify\Rules\Password;
-use Illuminate\Support\Str;
 
 class CreateNewUser implements CreatesNewUsers
 {
@@ -23,7 +23,7 @@ class CreateNewUser implements CreatesNewUsers
         Validator::make($input, [
             'name'     => ['required', 'string', 'max:255'],
             'email'    => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', (new Password)->requireNumeric()->requireUppercase(), 'confirmed'],
+            'password' => ['required', 'string', (new Password())->requireNumeric()->requireUppercase(), 'confirmed'],
             // 'username' => ['required', 'string', 'min:4', 'max:30', 'unique:users', 'alpha_dash'],
         ])->validate();
 
