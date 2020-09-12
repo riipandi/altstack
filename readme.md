@@ -15,7 +15,7 @@ guarantee that the code (especially the master branch) is stable.
 > In short: when using this, you're on your own.
 
 ## Quick Start
-At least you will need `PHP >= 7.3.5` and `Nodejs >= 12.16`. For database backend, you can choose between
+At least you will need `PHP >= 7.3` and `Nodejs >= 12.16`. For database backend, you can choose between
 `PostgreSQL >= 9.6` or `MySQL >= 5.7` or `MariaDB >= 10.3` or any other database engine that supported
 by Laravel. Also, you maybe want to use `Redis >= 3.2` for session store and or caching storage.
 
