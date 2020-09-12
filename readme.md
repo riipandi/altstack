@@ -6,11 +6,11 @@
 [![License](https://img.shields.io/badge/license-Apache%202-blue.svg?style=flat-square)](https://choosealicense.com/licenses/apache-2.0/)
 
 ## Introduction
-This is the Laravel template with Tailwind and Alpine.js as default preset and ships with some features like
-user management with UUID for primary key, and Two Factor Authentication. I'm using this template for (nearly)
-all my personal projects and professional projects, but you may use my template but please notice that we
-offer no support whatsoever. We also don't follow semver for this project and won't guarantee that the code
-(especially the master branch) is stable.
+This is the Laravel template with Tailwind, Alpine.js, and Livewire as default preset and ships with some
+features like user management with UUID for primary key, and Two Factor Authentication. I'm using this
+template for (nearly) all my personal projects and professional projects, but you may use my template but
+please notice that we offer no support whatsoever. We also don't follow semver for this project and won't
+guarantee that the code (especially the master branch) is stable.
 
 > In short: when using this, you're on your own.
 
@@ -76,9 +76,9 @@ If you discover any security related issues, please send an e-mail to [riipandi@
 instead of using the issue tracker.
 
 ## LICENSE
-Laravel is a trademark of Taylor Otwell, TailwindCSS is a trademark of Adam Wathan, and Alpine.js is a
-trademark of Caleb Porzio. Both of them are licensed under the terms of the MIT License. This template
-licensed under the terms of [Apache License 2.0][choosealicense].
+Laravel is a trademark of Taylor Otwell, TailwindCSS is a trademark of Adam Wathan, Laravel Livewire and
+Alpine.js is a trademark of Caleb Porzio. Both of them are licensed under the terms of the MIT License.
+This template licensed under the terms of [Apache License 2.0][choosealicense].
 
 Please see [license file](./license.txt) for more information.
 
