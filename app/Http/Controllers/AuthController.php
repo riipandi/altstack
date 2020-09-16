@@ -6,7 +6,6 @@ use Illuminate\Contracts\Auth\StatefulGuard;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Laravel\Fortify\Contracts\LogoutResponse;
-use Laravel\Fortify\Fortify;
 
 class AuthController extends Controller
 {
@@ -21,6 +20,7 @@ class AuthController extends Controller
      * Create a new controller instance.
      *
      * @param  \Illuminate\Contracts\Auth\StatefulGuard
+     *
      * @return void
      */
     public function __construct(StatefulGuard $guard)
@@ -31,7 +31,8 @@ class AuthController extends Controller
     /**
      * Destroy an authenticated session.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Laravel\Fortify\Contracts\LogoutResponse
      */
     public function destroy(Request $request): LogoutResponse
