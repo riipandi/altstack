@@ -6,6 +6,10 @@
 [![License](https://img.shields.io/badge/license-Apache%202-blue.svg?style=flat-square)](https://choosealicense.com/licenses/apache-2.0/)
 
 ## Introduction
+AltStack is a boilerplate meant to standardize much of the setup that almost every web application needs. 
+Reclaim your first few hours of development on every new project by allowing AltStack to give you a 
+little speed boost.
+
 This is the Laravel template with Tailwind, Alpine.js, and Livewire as default preset and ships with some
 features like user management with UUID for primary key, and Two Factor Authentication. I'm using this
 template for (nearly) all my personal projects and professional projects, but you may use my template but
