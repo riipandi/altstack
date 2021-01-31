@@ -8,13 +8,17 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
+use Riipandi\LaravelOptiKey\Traits\HasUuidKey;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
     use HasFactory;
+    use HasUuidKey;
     use Notifiable;
     use SoftDeletes;
     use TwoFactorAuthenticatable;
+
+    protected $optiKeyFieldName = 'uuid';
 
     // The attributes that are mass assignable.
     protected $fillable = [
