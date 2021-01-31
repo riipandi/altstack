@@ -46,7 +46,7 @@ return [
     |
     */
 
-    'username' => 'email',
+    'username' => 'identity',
 
     'email' => 'email',
 
@@ -74,7 +74,7 @@ return [
     |
     */
 
-    'prefix' => 'auth',
+    'prefix' => '',
 
     'domain' => null,
 

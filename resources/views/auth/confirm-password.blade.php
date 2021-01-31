@@ -22,7 +22,7 @@
                                 <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
                                     <x-heroicon-o-lock-closed class="w-auto h-4 text-gray-400"/>
                                 </div>
-                                <input type="password" id="password" name="password" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-md border-2 border-gray-200 outline-none focus:border-primary-500 text-sm" placeholder="Current password" autofocus required>
+                                <input type="password" id="password" name="password" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-md border-2 border-gray-200 outline-none focus:border-primary-500 text-sm text-gray-900" placeholder="Current password" autofocus required>
                             </div>
                         </div>
 

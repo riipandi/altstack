@@ -28,7 +28,7 @@
                                     <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
                                         <x-heroicon-o-user class="w-auto h-4 text-gray-400"/>
                                     </div>
-                                    <input type="text" id="first_name" name="first_name" value="{{ old('first_name') }}" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-md border-2 border-gray-200 outline-none focus:border-primary-500 text-sm" placeholder="First name">
+                                    <input type="text" id="first_name" name="first_name" value="{{ old('first_name') }}" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-md border-2 border-gray-200 outline-none focus:border-primary-500 text-sm text-gray-900" placeholder="First name">
                                 </div>
                             </div>
                             <div class="w-1/2">
@@ -37,7 +37,7 @@
                                     <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
                                         <x-heroicon-o-user class="w-auto h-4 text-gray-400"/>
                                     </div>
-                                    <input type="text" id="last_name" name="last_name" value="{{ old('last_name') }}" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-md border-2 border-gray-200 outline-none focus:border-primary-500 text-sm" placeholder="Last name">
+                                    <input type="text" id="last_name" name="last_name" value="{{ old('last_name') }}" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-md border-2 border-gray-200 outline-none focus:border-primary-500 text-sm text-gray-900" placeholder="Last name">
                                 </div>
                             </div>
                         </div> --}}
@@ -48,7 +48,7 @@
                                 <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
                                     <x-heroicon-o-user class="w-auto h-4 text-gray-400"/>
                                 </div>
-                                <input type="text" id="name" name="name" value="{{ old('name') }}" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-md border-2 border-gray-200 outline-none focus:border-primary-500 text-sm" placeholder="Full name">
+                                <input type="text" id="name" name="name" value="{{ old('name') }}" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-md border-2 border-gray-200 outline-none focus:border-primary-500 text-sm text-gray-900" placeholder="Full name">
                             </div>
                         </div>
 
@@ -58,7 +58,7 @@
                                 <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
                                     <x-heroicon-o-at-symbol class="w-auto h-4 text-gray-400"/>
                                 </div>
-                                <input type="text" id="email" name="email" value="{{ old('email') }}" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-md border-2 border-gray-200 outline-none focus:border-primary-500 text-sm" placeholder="Email address">
+                                <input type="text" id="email" name="email" value="{{ old('email') }}" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-md border-2 border-gray-200 outline-none focus:border-primary-500 text-sm text-gray-900" placeholder="Email address">
                             </div>
                         </div>
 
@@ -68,7 +68,7 @@
                                 <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
                                     <x-heroicon-o-lock-closed class="w-auto h-4 text-gray-400"/>
                                 </div>
-                                <input type="password" id="password" name="password" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-md border-2 border-gray-200 outline-none focus:border-primary-500 text-sm" placeholder="Password">
+                                <input type="password" id="password" name="password" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-md border-2 border-gray-200 outline-none focus:border-primary-500 text-sm text-gray-900" placeholder="Password">
                             </div>
                         </div>
 
@@ -78,7 +78,7 @@
                                 <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
                                     <x-heroicon-o-lock-closed class="w-auto h-4 text-gray-400"/>
                                 </div>
-                                <input type="password" id="password_confirmation" name="password_confirmation" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-md border-2 border-gray-200 outline-none focus:border-primary-500 text-sm" placeholder="Confirm Password">
+                                <input type="password" id="password_confirmation" name="password_confirmation" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-md border-2 border-gray-200 outline-none focus:border-primary-500 text-sm text-gray-900" placeholder="Confirm Password">
                             </div>
                         </div>
 

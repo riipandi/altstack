@@ -46,7 +46,10 @@ class FortifyServiceProvider extends ServiceProvider
 
         // Customizing User Authentication.
         Fortify::authenticateUsing(function (Request $request) {
-            $user = User::where('email', $request->email)->first();
+            $fieldType = filter_var($request->identity, FILTER_VALIDATE_EMAIL)
+                ? 'email' : 'username';
+
+            $user = User::where($fieldType, $request->identity)->first();
 
             if ($user && Hash::check($request->password, $user->password)) {
                 return $user;
