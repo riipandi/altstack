@@ -1,0 +1,10 @@
+[program:altstack]
+process_name=altstack
+command=/usr/bin/php /srv/altstack/current/artisan queue:work database --sleep=3 --tries=3
+autostart=true
+autorestart=true
+user=webmaster
+group=webmaster
+redirect_stderr=true
+stdout_logfile=/srv/altstack/current/storage/logs/worker.log
+stopwaitsecs=3600

@@ -39,7 +39,8 @@ CREATE DATABASE "homestead"; GRANT ALL PRIVILEGES ON DATABASE "homestead" TO "ho
 -- If using MariaDB 10.x: mysql -uroot -p
 DROP USER IF EXISTS `homestead`@`localhost`;
 DROP DATABASE IF EXISTS `homestead`; CREATE DATABASE `homestead`;
-GRANT ALL PRIVILEGES ON `homestead`.* TO `homestead`@`localhost` IDENTIFIED BY 'securepwd' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON `homestead`.* TO `homestead`@`localhost` 
+  IDENTIFIED BY 'securepwd' WITH GRANT OPTION;
 ```
 
 ### Create New Project
@@ -78,6 +79,34 @@ php artisan vendor:publish --tag=blade-heroicons --force
 # Compiling resources
 npm install --no-optional --no-audit
 npm run development
+```
+
+### Example Deployment
+```sh
+# Clone the project
+sudo mkdir -p /srv/altstack ; cd $_
+sudo chown -R $(whoami): /srv/altstack
+git clone git@github.com:riipandi/altstack.git current
+
+# Fix folder permissions
+find /srv/altstack/. -type d -exec sudo chmod 0775 {} \;
+find /srv/altstack/. -type f -exec sudo chmod 0644 {} \;
+sudo chown -R $(whoami): /srv/altstack/current/.git
+sudo chmod -R 0777 /srv/altstack/current/{bootstrap/cache,storage}
+sudo chown -R webmaster:webmaster /srv/altstack
+sudo chmod 0777 /srv/altstack
+
+# Nginx virtualhost
+sudo touch /etc/nginx/vhost.d/altstack.conf
+cat /srv/altstack/current/stubs/vhost.nginx.stub | sudo tee /etc/nginx/vhost.d/altstack.conf > /dev/null
+sudo systemctl restart nginx && sudo systemctl status nginx
+
+# Supervisor daemon
+sudo touch /etc/supervisor/conf.d/altstack.conf
+cat /srv/altstack/current/stubs/supervisor.stub | sudo tee /etc/supervisor/conf.d/altstack.conf > /dev/null
+sudo supervisorctl reread && sudo supervisorctl update
+sudo supervisorctl restart altstack
+sudo systemctl status supervisor
 ```
 
 ## Contributing
