@@ -3,7 +3,7 @@
 [![StyleCI](https://github.styleci.io/repos/174728418/shield?branch=master)](https://github.styleci.io/repos/174728418?branch=master)
 [![Total Download](https://poser.pugx.org/riipandi/altstack/d/total.svg?format=flat-square)](https://packagist.org/packages/riipandi/altstack)
 [![Latest Stable Version](https://poser.pugx.org/riipandi/altstack/v/stable.svg?format=flat-square)](https://packagist.org/packages/riipandi/altstack)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://choosealicense.com/licenses/mit/)
+[![License](https://img.shields.io/badge/license-ISC-red.svg?style=flat-square)][choosealicense]
 
 ## Introduction
 AltStack is a boilerplate meant to standardize much of the setup that almost every web 
@@ -94,11 +94,10 @@ their effort to contribute something to the open-source community.
 Your work means the world! 🌍 ❤️
 
 ## Copyright
-This project is licensed under MIT: <https://aris.mit-license.org/>
+This project is licensed under ISC: <https://aris.mit-license.org/>
 
 Copyrights in this project are retained by their contributors.
-No copyright assignment is required to contribute to this project.
-Please see [license file](./license.txt) for more information.
+See [license file](./license.txt) for details.
 
-[choosealicense]:https://choosealicense.com/licenses/mit/
+[choosealicense]:https://choosealicense.com/licenses/isc/
 [releasepage]:https://github.com/riipandi/altstack/releases

@@ -27,4 +27,28 @@ class {{ class }} extends FormRequest
             //
         ];
     }
+
+    /**
+     * Custom message for validation
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            //
+        ];
+    }
+
+    /**
+     *  Filters to be applied to the input.
+     *
+     * @return array
+     */
+    public function filters()
+    {
+        return [
+            //
+        ];
+    }
 }

@@ -9,61 +9,37 @@ use {{ namespacedParentModel }};
 
 class {{ class }} extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @param  \{{ namespacedParentModel }}  ${{ parentModelVariable }}
-     * @return \Illuminate\Http\Response
-     */
+    // Class constructor
+    public function __construct()
+    {
+        //
+    }
+
+    // Display a listing of the resource.
     public function index({{ parentModel }} ${{ parentModelVariable }})
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \{{ namespacedParentModel }}  ${{ parentModelVariable }}
-     * @return \Illuminate\Http\Response
-     */
+    // Store a newly created resource in storage.
     public function store(Request $request, {{ parentModel }} ${{ parentModelVariable }})
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \{{ namespacedParentModel }}  ${{ parentModelVariable }}
-     * @param  \{{ namespacedModel }}  ${{ modelVariable }}
-     * @return \Illuminate\Http\Response
-     */
+    // Display the specified resource.
     public function show({{ parentModel }} ${{ parentModelVariable }}, {{ model }} ${{ modelVariable }})
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \{{ namespacedParentModel }}  ${{ parentModelVariable }}
-     * @param  \{{ namespacedModel }}  ${{ modelVariable }}
-     * @return \Illuminate\Http\Response
-     */
+    // Update the specified resource in storage.
     public function update(Request $request, {{ parentModel }} ${{ parentModelVariable }}, {{ model }} ${{ modelVariable }})
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \{{ namespacedParentModel }}  ${{ parentModelVariable }}
-     * @param  \{{ namespacedModel }}  ${{ modelVariable }}
-     * @return \Illuminate\Http\Response
-     */
+    // Remove the specified resource from storage.
     public function destroy({{ parentModel }} ${{ parentModelVariable }}, {{ model }} ${{ modelVariable }})
     {
         //

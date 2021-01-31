@@ -18,7 +18,9 @@ class User extends Authenticatable implements MustVerifyEmail
     use SoftDeletes;
     use TwoFactorAuthenticatable;
 
-    protected $optiKeyFieldName = 'uuid';
+    protected $table = 'users';             // Model table name.
+    protected $optiKeyFieldName = 'uuid';   // Laravel OptiKey field name.
+    protected $perPage = 10;                // How much pagination rows.
 
     // The attributes that are mass assignable.
     protected $fillable = [
@@ -30,10 +32,7 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
 
     // The attributes that should be hidden for arrays.
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    protected $hidden = [ 'id', 'password', 'remember_token', ];
 
     // The attributes that should be cast to native types.
     protected $casts = [
