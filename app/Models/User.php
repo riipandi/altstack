@@ -32,7 +32,7 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
 
     // The attributes that should be hidden for arrays.
-    protected $hidden = [ 'id', 'password', 'remember_token', ];
+    protected $hidden = ['id', 'password', 'remember_token'];
 
     // The attributes that should be cast to native types.
     protected $casts = [
