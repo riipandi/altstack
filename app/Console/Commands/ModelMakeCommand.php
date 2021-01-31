@@ -10,9 +10,11 @@ class ModelMakeCommand extends BaseCommand
     /**
      * Build the class with the given name.
      *
-     * @param  string  $name
-     * @return string
+     * @param string $name
+     *
      * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
+     *
+     * @return string
      */
     protected function buildClass($name)
     {
@@ -38,7 +40,7 @@ class ModelMakeCommand extends BaseCommand
         }
 
         $this->call('make:migration', [
-            'name' => "create_{$table}_table",
+            'name'     => "create_{$table}_table",
             '--create' => $table,
         ]);
     }
@@ -60,8 +62,9 @@ class ModelMakeCommand extends BaseCommand
     /**
      * Replace the class name for the given stub.
      *
-     * @param  string  $stub
-     * @param  string  $name
+     * @param string $stub
+     * @param string $name
+     *
      * @return string
      */
     protected function replaceTable(&$stub, $name)
