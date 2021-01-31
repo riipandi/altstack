@@ -21,7 +21,8 @@ class SendRegisteredEmailVerification extends SendEmailVerificationNotification 
     /**
      * Handle the event.
      *
-     * @param  object  $event
+     * @param object $event
+     *
      * @return void
      */
     public function handle(Registered $event)

@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -45,7 +45,9 @@ class User extends Authenticatable implements MustVerifyEmail
     // Generate user avatar url.
     public function getAvatarAttribute($value): string
     {
-        if (!$value) return asset('images/avatars/avatar0.png');
+        if (!$value) {
+            return asset('images/avatars/avatar0.png');
+        }
 
         if (!filter_var($value, FILTER_VALIDATE_URL)) {
             return Storage::url('avatars/'.$value);

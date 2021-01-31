@@ -12,7 +12,7 @@ class AppLayout extends Component
 
     public function __construct($title = null, $fullTitle = null)
     {
-        $pageTitle = $title . ' | ' . config('app.name');
+        $pageTitle = $title.' | '.config('app.name');
 
         $this->title = $fullTitle ? $fullTitle : $pageTitle;
 
