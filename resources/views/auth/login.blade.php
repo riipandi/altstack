@@ -77,4 +77,10 @@
             </div>
         </div>
     </div>
+
+    <div class="mt-8 text-sm text-center">
+        <a href="{{ route('landing') }}" class="text-primary-700 hover:text-primary-500">
+            &larr; back to homepage
+        </a>
+    </div>
 </x-auth-layout>

@@ -3,7 +3,7 @@ const defaultColor = require('tailwindcss/colors')
 
 module.exports = {
   purge: ['./resources/**/*.{blade.php,js,jsx,ts,tsx,vue}'],
-  darkMode: 'class', // or 'media' or 'class'
+  darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {
       fontFamily: {
