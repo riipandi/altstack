@@ -1,4 +1,4 @@
-<x-guest-layout :fullTitle="__('Welcome')">
+<x-guest-layout :fullTitle="__('Welcome to AltStack')">
     <section id="landing" class="relative flex justify-center min-h-screen items-top sm:-mt-10 sm:items-center sm:pt-0">
         @if (Route::has('login'))
             <div class="fixed top-0 right-0 hidden px-6 py-4 sm:block">
