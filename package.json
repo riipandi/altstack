@@ -31,8 +31,7 @@
     "lodash": "^4.17.20",
     "postcss": "^8.2.4",
     "prettier": "^2.2.1",
-    "tailwindcss": "^2.0.2",
-    "vue-template-compiler": "^2.6.12"
+    "tailwindcss": "^2.0.2"
   },
   "dependencies": {
     "smooth-scroll-anchor": "^1.2.5"
