@@ -1,15 +1,8 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <x-jet-welcome />
-            </div>
+<x-app-layout :title="__('Dashboard')">
+    <div class="h-full p-4 sm:px-8 sm:py-6">
+        <div id="page-title">
+            <h1 class="text-xl sm:text-3xl font-medium pb-6 tracking-tight">Dashboard</h1>
         </div>
+        <!-- Content goes here! -->
     </div>
 </x-app-layout>

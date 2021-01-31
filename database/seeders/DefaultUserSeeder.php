@@ -16,13 +16,23 @@ class DefaultUserSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
-            'name'              => 'Admin Sistem',
-            'username'          => 'admin',
-            'email'             => 'admin@example.org',
-            'password'          => Hash::make('passw0rd'),
-            'remember_token'    => Str::random(12),
-            'email_verified_at' => now(),
+        $this->createUser('Super Admin', 'admin', 'admin@example.com', true);
+    }
+
+    private function createUser($name, $username, $email, $verified = false)
+    {
+        $user = User::create([
+            'name'           => $name,
+            'username'       => $username,
+            'email'          => $email,
+            'password'       => Hash::make('secret'),
+            'remember_token' => Str::random(12),
         ]);
+
+        if ($verified) {
+            $user->email_verified_at = now();
+        }
+
+        return $user->save();
     }
 }

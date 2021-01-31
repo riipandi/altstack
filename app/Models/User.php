@@ -2,79 +2,55 @@
 
 namespace App\Models;
 
-use Carbon\Carbon;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
-use Laravel\Jetstream\HasProfilePhoto;
-use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens;
     use HasFactory;
-    use HasProfilePhoto;
     use Notifiable;
     use SoftDeletes;
     use TwoFactorAuthenticatable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+    // The attributes that are mass assignable.
     protected $fillable = [
         'name',
         'email',
         'username',
         'password',
+        'avatar',
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
+    // The attributes that should be hidden for arrays.
     protected $hidden = [
         'password',
         'remember_token',
-        'two_factor_recovery_codes',
-        'two_factor_secret',
     ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
+    // The attributes that should be cast to native types.
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
 
-    /**
-     * The accessors to append to the model's array form.
-     *
-     * @var array
-     */
-    protected $appends = [
-        'profile_photo_url',
-    ];
-
-    // Get user first name.
-    public function getFirstNameAttribute()
+    // Set username attribute to lowercase.
+    public function setUsernameAttribute($value)
     {
-        $parser = new \TheIconic\NameParser\Parser();
-        $name = $parser->parse($this->name);
-
-        return $name->getFirstname();
+        $this->attributes['username'] = strtolower($value);
     }
 
-    // Get created date attribute.
-    public function getCreatedAtAttribute()
+    // Generate user avatar url.
+    public function getAvatarAttribute($value): string
     {
-        return Carbon::parse($this->attributes['created_at'])->format('d F Y H:i');
+        if (!$value) return asset('images/avatars/avatar0.png');
+
+        if (!filter_var($value, FILTER_VALIDATE_URL)) {
+            return Storage::url('avatars/'.$value);
+        }
+
+        return $value;
     }
 }

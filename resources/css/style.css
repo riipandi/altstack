@@ -1,4 +1,11 @@
+/* Tailwind base */
 @import 'tailwindcss/base';
+
+/* Tailwind components */
 @import 'tailwindcss/components';
-@import './app.css';
+
+/* Libraries and custom styles */
+@import './customize.css';
+
+/* Tailwind utils */
 @import 'tailwindcss/utilities';

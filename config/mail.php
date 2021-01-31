@@ -36,7 +36,7 @@ return [
     'mailers' => [
         'smtp' => [
             'transport'  => 'smtp',
-            'host'       => env('MAIL_HOST', 'smtp.mailtrap.io'),
+            'host'       => env('MAIL_HOST', 'smtp.mailgun.org'),
             'port'       => env('MAIL_PORT', 587),
             'encryption' => env('MAIL_ENCRYPTION', 'tls'),
             'username'   => env('MAIL_USERNAME'),
@@ -85,7 +85,7 @@ return [
 
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'noreply@example.com'),
-        'name'    => env('MAIL_FROM_NAME', 'Admin '.config('app.name')),
+        'name'    => env('MAIL_FROM_NAME', 'Administrator'),
     ],
 
     /*
@@ -101,6 +101,7 @@ return [
 
     'markdown' => [
         'theme' => 'default',
+
         'paths' => [
             resource_path('views/vendor/mail'),
         ],

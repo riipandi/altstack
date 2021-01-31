@@ -1,0 +1,152 @@
+/*   Fonts taken from: http://www.cufonfonts.com   */
+
+/* ------------------------------------------- Font weight 100 -------------------------------------------  */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: local('Inter Thin BETA'), url('Inter-Thin.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style:Italic;
+  font-weight: 100;
+  font-display: swap;
+  src: local('Inter Thin Italic BETA'), url('Inter-ThinItalic.woff') format('woff');
+}
+
+/* ------------------------------------------- Font weight 200 -------------------------------------------  */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: local('Inter Extra Light BETA'), url('Inter-ExtraLight.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style:Italic;
+  font-weight: 200;
+  font-display: swap;
+  src: local('Inter Extra Light Italic BETA'), url('Inter-ExtraLightItalic.woff') format('woff');
+}
+
+/* ------------------------------------------- Font weight 300 -------------------------------------------  */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Inter Light BETA'), url('Inter-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style:Italic;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Inter Light Italic BETA'), url('Inter-LightItalic.woff') format('woff');
+}
+
+/* ------------------------------------------- Font weight 400 -------------------------------------------  */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Inter Regular'), url('Inter-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style:Italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Inter Italic'), url('Inter-Italic.woff') format('woff');
+}
+
+/* ------------------------------------------- Font weight 500 -------------------------------------------  */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Inter Medium'), url('Inter-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style:Italic;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Inter Medium Italic'), url('Inter-MediumItalic.woff') format('woff');
+}
+
+/* ------------------------------------------- Font weight 600 -------------------------------------------  */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Inter Semi Bold'), url('Inter-SemiBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style:Italic;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Inter Semi Bold Italic'), url('Inter-SemiBoldItalic.woff') format('woff');
+}
+
+/* ------------------------------------------- Font weight 700 -------------------------------------------  */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Inter Bold'), url('Inter-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style:Italic;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Inter Bold Italic'), url('Inter-BoldItalic.woff') format('woff');
+}
+
+/* ------------------------------------------- Font weight 800 -------------------------------------------  */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: local('Inter Extra Bold'), url('Inter-ExtraBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style:Italic;
+  font-weight: 800;
+  font-display: swap;
+  src: local('Inter Extra Bold Italic'), url('Inter-ExtraBoldItalic.woff') format('woff');
+}
+
+/* ------------------------------------------- Font weight 900 -------------------------------------------  */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Inter Black'), url('Inter-Black.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style:Italic;
+  font-weight: 900;
+  src: local('Inter Black Italic'), url('Inter-BlackItalic.woff') format('woff');
+}

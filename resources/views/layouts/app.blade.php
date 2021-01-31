@@ -1,214 +1,134 @@
-@extends('layouts.base')
-
 @push('meta')
 <meta name="robots" content="noindex, nofollow">
 <meta name="googlebot" content="noindex, nofollow">
 @endpush
 
-@section('body')
-<div class="min-h-screen bg-gray-100">
-    <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
-        <!-- Primary Navigation Menu -->
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex">
-                    <!-- Logo -->
-                    <div class="flex-shrink-0 flex items-center">
-                        <a href="/dashboard">
-                            <x-jet-application-mark class="block h-9 w-auto" />
-                        </a>
-                    </div>
-
-                    <!-- Navigation Links -->
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-nav-link href="/dashboard" :active="request()->routeIs('dashboard')">
-                            {{ __('Dashboard') }}
-                        </x-jet-nav-link>
-                    </div>
-                </div>
-
-                <!-- Settings Dropdown -->
-                <div class="hidden sm:flex sm:items-center sm:ml-6">
-                    <x-jet-dropdown align="right" width="48">
-                        <x-slot name="trigger">
-                            <button
-                                class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out">
-                                <img class="h-8 w-8 rounded-full object-cover"
-                                    src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
-                            </button>
-                        </x-slot>
-
-                        <x-slot name="content">
-                            <!-- Account Management -->
-                            <div class="block px-4 py-2 text-xs text-gray-400">
-                                {{ __('Manage Account') }}
-                            </div>
-
-                            <x-jet-dropdown-link href="/user/profile">
-                                {{ __('Profile') }}
-                            </x-jet-dropdown-link>
-
-                            @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                            <x-jet-dropdown-link href="/user/api-tokens">
-                                {{ __('API Tokens') }}
-                            </x-jet-dropdown-link>
-                            @endif
-
-                            <div class="border-t border-gray-100"></div>
-
-                            <!-- Team Management -->
-                            @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
-                            <div class="block px-4 py-2 text-xs text-gray-400">
-                                {{ __('Manage Team') }}
-                            </div>
-
-                            <!-- Team Settings -->
-                            <x-jet-dropdown-link href="/teams/{{ Auth::user()->currentTeam->id }}">
-                                {{ __('Team Settings') }}
-                            </x-jet-dropdown-link>
-
-                            @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
-                            <x-jet-dropdown-link href="/teams/create">
-                                {{ __('Create New Team') }}
-                            </x-jet-dropdown-link>
-                            @endcan
-
-                            <div class="border-t border-gray-100"></div>
-
-                            <!-- Team Switcher -->
-                            <div class="block px-4 py-2 text-xs text-gray-400">
-                                {{ __('Switch Teams') }}
-                            </div>
-
-                            @foreach (Auth::user()->allTeams() as $team)
-                            <x-jet-switchable-team :team="$team" />
-                            @endforeach
-
-                            <div class="border-t border-gray-100"></div>
-                            @endif
-
-                            <!-- Authentication -->
-                            <form method="POST" action="{{ route('logout') }}">
-                                @csrf
-                                <x-jet-dropdown-link href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
-                                    {{ __('Logout') }}
-                                </x-jet-dropdown-link>
-                            </form>
-                        </x-slot>
-                    </x-jet-dropdown>
-                </div>
-
-                <!-- Hamburger -->
-                <div class="-mr-2 flex items-center sm:hidden">
-                    <button @click="open = ! open"
-                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
-                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                            <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex"
-                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16" />
-                            <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden"
-                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
+<x-base-layout title="{{ $title }}">
+<div class="flex bg-gray-100">
+    <aside class="relative bg-primary-600 h-screen w-72 hidden sm:block shadow">
+        <div class="flex flex-col mb-2">
+            <div class="pt-5 px-3 text-center">
+                <h1 class="text-white text-3xl font-semibold trcaking-tight">
+                    {{ config('app.name') }}
+                </h1>
+            </div>
+            <div class="px-5 py-2 mt-6 mb-2">
+                <button class="flex items-center justify-center w-full px-4 py-2 text-sm font-medium text-primary-600 border border-transparent rounded-md shadow-sm bg-white hover:bg-primary-100 focus:outline-none disabled:opacity-25 transition ease-in-out duration-150">
+                    <x-heroicon-o-home class="w-auto h-4 text-primary-600 mr-2 -ml-1"/> New Report
+                </button>
             </div>
         </div>
+        <nav class="text-white text-base font-medium pt-2 border-t border-primary-700">
+            <a href="{{ route('dashboard') }}" class="flex items-center bg-primary-700 text-sm text-white py-3 pl-6">
+                <x-heroicon-o-home class="w-auto h-5 text-white mr-3 -ml-1"/> Dashboard
+            </a>
+            <a href="javascript:;" class="flex justify-start items-center text-sm text-white opacity-90 hover:opacity-100 py-4 pl-6 hover:bg-primary-700">
+                <x-heroicon-o-document class="w-auto h-5 text-white mr-3 -ml-1"/> Sample 1
+            </a>
+            <a href="javascript:;" class="flex justify-start items-center text-sm text-white opacity-90 hover:opacity-100 py-4 pl-6 hover:bg-primary-700">
+                <x-heroicon-o-clock class="w-auto h-5 text-white mr-3 -ml-1"/> Sample 2
+            </a>
+            <a href="javascript:;" class="flex justify-start items-center text-sm text-white opacity-90 hover:opacity-100 py-4 pl-6 hover:bg-primary-700">
+                <x-heroicon-o-calendar class="w-auto h-5 text-white mr-3 -ml-1"/> Sample 3
+            </a>
+            <a href="javascript:;" class="flex justify-start items-center text-sm text-white opacity-90 hover:opacity-100 py-4 pl-6 hover:bg-primary-700">
+                <x-heroicon-o-adjustments class="w-auto h-5 text-white mr-3 -ml-1"/> Settings
+            </a>
+        </nav>
+        <a href="https://github.com/riipandi/altstack" target="_blank" rel="noopener noreferrer" class="absolute w-full bg-primary-700 text-sm font-medium bottom-0 bg-primary-700 text-white hover:bg-primary-800 flex items-center justify-center py-4">
+            <x-heroicon-o-external-link class="w-auto h-5 text-white mr-2 -ml-1"/>
+            Upgrade to Pro!
+        </a>
+    </aside>
 
-        <!-- Responsive Navigation Menu -->
-        <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
-            <div class="pt-2 pb-3 space-y-1">
-                <x-jet-responsive-nav-link href="/dashboard" :active="request()->routeIs('dashboard')">
-                    {{ __('Dashboard') }}
-                </x-jet-responsive-nav-link>
-            </div>
-
-            <!-- Responsive Settings Options -->
-            <div class="pt-4 pb-1 border-t border-gray-200">
-                <div class="flex items-center px-4">
-                    <div class="flex-shrink-0">
-                        <img class="h-10 w-10 rounded-full" src="{{ Auth::user()->profile_photo_url }}"
-                            alt="{{ Auth::user()->name }}" />
-                    </div>
-
-                    <div class="ml-3">
-                        <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
-                        <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
-                    </div>
+    <div class="relative w-full flex flex-col h-screen overflow-y-hidden">
+        <!-- Desktop Header -->
+        <header class="w-full flex items-center bg-white py-2 px-8 hidden sm:flex">
+            <div class="w-1/2"></div>
+            <div x-data="{ isOpen: false }" class="relative w-1/2 flex justify-end">
+                <div @click="isOpen = !isOpen"  class="inline-flex items-center cursor-pointer bg-gray-50 hover:bg-gray-100 py-2 px-3 rounded-md">
+                    <span class="text-sm mr-3 font-medium tracking-tighter text-gray-700">{{ auth()->user()->name }}</span>
+                    <img src="{{ auth()->user()->avatar }}" class="realtive z-10 w-8 h-8 rounded-full overflow-hidden border-2 border-primary-400 hover:border-primary-500 focus:outline-none" alt="User Avatar">
                 </div>
-
-                <div class="mt-3 space-y-1">
-                    <!-- Account Management -->
-                    <x-jet-responsive-nav-link href="/user/profile" :active="request()->routeIs('profile.show')">
-                        {{ __('Profile') }}
-                    </x-jet-responsive-nav-link>
-
-                    @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                    <x-jet-responsive-nav-link href="/user/api-tokens" :active="request()->routeIs('api-tokens.index')">
-                        {{ __('API Tokens') }}
-                    </x-jet-responsive-nav-link>
-                    @endif
-
-                    <!-- Authentication -->
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-
-                        <x-jet-responsive-nav-link href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                    this.closest('form').submit();">
-                            {{ __('Logout') }}
-                        </x-jet-responsive-nav-link>
+                <button x-show="isOpen" @click="isOpen = false" class="h-full w-full fixed inset-0 cursor-default"></button>
+                <div x-show="isOpen" class="absolute w-48 bg-white rounded-md shadow py-2 mt-12 space-y-1">
+                    <a href="javascript:;" class="inline-flex items-center w-full px-5 py-2 text-gray-600 text-sm hover:bg-primary-600 hover:text-white">
+                        <x-heroicon-o-user-circle class="w-auto h-5 mr-3 -ml-1" /> Preferences
+                    </a>
+                    <a href="javascript:;" class="inline-flex items-center w-full px-5 py-2 text-gray-600 text-sm hover:bg-primary-600 hover:text-white">
+                        <x-heroicon-o-support class="w-auto h-5 mr-3 -ml-1" /> Get Support
+                    </a>
+                    <form method="POST" action="{{ route('logout') }}" class="w-full"> @csrf
+                        <button type="submit" class="inline- items-center flex w-full px-5 py-2 text-gray-600 text-sm hover:bg-primary-600 hover:text-white">
+                            <x-heroicon-o-logout class="w-auto h-5 mr-3 -ml-1" /> {{ __('Sign out') }}
+                        </button>
                     </form>
-
-                    <!-- Team Management -->
-                    @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
-                    <div class="border-t border-gray-200"></div>
-
-                    <div class="block px-4 py-2 text-xs text-gray-400">
-                        {{ __('Manage Team') }}
-                    </div>
-
-                    <!-- Team Settings -->
-                    <x-jet-responsive-nav-link href="/teams/{{ Auth::user()->currentTeam->id }}"
-                        :active="request()->routeIs('teams.show')">
-                        {{ __('Team Settings') }}
-                    </x-jet-responsive-nav-link>
-
-                    <x-jet-responsive-nav-link href="/teams/create" :active="request()->routeIs('teams.create')">
-                        {{ __('Create New Team') }}
-                    </x-jet-responsive-nav-link>
-
-                    <div class="border-t border-gray-200"></div>
-
-                    <!-- Team Switcher -->
-                    <div class="block px-4 py-2 text-xs text-gray-400">
-                        {{ __('Switch Teams') }}
-                    </div>
-
-                    @foreach (Auth::user()->allTeams() as $team)
-                    <x-jet-switchable-team :team="$team" component="jet-responsive-nav-link" />
-                    @endforeach
-                    @endif
                 </div>
             </div>
-        </div>
-    </nav>
+        </header>
 
-    <!-- Page Heading -->
-    <header class="bg-white shadow">
-        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-            {{ $header }}
-        </div>
-    </header>
+        <!-- Mobile Header & Nav -->
+        <header x-data="{ isOpen: false }" :class="isOpen ? 'absolute': 'relative'" class="w-full bg-primary-600 py-3 px-6 sm:hidden">
+            <div class="flex items-center justify-between">
+                <h1 class="text-white text-2xl font-semibold">
+                    {{ config('app.name') }}
+                </h1>
+                <button @click="isOpen = !isOpen" class="text-white text-3xl focus:outline-none">
+                    <x-heroicon-o-menu-alt-2 x-show="!isOpen" class="w-auto h-6"/>
+                    <x-heroicon-o-x x-show="isOpen" class="w-auto h-6"/>
+                </button>
+            </div>
 
-    <!-- Page Content -->
-    <main>
-        {{ $slot }}
-    </main>
+            <!-- Dropdown Nav -->
+            <nav :class="isOpen ? 'flex': 'hidden'" class="flex flex-col pt-4 pb-2">
+                <a href="{{ route('dashboard') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 hover:bg-primary-700">
+                    <x-heroicon-o-home class="w-auto h-5 text-white mr-3 -ml-1"/>
+                    Dashboard
+                </a>
+                <a href="javascript:;" class="flex items-center bg-primary-700 text-white py-3 pl-4 hover:bg-primary-700">
+                    <x-heroicon-o-document class="w-auto h-5 text-white mr-3 -ml-1"/> Blank Page
+                </a>
+                <a href="javascript:;" class="flex items-center text-white opacity-90 hover:opacity-100 py-3 pl-4 hover:bg-primary-700">
+                    <x-heroicon-o-clock class="w-auto h-5 text-white mr-3 -ml-1"/> Sample 1
+                </a>
+                <a href="javascript:;" class="flex items-center text-white opacity-90 hover:opacity-100 py-3 pl-4 hover:bg-primary-700">
+                    <x-heroicon-o-calendar class="w-auto h-5 text-white mr-3 -ml-1"/> Sample 2
+                </a>
+                <a href="javascript:;" class="flex items-center text-white opacity-90 hover:opacity-100 py-3 pl-4 hover:bg-primary-700">
+                    <x-heroicon-o-adjustments class="w-auto h-5 text-white mr-3 -ml-1"/> Settings
+                </a>
+                <div class="relative px-3 py-5">
+                    <div class="w-full border-t border-gray-300"></div>
+                </div>
+                <a href="javascript:;" class="flex items-center text-white opacity-90 hover:opacity-100 py-3 pl-4 hover:bg-primary-700">
+                    <x-heroicon-o-support class="w-auto h-5 text-white mr-3 -ml-1"/> Support
+                </a>
+                <a href="javascript:;" class="flex items-center text-white opacity-90 hover:opacity-100 py-3 pl-4 hover:bg-primary-700">
+                    <x-heroicon-o-user-circle class="w-auto h-5 text-white mr-3 -ml-1"/> My Account
+                </a>
+                <a href="javascript:;" class="flex items-center text-white opacity-90 hover:opacity-100 py-3 pl-4 hover:bg-primary-700">
+                    <x-heroicon-o-logout class="w-auto h-5 text-white mr-3 -ml-1"/> Sign Out
+                </a>
+                <a href="https://github.com/riipandi" class="w-full bg-white text-primary-600 text-sm font-medium py-3 mt-4 rounded-lg shadow-sm hover:bg-gray-100 flex items-center justify-center" target="_blank" rel="noopener noreferrer">
+                    <x-heroicon-o-external-link class="w-auto h-4 mr-2 -ml-1"/> Upgrade to Pro!
+                </a>
+            </nav>
+        </header>
+
+        <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
+            <main class="w-full flex-grow">
+                {{ $slot }}
+            </main>
+
+            <footer class="w-full bg-white text-right px-6 py-4">
+                <div class="text-sm text-center sm:text-right">
+                    AltStack by
+                    <a href="https://twitter.com/riipandi" class="text-primary-800 hover:text-primary-600" target="_blank" rel="noopener noreferrer">
+                        Aris Ripandi
+                    </a>
+                </div>
+            </footer>
+        </div>
+    </div>
 </div>
-
-@stack('modals')
-@stack('scriptsBefore')
-<script src="{{ asset('assets/app.js') }}"></script>
-@livewireScripts
-@stack('scriptsAfter')
-@endsection
+</x-base-layout>

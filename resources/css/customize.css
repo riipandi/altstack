@@ -1,0 +1,18 @@
+/* Custom global scrollbar */
+::-webkit-scrollbar {
+    @apply cursor-pointer w-0.5;
+}
+::-webkit-scrollbar-track {
+    @apply cursor-pointer bg-primary-500;
+}
+::-webkit-scrollbar-thumb {
+    @apply cursor-pointer bg-primary-500;
+}
+
+/* Hide annoying Google reCAPTCHA v3 Badge */
+.grecaptcha-badge { visibility: hidden; }
+
+/* When files dragged over */
+#fileupload-container.active {
+  @apply ring-primary-500 ring-opacity-5 border-primary-300;
+}

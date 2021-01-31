@@ -126,7 +126,10 @@ return [
     |
     */
 
-    'cookie' => env('SESSION_COOKIE', Str::slug(env('APP_NAME', 'altstack'), '_').'_session'),
+    'cookie' => env(
+        'SESSION_COOKIE',
+        Str:: slug(env('APP_NAME', 'altstack'), '_').'_session'
+    ),
 
     /*
     |--------------------------------------------------------------------------
