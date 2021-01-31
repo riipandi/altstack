@@ -4,7 +4,7 @@
 @endpush
 
 <x-base-layout title="{{ $title }}">
-    <div class="min-w-screen min-h-screen bg-gray-200 flex items-center justify-center p-5">
+    <div class="flex items-center justify-center min-h-screen p-5 bg-gray-100 min-w-screen">
         {{ $slot }}
     </div>
 </x-base-layout>
