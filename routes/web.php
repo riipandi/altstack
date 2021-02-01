@@ -15,6 +15,7 @@ Route::view('/', 'welcome')->name('landing');
 // Authenticated routes...
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('dashboard', 'dashboard')->name('dashboard');
+    Route::view('user/profile', 'profile.index')->name('user.profile');
 
     // Logout using get method.
     Route::get('logout', [AuthenticatedSessionController::class, 'destroy'])

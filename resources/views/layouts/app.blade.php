@@ -43,7 +43,7 @@
 
     <div class="relative flex flex-col w-full h-screen overflow-y-hidden">
         <!-- Desktop Header -->
-        <header class="flex items-center hidden w-full px-8 py-2 bg-white sm:flex">
+        <header class="items-center hidden w-full px-8 py-2 bg-white sm:flex">
             <div class="w-1/2"></div>
             <div x-data="{ isOpen: false }" class="relative flex justify-end w-1/2">
                 <div @click="isOpen = !isOpen"  class="inline-flex items-center px-3 py-2 rounded-md cursor-pointer bg-gray-50 hover:bg-gray-100">
@@ -52,7 +52,7 @@
                 </div>
                 <button x-show="isOpen" @click="isOpen = false" class="fixed inset-0 w-full h-full cursor-default"></button>
                 <div x-show="isOpen" class="absolute w-48 py-2 mt-12 space-y-1 bg-white rounded-md shadow">
-                    <a href="javascript:;" class="inline-flex items-center w-full px-5 py-2 text-sm text-gray-600 hover:bg-primary-600 hover:text-white">
+                    <a href="{{ route('user.profile') }}" class="inline-flex items-center w-full px-5 py-2 text-sm text-gray-600 hover:bg-primary-600 hover:text-white">
                         <x-heroicon-o-user-circle class="w-auto h-5 mr-3 -ml-1" /> Preferences
                     </a>
                     <a href="javascript:;" class="inline-flex items-center w-full px-5 py-2 text-sm text-gray-600 hover:bg-primary-600 hover:text-white">
@@ -103,10 +103,10 @@
                 <a href="javascript:;" class="flex items-center py-3 pl-4 text-white opacity-90 hover:opacity-100 hover:bg-primary-700">
                     <x-heroicon-o-support class="w-auto h-5 mr-3 -ml-1 text-white"/> Support
                 </a>
-                <a href="javascript:;" class="flex items-center py-3 pl-4 text-white opacity-90 hover:opacity-100 hover:bg-primary-700">
+                <a href="{{ route('user.profile') }}" class="flex items-center py-3 pl-4 text-white opacity-90 hover:opacity-100 hover:bg-primary-700">
                     <x-heroicon-o-user-circle class="w-auto h-5 mr-3 -ml-1 text-white"/> My Account
                 </a>
-                <a href="javascript:;" class="flex items-center py-3 pl-4 text-white opacity-90 hover:opacity-100 hover:bg-primary-700">
+                <a href="{{ route('logout') }}" class="flex items-center py-3 pl-4 text-white opacity-90 hover:opacity-100 hover:bg-primary-700">
                     <x-heroicon-o-logout class="w-auto h-5 mr-3 -ml-1 text-white"/> Sign Out
                 </a>
                 <a href="https://github.com/riipandi" class="flex items-center justify-center w-full py-3 mt-4 text-sm font-medium bg-white rounded-lg shadow-sm text-primary-600 hover:bg-gray-100" target="_blank" rel="noopener noreferrer">

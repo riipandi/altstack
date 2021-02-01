@@ -32,7 +32,12 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
 
     // The attributes that should be hidden for arrays.
-    protected $hidden = ['id', 'password', 'remember_token'];
+    protected $hidden = [
+        'password',
+        'remember_token',
+        'two_factor_recovery_codes',
+        'two_factor_secret',
+    ];
 
     // The attributes that should be cast to native types.
     protected $casts = [
@@ -44,6 +49,12 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         $this->attributes['username'] = strtolower($value);
     }
+
+    // Set two factor recovery codes attribute to uppercase.
+    // public function setTwoFactorRecoveryCodesAttribute($value)
+    // {
+    //     $this->attributes['two_factor_recovery_codes'] = strtoupper($value);
+    // }
 
     // Generate user avatar url.
     public function getAvatarAttribute($value): string

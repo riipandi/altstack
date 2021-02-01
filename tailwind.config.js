@@ -14,11 +14,26 @@ module.exports = {
         primary: defaultColor.indigo,
         secondary: defaultColor.blue,
         accent: defaultColor.rose
-      }
+      },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            color: theme('colors.gray.800'),
+            a: {
+              color: theme('colors.primary.700'),
+              '&:hover': {
+                color: theme('colors.primary.500')
+              }
+            }
+          }
+        }
+      })
     }
   },
   variants: {
-    extend: {}
+    extend: {
+      fontWeight: ['hover', 'focus']
+    }
   },
   plugins: [
     // Additional first-party plugins

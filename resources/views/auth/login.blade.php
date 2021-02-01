@@ -21,12 +21,12 @@
 
                     <div class="flex flex-col mt-8 space-y-4">
                         <div class="w-full">
-                            <label for="identity" class="px-1 text-sm font-medium tracking-tight">Identity:</label>
+                            <label for="username" class="px-1 text-sm font-medium tracking-tight">Identity:</label>
                             <div class="flex mt-1">
                                 <div class="z-10 flex items-center justify-center w-10 pl-1 text-center pointer-events-none">
                                     <x-heroicon-o-user-circle class="w-auto h-4 text-gray-400"/>
                                 </div>
-                                <input type="text" id="identity" name="identity" value="{{ old('identity') }}" class="w-full py-2 pl-10 pr-3 -ml-10 text-sm text-gray-900 border-2 border-gray-200 rounded-md outline-none focus:border-primary-500" placeholder="Email or username" autofocus required>
+                                <input type="text" id="username" name="username" value="{{ old('username') }}" class="w-full py-2 pl-10 pr-3 -ml-10 text-sm text-gray-900 border-2 border-gray-200 rounded-md outline-none focus:border-primary-500" placeholder="Email or username" autofocus required>
                             </div>
                         </div>
 

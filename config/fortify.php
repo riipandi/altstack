@@ -46,7 +46,7 @@ return [
     |
     */
 
-    'username' => 'identity',
+    'username' => 'username',
 
     'email' => 'email',
 
@@ -76,7 +76,7 @@ return [
 
     'prefix' => '',
 
-    'domain' => null,
+    'domain' => env('APP_DOMAIN', null),
 
     /*
     |--------------------------------------------------------------------------
