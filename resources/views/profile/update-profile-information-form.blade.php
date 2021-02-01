@@ -43,6 +43,14 @@
                 </div>
             </div>
 
+            <div class="w-full">
+                <label for="email" class="px-1 text-sm font-medium tracking-tight">Avatar</label>
+                <div class="flex mt-1">
+                    <x-input-file id="avatar" name="avatar" acceptFile="PNG, JPG, GIF" maxSize="1" />
+                    <x-input-alert id="avatar" />
+                </div>
+            </div>
+
             <div class="flex flex-wrap justify-end pt-1">
                 <button class="flex items-center justify-center px-4 py-2 text-sm font-medium text-white transition duration-150 ease-in-out border border-transparent rounded-md shadow-sm bg-primary-600 hover:bg-primary-700 focus:outline-none disabled:opacity-25">
                     <x-heroicon-s-check-circle class="w-auto h-4 mr-2 -ml-1"/>

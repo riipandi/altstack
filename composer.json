@@ -4,7 +4,6 @@
   "description": "Alpine.js, Laravel, and Tailwind. An alternative full-stack development solution.",
   "keywords": [
     "framework",
-    "livewire",
     "alpinejs",
     "laravel",
     "tailwindcss"
@@ -17,7 +16,7 @@
       "homepage": "https://github.com/riipandi"
     }
   ],
-  "license": "MIT",
+  "license": "ISC",
   "require": {
     "php": "^7.4|^8.0",
     "ext-bcmath": "*",
@@ -34,6 +33,7 @@
     "fideloper/proxy": "^4.4",
     "fruitcake/laravel-cors": "^2.0",
     "guzzlehttp/guzzle": "^7.0.1",
+    "intervention/image": "^2.5",
     "laravel/fortify": "^1.7",
     "laravel/framework": "^8.12",
     "laravel/sanctum": "^2.9",
