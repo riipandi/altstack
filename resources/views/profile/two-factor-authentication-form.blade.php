@@ -38,6 +38,7 @@
             {{-- Enable 2FA --}}
             <form method="POST" action="{{ url('user/two-factor-authentication') }}"> @csrf
                 <button type="submit" class="flex items-center justify-center w-full px-4 py-2 text-sm font-medium text-white transition duration-150 ease-in-out border border-transparent rounded-md shadow-sm bg-primary-600 hover:bg-primary-700 focus:outline-none disabled:opacity-25">
+                    <x-heroicon-s-shield-check class="w-auto h-4 mr-2 -ml-1"/>
                     {{ __('Enable Two-Factor') }}
                 </button>
             </form>

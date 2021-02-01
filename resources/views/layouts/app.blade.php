@@ -68,7 +68,7 @@
         </header>
 
         <!-- Mobile Header & Nav -->
-        <header x-data="{ isOpen: false }" :class="isOpen ? 'absolute': 'relative'" class="w-full px-6 py-3 bg-primary-600 sm:hidden">
+        <header x-data="{ isOpen: false }" :class="isOpen ? 'absolute': 'relative'" class="z-20 w-full px-6 py-3 bg-primary-600 sm:hidden">
             <div class="flex items-center justify-between">
                 <h1 class="text-2xl font-semibold text-white">
                     {{ config('app.name') }}
