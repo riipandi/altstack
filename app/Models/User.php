@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
-use Riipandi\LaravelOptiKey\Traits\HasUuidKey;
 use Laravel\Sanctum\HasApiTokens;
+use Riipandi\LaravelOptiKey\Traits\HasUuidKey;
 
 class User extends Authenticatable implements MustVerifyEmail
 {

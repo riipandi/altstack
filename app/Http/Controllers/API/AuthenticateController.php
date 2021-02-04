@@ -23,7 +23,7 @@ class AuthenticateController extends Controller
 
         $user = User::where($fieldType, $request->identity)->first();
 
-        if (! $user || ! Hash::check($request->password, $user->password)) {
+        if (!$user || !Hash::check($request->password, $user->password)) {
             throw ValidationException::withMessages([
                 'identity' => ['The provided credentials are incorrect.'],
             ]);
@@ -33,6 +33,4 @@ class AuthenticateController extends Controller
 
         return response()->json(['accessToken' => $plainToken], 200);
     }
-
-
 }

@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\API\AuthenticateController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\API\AuthenticateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +26,6 @@ Route::middleware('auth:sanctum')->group(function () {
 });
 
 // Fallback response.
-Route::fallback(function(){
+Route::fallback(function () {
     return response()->json(['message' => 'Not Found!'], 404);
 });
