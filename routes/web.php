@@ -16,7 +16,6 @@ Route::view('/', 'welcome')->name('landing');
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('dashboard', 'dashboard')->name('dashboard');
     Route::view('user/profile', 'profile.index')->name('user.profile');
-
 });
 
 // Logout with get method and redirect authentication route using prefix.
