@@ -15,7 +15,7 @@ Route::get('/', function (Request $request) {
 });
 
 // Group routes yang perlu authorizaton...
-Route::middleware('auth:api')->group(function () {
+Route::middleware('auth:sanctum')->group(function () {
     Route::get('user', function (Request $request) {
         return $request->user();
     });
