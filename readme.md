@@ -3,7 +3,7 @@
 [![StyleCI](https://github.styleci.io/repos/174728418/shield?branch=master)](https://github.styleci.io/repos/174728418?branch=master)
 [![Total Download](https://poser.pugx.org/riipandi/altstack/d/total.svg?format=flat-square)](https://packagist.org/packages/riipandi/altstack)
 [![Latest Stable Version](https://poser.pugx.org/riipandi/altstack/v/stable.svg?format=flat-square)](https://packagist.org/packages/riipandi/altstack)
-[![License](https://img.shields.io/badge/license-ISC-red.svg?style=flat-square)][choosealicense]
+[![License](https://img.shields.io/badge/license-ISC-orange.svg?style=flat-square)][choosealicense]
 
 ## Introduction
 AltStack is a boilerplate meant to standardize much of the setup that almost every web 
