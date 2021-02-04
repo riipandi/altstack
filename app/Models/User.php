@@ -9,9 +9,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Riipandi\LaravelOptiKey\Traits\HasUuidKey;
+use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
+    use HasApiTokens;
     use HasFactory;
     use HasUuidKey;
     use Notifiable;
