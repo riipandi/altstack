@@ -6,6 +6,7 @@ const mix = require('laravel-mix')
 
 mix
   .js('resources/js/app.js', 'public/assets')
+  .js('resources/js/themeSwitcher.js', 'public/assets')
   .postCss('resources/css/fontface.css', 'public/assets')
   .postCss('resources/css/style.css', 'public/assets', [require('tailwindcss')])
 

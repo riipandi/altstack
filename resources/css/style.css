@@ -9,3 +9,8 @@
 
 /* Tailwind utils */
 @import 'tailwindcss/utilities';
+
+/* Dark mode switcher */
+.is-active {
+    border: 2px solid rgb(107, 114, 128)!important;
+}

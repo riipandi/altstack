@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="{{ asset('assets/style.css') }}">
         @stack('meta') <!-- Scripts -->
         <script src="{{ asset('assets/app.js') }}" defer></script>
+        <script src="{{ asset('assets/themeSwitcher.js') }}" defer></script>
         @stack('scriptHead')
     </head>
     <body class="font-sans antialiased">

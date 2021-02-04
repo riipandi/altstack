@@ -1,5 +1,5 @@
 <x-guest-layout :fullTitle="__('Welcome to AltStack')">
-    <section id="landing" class="relative flex justify-center min-h-screen items-top sm:-mt-10 sm:items-center sm:pt-0">
+    <section id="landing" class="relative flex flex-col justify-center min-h-screen items-top sm:-mt-10 sm:items-center sm:pt-0">
         @if (Route::has('login'))
             <div class="fixed top-0 right-0 hidden px-6 py-4 sm:block">
                 @auth
@@ -12,6 +12,9 @@
                 @endauth
             </div>
         @endif
+            <div class="items-center justify-around hidden w-full py-5 text-gray-900 bg-gray-100 md:flex dark:bg-gray-900 dark:text-white">
+                <x-theme-switcher />
+            </div>
 
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
             <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
