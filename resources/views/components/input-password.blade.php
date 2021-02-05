@@ -1,10 +1,11 @@
-@props(['id', 'name', 'placeholder' => '', 'disabled' => false, 'readonly' => false])
+@props(['id', 'name', 'placeholder' => '', 'disabled' => false, 'readonly' => false, 'lefticon' => false])
 
 @php
-    $classes = 'pl-3 pr-10 py-2 placeholder-gray-400 text-gray-600 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm';
+    $padding = ($lefticon) ? 'px-10' : 'pl-3 pr-10';
+    $classes = $padding . ' py-2 placeholder-gray-400 text-gray-600 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm';
 @endphp
 
-<div x-data="{ show: true }" class="relative w-full">
+<div x-data="{ show: true }" class="relative w-full {{ ($lefticon) ? '-ml-10' : '' }}">
     <input name="{{ $name }}" id="{{ $id }}" placeholder="{{ $placeholder }}" :type="show ? 'password' : 'text'" {{ $disabled ? 'disabled' : '' }} {{ $readonly ? 'readonly' : '' }} {!! $attributes->merge(['class' => $classes]) !!}>
     <div class="absolute inset-y-0 right-0 flex items-center pr-3 text-sm leading-5 cursor-pointer">
         <svg @click="show = !show" :class="{'hidden': !show, 'block':show }" class="h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>

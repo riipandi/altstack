@@ -38,10 +38,10 @@
                                 </a>
                             </div>
                             <div class="flex mt-1">
-                                {{-- <div class="z-10 flex items-center justify-center w-10 pl-1 text-center pointer-events-none">
+                                <div class="z-10 flex items-center justify-center w-10 pl-1 text-center pointer-events-none">
                                     <x-heroicon-o-lock-closed class="w-auto h-4 text-gray-400"/>
-                                </div> --}}
-                                <x-input-password name="password" id="password" class="block w-full" placeholder="Your password" required />
+                                </div>
+                                <x-input-password name="password" id="password" lefticon class="block w-full" placeholder="Your password" required />
                             </div>
                         </div>
 
