@@ -11,7 +11,7 @@
                         <x-heroicon-o-information-circle class="w-5 h-5 text-green-400" />
                     </div>
                     <div class="ml-2">
-                        <p class="text-xs text-green-700">
+                        <p class="text-green-700">
                             {{ __('Two factor authentication has been enabled.') }}
                         </p>
                     </div>
@@ -26,7 +26,7 @@
                         <x-heroicon-o-information-circle class="w-5 h-5 text-green-400" />
                     </div>
                     <div class="ml-2">
-                        <p class="text-xs text-green-700">
+                        <p class="text-green-700">
                             {{ __('Two factor authentication has been disabled.') }}
                         </p>
                     </div>

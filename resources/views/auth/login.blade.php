@@ -24,9 +24,9 @@
                             <label for="username" class="px-1 text-sm font-medium tracking-tight">Identity:</label>
                             <div class="flex mt-1">
                                 <div class="z-10 flex items-center justify-center w-10 pl-1 text-center pointer-events-none">
-                                    <x-heroicon-o-user-circle class="w-auto h-4 text-gray-400"/>
+                                    <x-heroicon-o-user-circle class="w-auto h-5 text-gray-400"/>
                                 </div>
-                                <input type="text" id="username" name="username" value="{{ old('username') }}" class="w-full py-2 pl-10 pr-3 -ml-10 text-sm text-gray-900 border-2 border-gray-200 rounded-md outline-none focus:border-primary-500" placeholder="Email or username" autofocus required>
+                                <input type="text" id="username" name="username" value="{{ old('username') }}" class="block w-full py-2 pl-10 pr-3 -ml-10 text-gray-600 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm" placeholder="Email or username" autofocus required>
                             </div>
                         </div>
 
@@ -38,10 +38,10 @@
                                 </a>
                             </div>
                             <div class="flex mt-1">
-                                <div class="z-10 flex items-center justify-center w-10 pl-1 text-center pointer-events-none">
+                                {{-- <div class="z-10 flex items-center justify-center w-10 pl-1 text-center pointer-events-none">
                                     <x-heroicon-o-lock-closed class="w-auto h-4 text-gray-400"/>
-                                </div>
-                                <input type="password" id="password" name="password" class="w-full py-2 pl-10 pr-3 -ml-10 text-sm text-gray-900 border-2 border-gray-200 rounded-md outline-none focus:border-primary-500" placeholder="Your password" required>
+                                </div> --}}
+                                <x-input-password name="password" id="password" class="block w-full" placeholder="Your password" required />
                             </div>
                         </div>
 

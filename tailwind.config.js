@@ -7,11 +7,11 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', ...defaultTheme.fontFamily.sans]
+        sans: ['Clarity City', ...defaultTheme.fontFamily.sans]
       },
       colors: {
         gray: defaultColor.coolGray,
-        primary: defaultColor.indigo,
+        primary: defaultColor.lightBlue,
         secondary: defaultColor.blue,
         accent: defaultColor.rose
       },

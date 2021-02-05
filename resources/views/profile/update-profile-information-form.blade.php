@@ -5,13 +5,13 @@
 
     <div class="w-full px-6 pt-1 pb-6">
         @if (session('status') == 'profile-information-updated')
-            <div class="px-2 py-3 mt-4 text-xs border-l-4 border-green-400 rounded-sm bg-green-50">
+            <div class="px-2 py-3 mt-4 text-sm border-l-4 border-green-400 rounded-sm bg-green-50">
                 <div class="flex">
                     <div class="flex-shrink-0">
                         <x-heroicon-o-information-circle class="w-5 h-5 text-green-400" />
                     </div>
                     <div class="ml-2">
-                        <p class="text-xs text-green-700">
+                        <p class="text-green-700">
                             {{ __('User profile has been updated.') }}
                         </p>
                     </div>
@@ -27,7 +27,7 @@
                     <div class="z-10 flex items-center justify-center w-10 pl-1 text-center pointer-events-none">
                         <x-heroicon-o-user-circle class="w-auto h-4 text-gray-400"/>
                     </div>
-                    <input type="text" id="name" name="name" value="{{ old('name') ?? auth()->user()->name }}" class="w-full py-2 pl-10 pr-3 -ml-10 text-sm text-gray-900 border-2 border-gray-200 rounded-md outline-none focus:border-primary-500" placeholder="Full name" required>
+                    <input type="text" id="name" name="name" value="{{ old('name') ?? auth()->user()->name }}" class="block w-full py-2 pl-10 pr-3 -ml-10 text-gray-600 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm" placeholder="Full name" required>
                     @error('name')<span class="mt-4 text-xs italic text-red-500">{{ $message }}</span>@enderror
                 </div>
             </div>
@@ -36,9 +36,9 @@
                 <label for="email" class="px-1 text-sm font-medium tracking-tight">Email</label>
                 <div class="flex mt-1">
                     <div class="z-10 flex items-center justify-center w-10 pl-1 text-center pointer-events-none">
-                        <x-heroicon-o-user-circle class="w-auto h-4 text-gray-400"/>
+                        <x-heroicon-o-at-symbol class="w-auto h-4 text-gray-400"/>
                     </div>
-                    <input type="text" id="email" name="email" value="{{ old('email') ?? auth()->user()->email }}" class="w-full py-2 pl-10 pr-3 -ml-10 text-sm text-gray-900 border-2 border-gray-200 rounded-md outline-none focus:border-primary-500" placeholder="Full name" required>
+                    <input type="text" id="email" name="email" value="{{ old('email') ?? auth()->user()->email }}" class="block w-full py-2 pl-10 pr-3 -ml-10 text-gray-600 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm" placeholder="Full name" required>
                     @error('email')<span class="mt-4 text-xs italic text-red-500">{{ $message }}</span>@enderror
                 </div>
             </div>

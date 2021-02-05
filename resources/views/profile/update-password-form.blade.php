@@ -6,13 +6,13 @@
     <div class="w-full px-6 pt-1 pb-6">
 
         @if (session('status') == 'password-updated')
-            <div class="px-2 py-3 mt-4 text-xs border-l-4 border-green-400 rounded-sm bg-green-50">
+            <div class="px-2 py-3 mt-4 text-sm border-l-4 border-green-400 rounded-sm bg-green-50">
                 <div class="flex">
                     <div class="flex-shrink-0">
                         <x-heroicon-o-information-circle class="w-5 h-5 text-green-400" />
                     </div>
                     <div class="ml-2">
-                        <p class="text-xs text-green-700">
+                        <p class="text-green-700">
                             {{ __('Password has been updated.') }}
                         </p>
                     </div>
@@ -28,7 +28,7 @@
                     <div class="z-10 flex items-center justify-center w-10 pl-1 text-center pointer-events-none">
                         <x-heroicon-o-lock-open class="w-auto h-4 text-gray-400"/>
                     </div>
-                    <input type="password" id="current_password" name="current_password" class="w-full py-2 pl-10 pr-3 -ml-10 text-sm text-gray-900 border-2 border-gray-200 rounded-md outline-none focus:border-primary-500" placeholder="Current password" required>
+                    <input type="password" id="current_password" name="current_password" class="block w-full py-2 pl-10 pr-3 -ml-10 text-gray-600 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm" placeholder="Current password" required>
                     @error('current_password')<span class="mt-4 text-xs italic text-red-500">{{ $message }}</span>@enderror
                 </div>
             </div>
@@ -39,7 +39,7 @@
                     <div class="z-10 flex items-center justify-center w-10 pl-1 text-center pointer-events-none">
                         <x-heroicon-o-lock-closed class="w-auto h-4 text-gray-400"/>
                     </div>
-                    <input type="password" id="password" name="password" class="w-full py-2 pl-10 pr-3 -ml-10 text-sm text-gray-900 border-2 border-gray-200 rounded-md outline-none focus:border-primary-500" placeholder="New password" required>
+                    <input type="password" id="password" name="password" class="block w-full py-2 pl-10 pr-3 -ml-10 text-gray-600 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm" placeholder="New password" required>
                     @error('password')<span class="mt-4 text-xs italic text-red-500">{{ $message }}</span>@enderror
                 </div>
             </div>
@@ -50,7 +50,7 @@
                     <div class="z-10 flex items-center justify-center w-10 pl-1 text-center pointer-events-none">
                         <x-heroicon-o-lock-closed class="w-auto h-4 text-gray-400"/>
                     </div>
-                    <input type="password" id="password_confirmation" name="password_confirmation" class="w-full py-2 pl-10 pr-3 -ml-10 text-sm text-gray-900 border-2 border-gray-200 rounded-md outline-none focus:border-primary-500" placeholder="Confirm new password" required>
+                    <input type="password" id="password_confirmation" name="password_confirmation" class="block w-full py-2 pl-10 pr-3 -ml-10 text-gray-600 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm" placeholder="Confirm new password" required>
                     @error('password_confirmation')<span class="mt-4 text-xs italic text-red-500">{{ $message }}</span>@enderror
                 </div>
             </div>

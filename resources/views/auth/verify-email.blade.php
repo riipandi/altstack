@@ -25,7 +25,7 @@
                             <x-heroicon-o-information-circle class="w-5 h-5 text-green-400" />
                         </div>
                         <div class="ml-2">
-                            <p class="text-xs text-green-700">
+                            <p class="text-green-700">
                                 {{ __('A new verification link has been sent to the email address you provided during registration.') }}
                             </p>
                         </div>

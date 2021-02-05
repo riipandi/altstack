@@ -33,7 +33,7 @@
                                     x-bind:id="useRecoveryCode === true ? 'recovery_code' : 'code'"
                                     x-bind:name="useRecoveryCode === true ? 'recovery_code' : 'code'"
                                     x-bind:placeholder="useRecoveryCode === true ? 'Recovery code' : 'OTP Token'"
-                                    class="w-full py-2 pl-10 pr-3 -ml-10 text-sm text-gray-900 border-2 border-gray-200 rounded-md outline-none focus:border-primary-500"
+                                    class="block w-full py-2 pl-10 pr-3 -ml-10 text-gray-600 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
                                     autofocus required>
                             </div>
                         </div>

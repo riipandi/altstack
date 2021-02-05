@@ -28,7 +28,7 @@
                                     <div class="z-10 flex items-center justify-center w-10 pl-1 text-center pointer-events-none">
                                         <x-heroicon-o-user class="w-auto h-4 text-gray-400"/>
                                     </div>
-                                    <input type="text" id="first_name" name="first_name" value="{{ old('first_name') }}" class="w-full py-2 pl-10 pr-3 -ml-10 text-sm text-gray-900 border-2 border-gray-200 rounded-md outline-none focus:border-primary-500" placeholder="First name" required>
+                                    <input type="text" id="first_name" name="first_name" value="{{ old('first_name') }}" class="block w-full py-2 pl-10 pr-3 -ml-10 text-gray-600 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm" placeholder="First name" required>
                                 </div>
                             </div>
                             <div class="w-1/2">
@@ -37,7 +37,7 @@
                                     <div class="z-10 flex items-center justify-center w-10 pl-1 text-center pointer-events-none">
                                         <x-heroicon-o-user class="w-auto h-4 text-gray-400"/>
                                     </div>
-                                    <input type="text" id="last_name" name="last_name" value="{{ old('last_name') }}" class="w-full py-2 pl-10 pr-3 -ml-10 text-sm text-gray-900 border-2 border-gray-200 rounded-md outline-none focus:border-primary-500" placeholder="Last name" required>
+                                    <input type="text" id="last_name" name="last_name" value="{{ old('last_name') }}" class="block w-full py-2 pl-10 pr-3 -ml-10 text-gray-600 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm" placeholder="Last name" required>
                                 </div>
                             </div>
                         </div> --}}
@@ -48,7 +48,7 @@
                                 <div class="z-10 flex items-center justify-center w-10 pl-1 text-center pointer-events-none">
                                     <x-heroicon-o-user class="w-auto h-4 text-gray-400"/>
                                 </div>
-                                <input type="text" id="name" name="name" value="{{ old('name') }}" class="w-full py-2 pl-10 pr-3 -ml-10 text-sm text-gray-900 border-2 border-gray-200 rounded-md outline-none focus:border-primary-500" placeholder="Full name" autofocus required>
+                                <input type="text" id="name" name="name" value="{{ old('name') }}" class="block w-full py-2 pl-10 pr-3 -ml-10 text-gray-600 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm" placeholder="Full name" autofocus required>
                             </div>
                         </div>
 
@@ -58,7 +58,7 @@
                                 <div class="z-10 flex items-center justify-center w-10 pl-1 text-center pointer-events-none">
                                     <x-heroicon-o-at-symbol class="w-auto h-4 text-gray-400"/>
                                 </div>
-                                <input type="text" id="email" name="email" value="{{ old('email') }}" class="w-full py-2 pl-10 pr-3 -ml-10 text-sm text-gray-900 border-2 border-gray-200 rounded-md outline-none focus:border-primary-500" placeholder="Email address" required>
+                                <input type="text" id="email" name="email" value="{{ old('email') }}" class="block w-full py-2 pl-10 pr-3 -ml-10 text-gray-600 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm" placeholder="Email address" required>
                             </div>
                         </div>
 
@@ -68,7 +68,7 @@
                                 <div class="z-10 flex items-center justify-center w-10 pl-1 text-center pointer-events-none">
                                     <x-heroicon-o-lock-closed class="w-auto h-4 text-gray-400"/>
                                 </div>
-                                <input type="password" id="password" name="password" class="w-full py-2 pl-10 pr-3 -ml-10 text-sm text-gray-900 border-2 border-gray-200 rounded-md outline-none focus:border-primary-500" placeholder="Password" required>
+                                <input type="password" id="password" name="password" class="block w-full py-2 pl-10 pr-3 -ml-10 text-gray-600 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm" placeholder="Password" required>
                             </div>
                         </div>
 
@@ -78,7 +78,7 @@
                                 <div class="z-10 flex items-center justify-center w-10 pl-1 text-center pointer-events-none">
                                     <x-heroicon-o-lock-closed class="w-auto h-4 text-gray-400"/>
                                 </div>
-                                <input type="password" id="password_confirmation" name="password_confirmation" class="w-full py-2 pl-10 pr-3 -ml-10 text-sm text-gray-900 border-2 border-gray-200 rounded-md outline-none focus:border-primary-500" placeholder="Confirm Password" required>
+                                <input type="password" id="password_confirmation" name="password_confirmation" class="block w-full py-2 pl-10 pr-3 -ml-10 text-gray-600 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm" placeholder="Confirm Password" required>
                             </div>
                         </div>
 

@@ -27,7 +27,7 @@
                                 <div class="z-10 flex items-center justify-center w-10 pl-1 text-center pointer-events-none">
                                     <x-heroicon-o-at-symbol class="w-auto h-4 text-gray-400"/>
                                 </div>
-                                <input type="text" id="email" name="email" value="{{ old('email', $request->get('email')) }}" class="w-full py-2 pl-10 pr-3 -ml-10 text-sm text-gray-900 border-2 border-gray-200 rounded-md outline-none focus:border-primary-500" placeholder="Email address" autofocus required>
+                                <input type="text" id="email" name="email" value="{{ old('email', $request->get('email')) }}" class="block w-full py-2 pl-10 pr-3 -ml-10 text-gray-600 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm" placeholder="Email address" autofocus required>
                             </div>
                         </div>
 
@@ -37,7 +37,7 @@
                                 <div class="z-10 flex items-center justify-center w-10 pl-1 text-center pointer-events-none">
                                     <x-heroicon-o-lock-closed class="w-auto h-4 text-gray-400"/>
                                 </div>
-                                <input type="password" id="password" name="password" class="w-full py-2 pl-10 pr-3 -ml-10 text-sm text-gray-900 border-2 border-gray-200 rounded-md outline-none focus:border-primary-500" placeholder="New password" required>
+                                <input type="password" id="password" name="password" class="block w-full py-2 pl-10 pr-3 -ml-10 text-gray-600 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm" placeholder="New password" required>
                             </div>
                         </div>
 
@@ -47,7 +47,7 @@
                                 <div class="z-10 flex items-center justify-center w-10 pl-1 text-center pointer-events-none">
                                     <x-heroicon-o-lock-closed class="w-auto h-4 text-gray-400"/>
                                 </div>
-                                <input type="password" id="password_confirmation" name="password_confirmation" class="w-full py-2 pl-10 pr-3 -ml-10 text-sm text-gray-900 border-2 border-gray-200 rounded-md outline-none focus:border-primary-500" placeholder="Confirm new password" required>
+                                <input type="password" id="password_confirmation" name="password_confirmation" class="block w-full py-2 pl-10 pr-3 -ml-10 text-gray-600 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm" placeholder="Confirm new password" required>
                             </div>
                         </div>
 
