@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\API\AuthenticateController;
+use App\Http\Controllers\ApiControllers\AuthenticateController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,8 +15,12 @@ Route::get('/', function (Request $request) {
     return response()->json(['message' => 'This is '.config('app.name').' API endpoint'], 200);
 });
 
-// Get Sanctum API Token.
-Route::post('/sanctum/token', [AuthenticateController::class, 'generateToken']);
+// Authentication via API using Laravel Sanctum.
+Route::post('/auth/login', [AuthenticateController::class, 'login']);
+Route::post('/auth/logout', [AuthenticateController::class, 'logout'])
+    ->missing(function (Request $request) {
+         return response()->json(['message' => 'Failed to deauthorize user!'], 404);
+     });
 
 // Group routes yang perlu authorizaton...
 Route::middleware('auth:sanctum')->group(function () {

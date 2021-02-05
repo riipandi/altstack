@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\API;
+namespace App\Http\Controllers\ApiControllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
@@ -11,7 +11,7 @@ use Illuminate\Validation\ValidationException;
 class AuthenticateController extends Controller
 {
     // Generate Sanctum API Token.
-    public function generateToken(Request $request)
+    public function login(Request $request)
     {
         $request->validate([
             'identity'    => 'required|string',
@@ -32,5 +32,19 @@ class AuthenticateController extends Controller
         $plainToken = $user->createToken($request->device_name)->plainTextToken;
 
         return response()->json(['accessToken' => $plainToken], 200);
+    }
+
+    // End user session.
+    public function logout(Request $request)
+    {
+        // Revoke a specific user token
+        // $user->tokens()->where('id', $id)->delete();
+        if ($token = $request->bearerToken()) {
+            $model = Sanctum::$personalAccessTokenModel;
+            $accessToken = $model::findToken($token);
+            $accessToken->delete();
+        }
+
+        return response()->json(['message' => 'User has been deauthorized!'], 200);
     }
 }
