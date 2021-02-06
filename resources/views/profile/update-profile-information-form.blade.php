@@ -19,7 +19,7 @@
             </div>
         @endif
 
-        <form method="POST" action="{{ route('user-profile-information.update') }}" class="w-full space-y-4">
+        <form method="POST" action="{{ route('user-profile-information.update') }}" enctype="multipart/form-data" class="w-full space-y-4">
             @csrf @method('PUT')
             <div class="w-full">
                 <label for="name" class="px-1 text-sm font-medium tracking-tight">Name</label>
