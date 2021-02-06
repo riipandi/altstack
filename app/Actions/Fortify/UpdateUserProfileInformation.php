@@ -24,7 +24,6 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
     {
         Validator::make($input, [
             'name' => ['required', 'string', 'max:255'],
-            'avatar' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:1024'],
 
             'email' => [
                 'required',
@@ -35,7 +34,11 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             ],
         ])->validateWithBag('updateProfileInformation');
 
-        if ($input['avatar']) {
+        if (isset($input['avatar'])) {
+            Validator::make($input, [
+                'avatar' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:1024'],
+            ])->validate();
+
             $fileName = $this->generateFileNameToStore($input['avatar']);
             $this->storeImageFile($input['avatar'], 'public/avatars', $fileName, 500);
             $user->avatar = $fileName;

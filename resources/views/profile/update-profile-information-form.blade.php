@@ -45,7 +45,7 @@
 
             <div class="w-full">
                 <label for="email" class="px-1 text-sm font-medium tracking-tight">Avatar</label>
-                <div class="flex mt-1">
+                <div class="flex flex-col mt-1">
                     <x-input-file id="avatar" name="avatar" acceptFile="PNG, JPG, GIF" maxSize="1" />
                     <x-input-alert id="avatar" />
                 </div>
