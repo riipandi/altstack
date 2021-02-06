@@ -19,8 +19,8 @@ Route::get('/', function (Request $request) {
 Route::post('/auth/login', [AuthenticateController::class, 'login']);
 Route::post('/auth/logout', [AuthenticateController::class, 'logout'])
     ->missing(function (Request $request) {
-         return response()->json(['message' => 'Failed to deauthorize user!'], 404);
-     });
+        return response()->json(['message' => 'Failed to deauthorize user!'], 404);
+    });
 
 // Group routes yang perlu authorizaton...
 Route::middleware('auth:sanctum')->group(function () {

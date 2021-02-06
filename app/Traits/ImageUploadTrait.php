@@ -2,10 +2,9 @@
 
 namespace App\Traits;
 
-use Carbon\Carbon;
-use Intervention\Image\Facades\Image as Image;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Intervention\Image\Facades\Image as Image;
 
 trait ImageUploadTrait
 {
@@ -18,12 +17,12 @@ trait ImageUploadTrait
         })->encode('jpg');
 
         // Prepare qualified image name
-        $image = md5($resize->__toString()) . 'jpg';
+        $image = md5($resize->__toString()).'jpg';
 
         // Put image to storage directory
         $save = Storage::put("{$targetDirectoryName}/{$fileNameToStore}", $resize->__toString());
 
-        return ($save) ? true : false ;
+        return ($save) ? true : false;
     }
 
     // Rename uploaded image file name.
@@ -35,7 +34,7 @@ trait ImageUploadTrait
         // Get file path and set new file name
         $filename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
         $filename = md5(Str::slug($filename, ''));
-        $fileNameToStore = $filename . '_' . time() . '.' . $extension;
+        $fileNameToStore = $filename.'_'.time().'.'.$extension;
 
         return $fileNameToStore;
     }

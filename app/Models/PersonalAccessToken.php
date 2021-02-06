@@ -8,7 +8,8 @@ use Riipandi\LaravelOptiKey\Traits\UlidAsPrimaryKey;
 
 class PersonalAccessToken extends SanctumPersonalAccessToken
 {
-    use HasUlidKey, UlidAsPrimaryKey;
+    use HasUlidKey;
+    use UlidAsPrimaryKey;
 
     // Model table name.
     protected $table = 'personal_access_tokens';
@@ -17,5 +18,4 @@ class PersonalAccessToken extends SanctumPersonalAccessToken
 
     // Laravel OptiKey field name.
     protected $optiKeyFieldName = 'id';
-
 }
