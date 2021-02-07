@@ -29,11 +29,9 @@
     "axios": "^0.21.1",
     "laravel-mix": "^6.0.11",
     "lodash": "^4.17.20",
-    "postcss": "^8.2.4",
+    "postcss": "^8.2.5",
     "prettier": "^2.2.1",
+    "smooth-scroll-anchor": "^1.2.5",
     "tailwindcss": "^2.0.2"
-  },
-  "dependencies": {
-    "smooth-scroll-anchor": "^1.2.5"
   }
 }
