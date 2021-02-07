@@ -35,12 +35,20 @@
                     </div>
                 </form>
                 <div class="mt-10 text-center">
+                    @auth
+                    <p class="mt-4 text-sm">
+                        <a href="{{ url()->previous() }}" class="text-primary-700 hover:text-primary-500">
+                            &larr; back to dashboard
+                        </a>
+                    </p>
+                    @else
                     <p class="mt-4 text-sm">
                         Forgot your password?
                         <a href="{{ route('password.request') }}" class="text-primary-700 hover:text-primary-500">
                             Reset here &rarr;
                         </a>
                     </p>
+                    @endauth
                 </div>
             </div>
         </div>
