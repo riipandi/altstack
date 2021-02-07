@@ -74,7 +74,7 @@ return [
     |
     */
 
-    'prefix' => 'auth',
+    'prefix' => '',
 
     'domain' => env('APP_DOMAIN', null),
 
