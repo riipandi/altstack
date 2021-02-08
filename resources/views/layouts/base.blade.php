@@ -21,6 +21,9 @@
         @stack('scriptHead')
     </head>
     <body class="font-sans antialiased">
+        {{-- <a href="https://github.com/riipandi/altstack" rel="noopener noreferrer" target="_blank" >
+            <img class="absolute top-0 left-0 z-50 h-32 transform -rotate-90" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" />
+        </a> --}}
         {{ $slot }} @stack('scriptBody')
     </body>
 </html>
