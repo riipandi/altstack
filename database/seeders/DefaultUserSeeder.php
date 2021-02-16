@@ -25,7 +25,7 @@ class DefaultUserSeeder extends Seeder
             'name'           => $name,
             'username'       => $username,
             'email'          => $email,
-            'password'       => Hash::make('secretpwd'),
+            'password'       => Hash::make('secret'),
             'remember_token' => Str::random(12),
         ]);
 

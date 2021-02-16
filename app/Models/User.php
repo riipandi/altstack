@@ -63,7 +63,7 @@ class User extends Authenticatable implements MustVerifyEmail
     public function getAvatarAttribute($value): string
     {
         if (!$value) {
-            return asset('images/avatars/avatar0.png');
+            return asset('images/avatars/default-profile.svg');
         }
 
         if (!filter_var($value, FILTER_VALIDATE_URL)) {

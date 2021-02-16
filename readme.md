@@ -79,7 +79,12 @@ php artisan vendor:publish --tag=blade-heroicons --force
 # Compiling resources
 npm install --no-optional --no-audit
 npm run development
+
+# Then, initiate database migration
+php artisan migrate:fresh --seed
 ```
+
+> Default username is `admin` and password is `secret`.
 
 ### Example Deployment
 ```sh
