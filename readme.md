@@ -1,10 +1,10 @@
 # ⎇ AltStack - An alternative Laravel stack
 <!-- [![Build Status](https://travis-ci.org/riipandi/altstack.svg?branch=master)](https://travis-ci.org/riipandi/altstack) -->
+[![Build Status](https://riipandi.semaphoreci.com/badges/altstack/branches/master.svg?style=shields)](https://riipandi.semaphoreci.com/projects/altstack)
 [![StyleCI](https://github.styleci.io/repos/174728418/shield?branch=master)](https://github.styleci.io/repos/174728418?branch=master)
 [![Total Download](https://poser.pugx.org/riipandi/altstack/d/total.svg?format=flat-square)](https://packagist.org/packages/riipandi/altstack)
 [![Latest Stable Version](https://poser.pugx.org/riipandi/altstack/v/stable.svg?format=flat-square)](https://packagist.org/packages/riipandi/altstack)
 [![License](https://img.shields.io/badge/license-ISC-orange.svg?style=flat-square)][choosealicense]
-
 ## Introduction
 AltStack is a boilerplate meant to standardize much of the setup that almost every web 
 application needs. Reclaim your first few hours of development on every new project by 
