@@ -1,32 +1,22 @@
-public/mix-manifest.json
-public/assets/
-public/avatars/
-public/css/
-public/docs/
-public/fonts/
-public/images/
-public/js/
-node_modules/
-vendor/
-
-# Storage symlink
-public/storage
-!*/public/storage
-
-# Essentials
+# Common files and dirs
 .DS_Store
 .DS_Store?
-.env
-.env.production
-.env.testing
 .htpasswd
 .phpunit.result.cache
 .Trashes
-*.sqlite
+*.sqlite*
 *.sqlite-journal
 Thumbs.db
-yarn-error.log
-npm-debug.log
+docker-compose.override.yml
+Homestead.json
+Homestead.yaml
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+/.idea
+/.vscode
 
 # Lock files
 composer.lock
@@ -34,6 +24,25 @@ package-lock.json
 pnpm-lock.yaml
 yarn.lock
 
-# Vuepress
-docs/.vuepress/*
-!docs/.vuepress/config.js
+# debug files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# env files
+~.env.production
+.env.*
+!.env.example
+
+# Storage symlink
+/storage/minio/*
+!/storage/minio/.gitkeep
+public/mix-manifest.json
+public/assets/
+public/avatars/
+public/css/
+public/fonts/
+public/images/
+public/js/
+public/storage
+!*/public/storage

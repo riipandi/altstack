@@ -1,22 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
 */
 
-// Welcome page.
-Route::view('/', 'welcome')->name('landing');
-
-// Authenticated routes...
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::view('dashboard', 'dashboard')->name('dashboard');
-    Route::view('user/profile', 'profile.index')->name('user.profile');
+Route::get('/', function () {
+    return view('welcome');
 });
-
-// Logout using get method.
-Route::get('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');

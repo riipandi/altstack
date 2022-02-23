@@ -1,13 +1,11 @@
 {
   "private": true,
   "scripts": {
-    "dev": "npm run development",
-    "development": "mix",
+    "dev": "mix",
     "watch": "mix watch",
     "watch-poll": "mix watch -- --watch-options-poll=1000",
     "hot": "mix watch --hot",
-    "prod": "npm run production",
-    "production": "mix --production"
+    "prod": "mix --production"
   },
   "prettier": {
     "arrowParens": "always",
@@ -20,18 +18,26 @@
     "useTabs": false
   },
   "devDependencies": {
-    "@tailwindcss/aspect-ratio": "^0.2.0",
-    "@tailwindcss/forms": "^0.2.1",
-    "@tailwindcss/line-clamp": "^0.2.0",
-    "@tailwindcss/typography": "^0.4.0",
-    "alpinejs": "^2.8.0",
-    "autoprefixer": "^10.2.4",
-    "axios": "^0.21.1",
-    "laravel-mix": "^6.0.11",
-    "lodash": "^4.17.20",
-    "postcss": "^8.2.5",
-    "prettier": "^2.2.1",
-    "smooth-scroll-anchor": "^1.2.5",
-    "tailwindcss": "^2.0.2"
-  }
+    "@babel/core": "^7.17.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.17.3",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "@fontsource/jetbrains-mono": "^4.5.3",
+    "@fontsource/plus-jakarta-sans": "^4.5.2",
+    "@tailwindcss/aspect-ratio": "^0.4.0",
+    "@tailwindcss/forms": "^0.4.0",
+    "@tailwindcss/line-clamp": "^0.3.1",
+    "@tailwindcss/typography": "^0.5.2",
+    "alpinejs": "^3.9.0",
+    "autoprefixer": "^10.4.2",
+    "axios": "^0.26.0",
+    "laravel-mix": "^6.0.43",
+    "postcss": "^8.4.6",
+    "prettier": "^2.5.1",
+    "tailwindcss": "^3.0.23",
+    "webpack-cli": "^4.9.2",
+    "webpack": "^5.69.1"
+  },
+  "dependencies": {}
 }

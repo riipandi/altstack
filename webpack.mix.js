@@ -1,17 +1,36 @@
 const mix = require('laravel-mix')
+const path = require('path')
 
 //------------------------------------------------------------------------------
 // Mix configuration...
 //------------------------------------------------------------------------------
+mix.disableNotifications().webpackConfig({
+  resolve: {
+    alias: {
+      '@js': path.resolve('resources/js')
+    }
+  }
+})
+
+/*
+ |--------------------------------------------------------------------------
+ | Mix Asset Management
+ |--------------------------------------------------------------------------
+ */
 
 mix
-  .js('resources/js/app.js', 'public/assets')
-  .js('resources/js/themeSwitcher.js', 'public/assets')
-  .postCss('resources/css/fontface.css', 'public/assets')
-  .postCss('resources/css/style.css', 'public/assets', [require('tailwindcss')])
+  .copyDirectory('resources/img', 'public/images')
+  .js('resources/js/app.js', 'public/js')
+  .postCss('resources/css/fonts.css', 'public/css')
+  .postCss('resources/css/style.css', 'public/css', [
+    require('autoprefixer'),
+    require('tailwindcss')
+  ])
+  .options({ autoprefixer: false })
 
 // Images directory
 mix.copyDirectory('resources/img', 'public/images')
 
-// Favicon for docs using VuePress
-// mix.copy('public/favicon.ico', 'public/docs')
+if (mix.inProduction()) {
+  mix.version()
+}

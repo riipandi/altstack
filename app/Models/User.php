@@ -4,72 +4,41 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Support\Facades\Storage;
-use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Sanctum\HasApiTokens;
-use Riipandi\LaravelOptiKey\Traits\HasUuidKey;
 
-class User extends Authenticatable implements MustVerifyEmail
+class User extends Authenticatable
 {
-    use HasApiTokens;
-    use HasFactory;
-    use HasUuidKey;
-    use Notifiable;
-    use SoftDeletes;
-    use TwoFactorAuthenticatable;
+    use HasApiTokens, HasFactory, Notifiable;
 
-    protected $table = 'users';             // Model table name.
-    protected $optiKeyFieldName = 'uuid';   // Laravel OptiKey field name.
-    protected $perPage = 10;                // How much pagination rows.
-
-    // The attributes that are mass assignable.
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
     protected $fillable = [
         'name',
         'email',
-        'username',
         'password',
-        'avatar',
     ];
 
-    // The attributes that should be hidden for arrays.
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
     protected $hidden = [
         'password',
         'remember_token',
-        'two_factor_recovery_codes',
-        'two_factor_secret',
     ];
 
-    // The attributes that should be cast to native types.
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    // Set username attribute to lowercase.
-    public function setUsernameAttribute($value)
-    {
-        $this->attributes['username'] = strtolower($value);
-    }
-
-    // Set two factor recovery codes attribute to uppercase.
-    // public function setTwoFactorRecoveryCodesAttribute($value)
-    // {
-    //     $this->attributes['two_factor_recovery_codes'] = strtoupper($value);
-    // }
-
-    // Generate user avatar url.
-    public function getAvatarAttribute($value): string
-    {
-        if (!$value) {
-            return asset('images/avatars/default-profile.svg');
-        }
-
-        if (!filter_var($value, FILTER_VALIDATE_URL)) {
-            return Storage::url('avatars/'.$value);
-        }
-
-        return $value;
-    }
 }

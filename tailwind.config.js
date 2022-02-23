@@ -1,38 +1,22 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
-const defaultColor = require('tailwindcss/colors')
+const colors = require('tailwindcss/colors')
 
 module.exports = {
-  purge: ['./resources/**/*.{blade.php,js,jsx,ts,tsx,vue}'],
-  darkMode: 'class', // or 'media' or 'class'
+  content: [
+    './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
+    './vendor/laravel/jetstream/**/*.blade.php',
+    './resources/**/*.{blade.php,js,vue}'
+  ],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Clarity City', ...defaultTheme.fontFamily.sans]
+        sans: ['Plus Jakarta Sans', ...defaultTheme.fontFamily.sans],
+        mono: ['JetBrains Mono', ...defaultTheme.fontFamily.mono]
       },
       colors: {
-        gray: defaultColor.coolGray,
-        primary: defaultColor.lightBlue,
-        secondary: defaultColor.blue,
-        accent: defaultColor.rose
-      },
-      typography: (theme) => ({
-        DEFAULT: {
-          css: {
-            color: theme('colors.gray.800'),
-            a: {
-              color: theme('colors.primary.700'),
-              '&:hover': {
-                color: theme('colors.primary.500')
-              }
-            }
-          }
-        }
-      })
-    }
-  },
-  variants: {
-    extend: {
-      fontWeight: ['hover', 'focus']
+        gray: colors.slate
+      }
     }
   },
   plugins: [
